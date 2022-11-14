@@ -1,14 +1,61 @@
 import re
+import sys
+
+sys.path.append('.')
 import string
 from datetime import datetime
+from src.utils import all_country
 
 class Validator(object):
     
     def __init__(self):
         pass
+    
+    def ifvalidString(self, value):
+        """ check if the string is valid or not """
+        if value is None or value == '':
+            return False
+        
+        if isinstance(value, str):
+            return True  
+        
+        return False
+    
+    def ifvalidNumber(self, value):
+        """ check if the number is valid or not """
+        if value is None:
+            return False
+        
+        if isinstance(value, (int, float)):
+            return True  
+        
+        return False
+    
+    def ifvalidBoolean(self, string1):
+        """ check if the string is boolean or not """
+        pass
+    
+    def isPostalCode(self, string1, locale):
+        """ check if the string is postal code or not """
+        country_data = all_country[locale]
+        
+        PostalCodeFormat = country_data['PostalCodeFormat']
+        PostalCodeRegex = country_data['PostalCodeRegex']
 
-    def equals(self, string1, string2, ignoreCase=False):
+        if re.match(PostalCodeRegex, string1):
+            if re.match(PostalCodeFormat, string1):
+                return True
+        
+        return False
+        
+    def equals(self, string1, string2, ignoreCase=False)-> bool:
         """ Check if the two string are equal or not """
+        if not isinstance(string1, str) or not isinstance(string2, str):
+            return False
+        if ignoreCase:
+            string1 = string1.lower()
+            string2 = string2.lower()
+        
         if string1 == string2:
             return True
         
@@ -127,7 +174,7 @@ class Validator(object):
         
     def isIP(self, string1):
         """ check if the string is IP or not """
-        regex = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+        regex = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
         if re.search(regex, string1):
             return True
         return False
@@ -177,10 +224,6 @@ class Validator(object):
         if string1.isdigit() and 0 <= int(string1) <= 65535:
             return True
         return False
-    
-    def isPostalCode(self, string1):
-        """ check if the string is postal code or not """
-        pass
     
     def isSlug(self, string1):
         """ check if the string is slug or not """
@@ -238,7 +281,47 @@ class Validator(object):
         """ trim string """
         pass
     
+    def distance(self, string1, string2):
+        """ calculate distance between two strings """
+        pass
     
-        
+    def distanceByIndex(self, string1, string2):
+        """ calculate distance between two strings by index """
+        pass
     
+    def removeNonASCII(self, string1):
+        """ remove non ASCII characters from string """
+        pass
     
+    def removeNonWord(self, string1):
+        """ remove non word characters from string """
+        pass
+    
+    def removeSpaces(self, string1):
+        """ remove spaces from string """
+        pass
+    
+    def removeSymbols(self, string1):
+        """ remove symbols from string """
+        pass
+    
+    def removeTags(self, string1):
+        """ remove tags from string """
+        pass
+    
+    def removeWhiteSpace(self, string1):
+        """ remove white space from string """
+        pass
+    
+    def upperCase(self, string1):
+        """ convert string to upper case """
+        pass
+    
+    def lowerCase(self, string1):
+        """ convert string to lower case """
+        pass
+    
+    def isMobilePhone(self, string1):
+        """ check if the string is mobile phone or not """
+        pass
+

@@ -1,0 +1,24 @@
+import os
+import json
+import re
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ASSETS_DIR = os.path.join(ROOT_DIR, 'src/assets')
+
+
+def load_json(filename):
+    if not os.path.exists(filename):
+        raise FileNotFoundError(f'File {filename} not found')
+    
+    if not filename.endswith('.json'):
+        raise ValueError('Filename must be a json file')
+
+    with open(os.path.join(filename), 'r') as f:
+        return json.load(f)
+    
+
+def load_asset(filename):
+    return load_json(os.path.join(ASSETS_DIR, filename))
+
+all_country = load_asset('country.json')
+
