@@ -21,10 +21,14 @@ if you want to contribute please open a pull request.
 
 | Country | Code | Supported | 
 | --- | --- | --- |
-| Afghanistan | AF | :x: |
+| Afghanistan | AF | ✅ |
 | India | IN | ✅ |
 | United States | US | ✅ |
-| Saudi Arabia | SA | :x: |
-| South Africa | ZA | :x: |s
+| Saudi Arabia | SA | ✅ |
+| South Africa | ZA | ✅ |
+| United Kingdom | GB | ✅ |
+| Singapore | SG | ✅ |
+| Pakistan | PK | ✅ |
+| United Arab Emirates | AE | will soon |
 
 will add more countries soon
