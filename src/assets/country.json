@@ -5,11 +5,10 @@
         "Currency" : "INR",
         "CurrencyName" : "Rupee",
         "CurrencySymbol" : "₹",
-        "CurrencyDecimalPlaces" : 2,
-        "CurrencyDecimalSeparator" : ".",
-        "CurrencyGroupSeparator" : ",",
         "PostalCodeFormat" : "^[1-9][0-9]{5}$",
-        "PostalCodeRegex" : "^(\\d{6})$"
+        "PostalCodeRegex" : "^(\\d{6})$",
+        "LicensePlateFormat" : "^[A-Z]{2,2}[0-9]{1,2}[A-Z]{1,2}[0-9]{4,4}$",
+        "MobileNumberFormat" : ""
     },
     "US" : {
         "Code" : "US",
@@ -17,10 +16,68 @@
         "Currency" : "USD",
         "CurrencyName" : "Dollar",
         "CurrencySymbol" : "$",
-        "CurrencyDecimalPlaces" : 2,
-        "CurrencyDecimalSeparator" : ".",
-        "CurrencyGroupSeparator" : ",",
         "PostalCodeFormat" : "^[0-9]{5}(?:-[0-9]{4})?$",
-        "PostalCodeRegex" : "^(\\d{5})(?:[-](\\d{4}))?$"
+        "PostalCodeRegex" : "^(\\d{5})(?:[-](\\d{4}))?$",
+        "LicensePlateFormat": ""
+    },
+    "AF": {
+        "Code": "AF",
+        "Name": "Afghanistan",
+        "Currency": "AFN",
+        "CurrencyName": "Afghani",
+        "CurrencySymbol": "؋",
+        "PostalCodeFormat": "^[0-9]{4}$",
+        "PostalCodeRegex": "^(\\d{4})$",
+        "LicensePlateFormat": ""
+    },
+    "SA" : {
+        "Code" : "SA",
+        "Name" : "Saudi Arabia",
+        "Currency" : "SAR",
+        "CurrencyName" : "Riyal",
+        "CurrencySymbol" : "﷼",
+        "PostalCodeFormat" : "^[0-9]{5}$",
+        "PostalCodeRegex" : "^(\\d{5})$",
+        "LicensePlateFormat" : ""
+    },
+    "SG": {
+        "Code": "SG",
+        "Name": "Singapore",
+        "Currency": "SGD",
+        "CurrencyName": "Dollar",
+        "CurrencySymbol": "$",
+        "PostalCodeFormat": "^[09]{6}$",
+        "PostalCodeRegex": "^(\\d{6})$",
+        "LicensePlateFormat": ""
+    },
+    "ZA": {
+        "Code": "ZA",
+        "Name": "South Africa",
+        "Currency": "ZAR",
+        "CurrencyName": "Rand",
+        "CurrencySymbol": "R",
+        "PostalCodeFormat": "^[0-9]{4}$",
+        "PostalCodeRegex": "^(\\d{4})$",
+        "LicensePlateFormat": ""
+    },
+    "PK": {
+        "Code": "PK",
+        "Name": "Pakistan",
+        "Currency": "PKR",
+        "CurrencyName": "Rupee",
+        "CurrencySymbol": "₨",
+        "PostalCodeFormat": "^[0-9]{5}$",
+        "PostalCodeRegex": "^(\\d{5})$",
+        "LicensePlateFormat": ""
+    },
+    "UK": {
+        "Code": "UK",
+        "Name": "United Kingdom",
+        "Currency": "GBP",
+        "CurrencyName": "Pound",
+        "CurrencySymbol": "£",
+        "PostalCodeFormat": "^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$",
+        "PostalCodeRegex": "^(\\w{1,2}\\d\\w? \\d\\w{2})$",
+        "LicensePlateFormat": ""
     }
 }
