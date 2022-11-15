@@ -1,8 +1,10 @@
 import re
 import json
 from datetime import datetime
+from dateutil.parser import parse
+from Levenshtein import distance as levenshtein_distance
 
-from src.utils import all_country
+from src.utils import all_country, regexs
 
 class Validator(object):
     """ Validator class for validating the data """
@@ -38,126 +40,127 @@ class Validator(object):
 
         return False
     
-    def isPostalCode(self, string1, locale):
+    def isPostalCode(self, value, locale):
         """ check if the string is postal code or not """
         country_data = all_country[locale]
 
         PostalCodeFormat = country_data['PostalCodeFormat']
         PostalCodeRegex = country_data['PostalCodeRegex']
 
-        if re.match(PostalCodeRegex, string1):
-            if re.match(PostalCodeFormat, string1):
+        if re.match(PostalCodeRegex, value):
+            if re.match(PostalCodeFormat, value):
                 return True
 
         return False
 
-    def isLicensePlate(self, string1, locale):
+    def isLicensePlate(self, value, locale):
         """ check if the string is license plate or not """
-        string1 = string1.upper()
+        value = value.upper()
         country_data = all_country[locale]
 
         LicensePlateFormat = country_data['LicensePlateFormat']
 
-        if re.match(LicensePlateFormat, string1):
+        if re.match(LicensePlateFormat, value):
             return True
 
         return False
     
-    def isPassportNumber(self, string1, locale):  # TODO: research more about passport number
+    def isPassportNumber(self, value, locale):  # TODO: research more about passport number
         """ check if the string is passport number or not """
         country_data = all_country[locale]
         
         PassportNumberRegex = country_data['PassportNumberRegex']
-        if re.match(PassportNumberRegex, string1):
+        if re.match(PassportNumberRegex, value):
             return True
         return False
 
-    def isMobilePhone(self, string1, locale):
+    def isMobilePhone(self, value, locale):
         """ check if the string is mobile phone or not """
         country_data = all_country[locale]
 
         MobileNumberRegex = country_data['MobileNumberRegex']
 
-        if re.match(MobileNumberRegex, string1):
+        if re.match(MobileNumberRegex, value):
             return True
 
         return False
     
-    def isDriverLicense(self, string1, locale):
+    def isDriverLicense(self, value, locale):
         """ check if the string is driver license or not """
         country_data = all_country[locale]
 
         DrivingLicenseNumberRegex = country_data['DrivingLicenseNumberRegex']
 
-        if re.match(DrivingLicenseNumberRegex, string1):
+        if re.match(DrivingLicenseNumberRegex, value):
             return True
 
         return False
     
-    def isDiscordUsername(self, string1):
+    def isDiscordUsername(self, value):
         regex = "^.{3,32}#[0-9]{4}$"
-        if re.match(regex, string1):
+        if re.match(regex, value):
             return True
         return False
     
-    def isCreditCard(self, string1):
+    def isCreditCard(self, value):
         regex = "(^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)|(3[47][0-9]{13})|(^3(?:0[0-5]|[68][0-9])[0-9]{11}$)|(^6(?:011|5[0-9]{2})[0-9]{12}$)|(^(?:2131|1800|35\d{3})\d{11}$)"
-        if re.match(regex, string1):
+        if re.match(regex, value):
             return True
         return False
 
-    def equals(self, string1, string2, ignoreCase=False)-> bool:
+    def equals(self, value1, value2, ignoreCase=False)-> bool:
         """ Check if the two string are equal or not """
-        if not isinstance(string1, str) or not isinstance(string2, str):
+        if not self.__isvalidString(value1) or not self.__isvalidString(value2):
             return False
+        
         if ignoreCase:
-            string1 = string1.lower()
-            string2 = string2.lower()
+            value1 = value1.lower()
+            value2 = value2.lower()
 
-        if string1 == string2:
+        if value1 == value2:
             return True
 
         return False
 
-    def isLength(self, string, min=0, max=None):
+    def isLength(self, value, min=0, max=None):
         """ check if the string length is between min and max """
-        if min <= len(string) <= max:
+        if min <= len(value) <= max:
             return True
 
         return False
 
-    def isEmpty(self, string1):
+    def isEmpty(self, value):
         """ check if the string is empty or not """
-        string1 = string1.strip()
-        if string1 == "":
+        value = value.strip()
+        if value == "":
             return True
 
         return False
 
-    def isAlphanumeric(self, string1):
-        if string1.isalnum():
+    def isAlphanumeric(self, value):
+        if value.isalnum():
             return True
 
         return False
 
-    def isAlpha(self, string1):
-        if string1.isalpha():
+    def isAlpha(self, value):
+        if value.isalpha():
             return True
 
         return False
 
-    def isAscii(self, string1):
-        if string1.isascii():
+    def isAscii(self, value):
+        if value.isascii():
             return True
 
         return False
 
-    def contains(self, string1, string2, ignoreCase=False):
+    def contains(self, value, substring, ignoreCase=False):
         if ignoreCase:
-            string1 = string1.lower()
-            string2 = string2.lower()
+            value = value.lower()
+            substring = substring.lower()
 
-        if string2 in string1:
+        if substring in value:
             return True
 
         return False
@@ -199,27 +202,34 @@ class Validator(object):
 
         return False
 
-    def isDate(self, date1):  # TODO: add more date format, currently only support YYYY-MM-DD
+    def isDate(self, value):  # TODO: add more date format, currently only support YYYY-MM-DD
         """ check if the string is date or not """
-        try:
-            datetime.strptime(date1, '%Y-%m-%d')
-            return True
-        except ValueError:
+        if not self.__isvalidString(value):
             return False
+        try:
+            date_obj = parse(value)
+            if date_obj:
+                return True
+        except Exception:
+            return False
+        return False
 
-    def isEmail(self, email):
+    def isEmail(self, value, checkDNS=False):
         """ check if the string is email or not """
-        if not self.__isvalidString(email):
+        if not self.__isvalidString(value):
             return False
         regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-        if re.search(regex, email):
+        if re.search(regex, value):
             return True
 
         return False
 
-    def isDecimal(self, string1):
+    def isDecimal(self, value):
         """ check if the string is decimal or not """
-        if string1.isdecimal():
+        if not self.__isvalidNumber(value):
+            return False
+    
+        if value.isdecimal():
             return True
 
         return False
@@ -232,85 +242,85 @@ class Validator(object):
 
         return False
 
-    def isEAN(self, string1):
+    def isEAN(self, value):
         """ check if the string is EAN or not """
         pass
 
-    def isHash(self, string1):
+    def isHash(self, value):
         """ check if the string is hash or not """
         pass
 
-    def isIMEI(self, string1):
+    def isIMEI(self, value):
         """ check if the string is IMEI or not """
-        if len(string1) == 15 or len(string1) == 17:
+        if len(value) == 15 or len(value) == 17:
             return True
         return False
 
-    def isIPV4(self, string1):
+    def isIPV4(self, value):
         """ check if the string is IP or not """
-        regex = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?).){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
-        if re.search(regex, string1):
+        regex = regexs['ipv4_regex']
+        if re.search(regex, value):
             return True
         return False
 
-    def isIPV6(self, string1):
-        regex = '(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))'
-        if re.match(regex, string1):
+    def isIPV6(self, value):
+        regex = regexs['ipv6_regex']
+        if re.match(regex, value):
             return True
         return False
 
-    def isSSN(self, string1):
+    def isSSN(self, value):
         """ check if the string is SSN or not """
         regex = '^(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$'
-        if re.match(regex, string1):
+        if re.match(regex, value):
             return True
         return False
     
-    def isJSON(self, string1):
+    def isJSON(self, value):
         """ check if the string is JSON or not """
         try:
-            json.loads(string1)
+            json.loads(value)
             return True
         except ValueError:
             return False
 
-    def isJWT(self, string1):
+    def isJWT(self, value):
         """ check if the string is JWT or not """
         pass
 
-    def isLatLong(self, string1):
+    def isLatLong(self, value):
         """ check if the string is lat long or not """
         regex = '^((\-?|\+?)?\d+(\.\d+)?),\s*((\-?|\+?)?\d+(\.\d+)?)$'
-        if re.match(regex, string1):
+        if re.match(regex, value):
             return True
         return False
 
-    def isMACAddress(self, string1):
+    def isMACAddress(self, value):
         """ check if the string is MAC address or not """
         regex = '(([0-9a-fA-F]{2}[:]){5}([0-9a-fA-F]{2})|([0-9a-fA-F]{2}[-]){5}([0-9a-fA-F]{2})|[0-9a-fA-F]{12})'
-        if self.__isvalidString(string1) and re.search(regex, string1, re.IGNORECASE):
+        if self.__isvalidString(value) and re.search(regex, value, re.IGNORECASE):
             return True
         return False
 
-    def isMD5(self, string1):
+    def isMD5(self, value):
         """ check if the string is MD5 or not """
         pass
 
    
-    def isPort(self, string1):
+    def isPort(self, value):
         """ check if the string is port or not
         A port number is a 16-bit unsigned integer,
         so it has a minimum value of 0 and a maximum value of 65535.
         """
-        if string1.isdigit() and 0 <= int(string1) <= 65535:
+        if value.isdigit() and 0 <= int(value) <= 65535:
             return True
         return False
 
-    def isSlug(self, string1):
+    def isSlug(self, value):
         """ check if the string is slug or not """
         pass
 
-    def isStrongPassword(self, string1):
+    def isStrongPassword(self, value):
         """ check if the string is strong password or not
 
         requirements:
@@ -320,93 +330,108 @@ class Validator(object):
             4. At least one number
             5. At least one special character
         """
-        if len(string1) < 8:
+        if len(value) < 8:
             return False
 
-        if not re.search("[a-z]", string1):
+        if not re.search("[a-z]", value):
             return False
 
-        if not re.search("[A-Z]", string1):
+        if not re.search("[A-Z]", value):
             return False
 
-        if not re.search("[0-9]", string1):
+        if not re.search("[0-9]", value):
             return False
 
-        if not re.search("[_@$]", string1):
+        if not re.search("[_@$]", value):
             return False
 
         return True
 
-    def isUUID(self, string1):
+    def isUUID(self, value):
         """ check if the string is UUID or not """
         pass
 
     # Sanitizers functions
-    def toDate(self, string1):
+    def toDate(self, value):
         """ convert string to date """
         pass
 
 
-    def toInt(self, string1):
+    def toInt(self, value):
         """ convert string to int """
         pass
 
-    def trim(self, string1):
+    def trim(self, value):
         """ trim string """
-        if self.__isvalidString(string1):
-            return string1.strip()
+        if self.__isvalidString(value):
+            return value.strip()
         
-    def ltrim(self, string1):
-        if self.__isvalidString(string1):
-            return string1.lstrip()
+    def ltrim(self, value):
+        if self.__isvalidString(value):
+            return value.lstrip()
         
-    def rtrim(self, string1):
-        if self.__isvalidString(string1):
-            return string1.rstrip()
+    def rtrim(self, value):
+        if self.__isvalidString(value):
+            return value.rstrip()
         
-    def toUpperCase(self, string1):
+    def toUpperCase(self, value):
         """ convert string to upper case """
-        if self.__isvalidString(string1):
-            return string1.upper()
+        if self.__isvalidString(value):
+            return value.upper()
 
-    def toLowerCase(self, string1):
+    def toLowerCase(self, value):
         """ convert string to lower case """
-        if self.__isvalidString(string1):
-            return string1.lower()
+        if self.__isvalidString(value):
+            return value.lower()
 
-    def removeSpaces(self, string1):
+    def removeSpaces(self, value):
         """ remove spaces from string """
-        if self.__isvalidString(string1):
-            return string1.replace(" ", "")
+        if self.__isvalidString(value):
+            return value.replace(" ", "")
         
-    def removeSymbols(self, string1):
+    def removeSymbols(self, value):
         """ remove symbols from string """
-        if self.__isvalidString(string1):
-            return re.sub(r'[^\w\s]', '', string1)
+        if self.__isvalidString(value):
+            return re.sub(r'[^\w\s]', '', value)
     
-    def distance(self, string1, string2):
+    def levenshtein_distance(self, value1, value2):
         """ calculate distance between two strings """
-        pass
+        distance = levenshtein_distance(value1, value2)
+        return distance
+    
+    def edit_distance(self, value1, value2):
+        """ calculate distance between two strings """
+        if len(value1) > len(value2):
+            difference = len(value1) - len(value2)
 
-    def distanceByIndex(self, string1, string2):
-        """ calculate distance between two strings by index """
-        pass
+        elif len(value2) > len(value1):
+            difference = len(value2) - len(value1)
 
-    def removeNonASCII(self, string1):
+        else:
+            difference = 0
+
+        for val1, val2 in zip(value1, value2):
+            if val1 != val2:
+                difference += 1
+
+        return difference
+
+    def removeNonASCII(self, value):
         """ remove non ASCII characters from string """
-        if self.__isvalidString(string1):
-            return string1.encode("ascii", "ignore").decode()
+        if self.__isvalidString(value):
+            return value.encode("ascii", "ignore").decode()
 
-    def removeNonWord(self, string1):
+    def removeNonWord(self, value):
         """ remove non word characters from string """
-        pass
+        if self.__isvalidString(value):
+            return re.sub(r'[^\w]', '', value)
 
-    def removeTags(self, string1):
+    def removeTags(self, value):
         """ remove tags from string """
-        if self.__isvalidString(string1):
-            return re.sub(r'<[^>]*>', '', string1)
+        if self.__isvalidString(value):
+            return re.sub(r'<[^>]*>', '', value)
 
-    def removeWhiteSpace(self, string1):
+    def removeWhiteSpace(self, value):
         """ remove white space from string """
-        if self.__isvalidString(string1):
-            return string1.replace(" ", "")
+        if self.__isvalidString(value):
+            return value.replace(" ", "")

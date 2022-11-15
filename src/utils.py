@@ -13,7 +13,7 @@ def load_json(filename):
     if not filename.endswith('.json'):
         raise ValueError('Filename must be a json file')
 
-    with open(os.path.join(filename), 'r') as f:
+    with open(os.path.join(filename), 'r', encoding="utf-8") as f:
         return json.load(f)
     
 
@@ -21,4 +21,4 @@ def load_asset(filename):
     return load_json(os.path.join(ASSETS_DIR, filename))
 
 all_country = load_asset('country.json')
-
+regexs = load_asset('regex.json')
