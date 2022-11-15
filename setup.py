@@ -3,8 +3,8 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-with open('requirements.txt') as f:
-    required = f.read().splitlines()
+with open("requirements.txt", "r") as fh:
+    requirements = fh.read().splitlines()
 
 setuptools.setup(
     name="",
@@ -14,9 +14,9 @@ setuptools.setup(
     description="",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    install_requires=required,
     url="https://github.com/Py-Contributors/validator.py",
     keywords="audiobook",
+    install_requires=requirements,
     packages=setuptools.find_packages(),
     project_urls={"Documentation": "https://pycontributors.readthedocs.io/projects/morse/en/latest/",
                   "Source": "https://github.com/Py-Contributors/validator.py",
@@ -27,7 +27,4 @@ setuptools.setup(
                  "Operating System :: OS Independent",
                  "Intended Audience :: Developers"],
     python_requires=">=3.4",
-    # entry_points={
-    #     "console_scripts": ["morse = morse.cli:main"],
-    # },
 )
