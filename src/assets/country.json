@@ -8,7 +8,9 @@
         "PostalCodeFormat" : "^[1-9][0-9]{5}$",
         "PostalCodeRegex" : "^(\\d{6})$",
         "LicensePlateFormat" : "^[A-Z]{2,2}[0-9]{1,2}[A-Z]{1,2}[0-9]{4,4}$",
-        "MobileNumberFormat" : ""
+        "MobileNumberRegex" : "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+        "PassportNumberRegex" : "^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$",
+        "DrivingLicenseNumberRegex" : ""
     },
     "US" : {
         "Code" : "US",
@@ -18,7 +20,9 @@
         "CurrencySymbol" : "$",
         "PostalCodeFormat" : "^[0-9]{5}(?:-[0-9]{4})?$",
         "PostalCodeRegex" : "^(\\d{5})(?:[-](\\d{4}))?$",
-        "LicensePlateFormat": ""
+        "LicensePlateFormat": "",
+        "MobileNumberRegex" : "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+        "PassportNumberRegex" : ""
     },
     "AF": {
         "Code": "AF",
