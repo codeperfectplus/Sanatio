@@ -1,5 +1,5 @@
-License Plate Functions
-=======================
+License Plate Validations
+=========================
 
 Check if a license plate is valid or not.
 

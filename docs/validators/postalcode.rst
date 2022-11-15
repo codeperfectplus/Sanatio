@@ -9,7 +9,7 @@ The following functions are used to validate postal codes.
 
     val = Validator()
 
-:code:`isPostalCode` - return true if the postal code is valid for the country
+:code:`isPostalCode(value, locale)` - return true if the postal code is valid for the country
     args: value, locale
 
     >>> val.isPostalCode(value='110016', locale='IN')  
