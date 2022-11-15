@@ -47,6 +47,13 @@ class StringConversionTest(unittest.TestCase):
         self.assertEqual(validator.removeWhiteSpace('foo   bar'), 'foobar')
         self.assertEqual(validator.removeWhiteSpace('foo    bar'), 'foobar')
         
+    def test_removeNonWord(self):
+        self.assertEqual(validator.removeNonWord('foobar@'), 'foobar')
+        self.assertEqual(validator.removeNonWord('@#$%^&*()foobar'), 'foobar')
+        self.assertEqual(validator.removeNonWord('foo@#$%^&*()bar'), 'foobar')
+        self.assertEqual(validator.removeNonWord('foo@#$%^&*()bar@#$'), 'foobar')
+        self.assertEqual(validator.removeNonWord('@#@$@$@$@$@$@$@$'), '')
+        
 
 if __name__ == '__main__':
     unittest.main()
