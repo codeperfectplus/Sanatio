@@ -1,9 +1,8 @@
 from datetime import datetime
 
-project = 'audiobook'
-copyright = '2022, Deeapk Raj'
+project = 'Validation.py'
 author = 'Deeapk Raj'
-release = '2.0.4'
+release = '1.0.0'
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -15,7 +14,7 @@ extensions = [
 
 pdf_documents = [('index', u'documentation', 'My Docs', u'Me'), ]
 
-releases_github_path = "Py-Contributors/AudioBook"
+releases_github_path = "Py-Contributors/validator.py"
 
 autosectionlabel_prefix_document = True
 
