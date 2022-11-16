@@ -103,7 +103,7 @@ class Validator(object):
         return False
     
     def isCreditCard(self, value):
-        regex = "(^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)|(3[47][0-9]{13})|(^3(?:0[0-5]|[68][0-9])[0-9]{11}$)|(^6(?:011|5[0-9]{2})[0-9]{12}$)|(^(?:2131|1800|35\d{3})\d{11}$)"
+        regex = regexs['credit_card_regex']
         if re.match(regex, value):
             return True
         return False
@@ -202,7 +202,7 @@ class Validator(object):
 
         return False
 
-    def isDate(self, value):  # TODO: add more date format, currently only support YYYY-MM-DD
+    def isDate(self, value):
         """ check if the string is date or not """
         if not self.__isvalidString(value):
             return False
@@ -213,6 +213,20 @@ class Validator(object):
         except Exception:
             return False
         return False
+    
+    def isLeapYear(self, year):
+        """ check if the year is leap year or not """
+        if year % 4 == 0:
+            if year % 100 == 0:
+                if year % 400 == 0:
+                    return True
+                else:
+                    return False
+            else:
+                return True
+        else:
+            return False
+
 
     def isEmail(self, value, checkDNS=False):
         """ check if the string is email or not """
@@ -286,18 +300,22 @@ class Validator(object):
 
     def isJWT(self, value):
         """ check if the string is JWT or not """
-        pass
+        regex = "^[A-Za-z0-9_-]{2,}(?:\.[A-Za-z0-9_-]{2,}){2}$"
+        if re.match(regex, value):
+            return True
+
+        return False
 
     def isLatLong(self, value):
         """ check if the string is lat long or not """
-        regex = '^((\-?|\+?)?\d+(\.\d+)?),\s*((\-?|\+?)?\d+(\.\d+)?)$'
+        regex = "^((\-?|\+?)?\d+(\.\d+)?),\s*((\-?|\+?)?\d+(\.\d+)?)$"
         if re.match(regex, value):
             return True
         return False
 
     def isMACAddress(self, value):
         """ check if the string is MAC address or not """
-        regex = '(([0-9a-fA-F]{2}[:]){5}([0-9a-fA-F]{2})|([0-9a-fA-F]{2}[-]){5}([0-9a-fA-F]{2})|[0-9a-fA-F]{12})'
+        regex = regexs['mac_address_regex']
         if self.__isvalidString(value) and re.search(regex, value, re.IGNORECASE):
             return True
         return False
@@ -352,14 +370,33 @@ class Validator(object):
         pass
 
     # Sanitizers functions
-    def toDate(self, value):
+    def toDate(self, value):  # need to improve this function
         """ convert string to date """
-        pass
-
-
+        format = '%Y-%m-%d'
+        if self.isDate(value):
+            date = datetime.strptime(value, format)
+            return date
+        
+        else:
+            return None
+        
+    
     def toInt(self, value):
         """ convert string to int """
-        pass
+        if isinstance(value, int):
+            return value
+        
+        elif isinstance(value, float):
+            return int(value)
+        
+        try:
+            value = int(float(value))
+            return value
+        
+        except ValueError:
+            value = 0
+        
+        return value
 
     def trim(self, value):
         """ trim string """

@@ -30,7 +30,7 @@
         "Currency": "AFN",
         "CurrencyName": "Afghani",
         "CurrencySymbol": "؋",
-        "PostalCodeFormat": "^[0-9]{4}$",
+        "PostalCodeFormat": "[1-4]{1}[0-3]{1}[0-9]{1}[0-9]{1}",
         "PostalCodeRegex": "^(\\d{4})$",
         "LicensePlateFormat": ""
     },
