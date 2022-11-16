@@ -115,8 +115,6 @@ Address Format
    YEOVILLE
    2198
 
-Reference: - https://en.youbianku.com/South_Africa -
-https://www.finglobal.com/2019/08/29/south-africa-post-codes/#:~:text=All%20South%20African%20postal%20codes,Cape%20Town%20is%208000%20%2F%208001.
 
 UK - United Kingdom
 ~~~~~~~~~~~~~~~~~~~

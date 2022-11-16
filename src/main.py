@@ -43,12 +43,15 @@ class Validator(object):
     def isPostalCode(self, value, locale):
         """ check if the string is postal code or not """
         country_data = all_country[locale]
-
-        PostalCodeFormat = country_data['PostalCodeFormat']
-        PostalCodeRegex = country_data['PostalCodeRegex']
-
-        if re.match(PostalCodeRegex, value):
-            if re.match(PostalCodeFormat, value):
+        PostalCode = country_data['PostalCode']
+        
+        PostalCodeFormat = PostalCode['PostalCodeFormat']
+        PostalCodeRegex = PostalCode['PostalCodeRegex']
+        MinPostalCodeLength = PostalCode['MinLength']
+        MaxPostalCodeLength = PostalCode['MaxLength']
+        
+        if re.match(PostalCodeRegex, value) and re.match(PostalCodeFormat, value) \
+            and self.isLength(str(value), MinPostalCodeLength, MaxPostalCodeLength):
                 return True
 
         return False
@@ -462,6 +465,11 @@ class Validator(object):
         """ remove non word characters from string """
         if self.__isvalidString(value):
             return re.sub(r'[^\w]', '', value)
+        
+    def removeNonNumeric(self, value):
+        """ remove non numeric characters from string """
+        if self.__isvalidString(value):
+            return re.sub(r'[^\d]', '', value)
 
     def removeTags(self, value):
         """ remove tags from string """

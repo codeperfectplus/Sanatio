@@ -1,87 +1,596 @@
 {
-    "IN" : {
-        "Code" : "IN",
-        "Name" : "India",
-        "Currency" : "INR",
-        "CurrencyName" : "Rupee",
-        "CurrencySymbol" : "₹",
-        "PostalCodeFormat" : "^[1-9][0-9]{5}$",
-        "PostalCodeRegex" : "^(\\d{6})$",
-        "LicensePlateFormat" : "^[A-Z]{2,2}[0-9]{1,2}[A-Z]{1,2}[0-9]{4,4}$",
-        "MobileNumberRegex" : "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
-        "PassportNumberRegex" : "^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$",
-        "DrivingLicenseNumberRegex" : ""
+    "key": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "UA",
+        "Name": "Ukraine",
+        "Currency": "UAH",
+        "CurrencyName": "Hryvnia",
+        "CurrencySymbol": "\u20b4",
+        "LicensePlateFormat": ""
     },
-    "US" : {
-        "Code" : "US",
-        "Name" : "United States",
-        "Currency" : "USD",
-        "CurrencyName" : "Dollar",
-        "CurrencySymbol" : "$",
-        "PostalCodeFormat" : "^[0-9]{5}(?:-[0-9]{4})?$",
-        "PostalCodeRegex" : "^(\\d{5})(?:[-](\\d{4}))?$",
+    "IN": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[1-9][0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{6})$",
+            "MinLength": 6,
+            "MaxLength": 6
+        },
+        "Code": "IN",
+        "Name": "India",
+        "Currency": "INR",
+        "CurrencyName": "Rupee",
+        "CurrencySymbol": "\u20b9",
+        "LicensePlateFormat": "^[A-Z]{2,2}[0-9]{1,2}[A-Z]{1,2}[0-9]{4,4}$",
+        "MobileNumberRegex": "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+        "PassportNumberRegex": "^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$",
+        "DrivingLicenseNumberRegex": ""
+    },
+    "US": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}(?:-[0-9]{4})?$",
+            "PostalCodeRegex": "^(\\d{5})(?:[-](\\d{4}))?$",
+            "MinLength": 5,
+            "MaxLength": 10
+        },
+        "Code": "US",
+        "Name": "United States",
+        "Currency": "USD",
+        "CurrencyName": "Dollar",
+        "CurrencySymbol": "$",
         "LicensePlateFormat": "",
-        "MobileNumberRegex" : "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
-        "PassportNumberRegex" : ""
+        "MobileNumberRegex": "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+        "PassportNumberRegex": "^[0-9]{9}$"
     },
     "AF": {
+        "PostalCode": {
+            "PostalCodeFormat": "[1-4]{1}[0-3]{1}[0-9]{1}[0-9]{1}",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
         "Code": "AF",
         "Name": "Afghanistan",
         "Currency": "AFN",
         "CurrencyName": "Afghani",
-        "CurrencySymbol": "؋",
-        "PostalCodeFormat": "[1-4]{1}[0-3]{1}[0-9]{1}[0-9]{1}",
-        "PostalCodeRegex": "^(\\d{4})$",
+        "CurrencySymbol": "\u060b",
+        "LicensePlateFormat": "",
+        "PassportNumberRegex": ""
+    },
+    "SA": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}(?:-[0-9]{4})?$",
+            "PostalCodeRegex": "^(\\d{5})(?:[-](\\d{4}))?$",
+            "MinLength": 5,
+            "MaxLength": 10
+        },
+        "Code": "SA",
+        "Name": "Saudi Arabia",
+        "Currency": "SAR",
+        "CurrencyName": "Riyal",
+        "CurrencySymbol": "\ufdfc",
         "LicensePlateFormat": ""
     },
-    "SA" : {
-        "Code" : "SA",
-        "Name" : "Saudi Arabia",
-        "Currency" : "SAR",
-        "CurrencyName" : "Riyal",
-        "CurrencySymbol" : "﷼",
-        "PostalCodeFormat" : "^[0-9]{5}$",
-        "PostalCodeRegex" : "^(\\d{5})$",
-        "LicensePlateFormat" : ""
-    },
     "SG": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{6}$",
+            "PostalCodeRegex": "^(\\d{6})$",
+            "MinLength": 6,
+            "MaxLength": 6
+        },
         "Code": "SG",
         "Name": "Singapore",
         "Currency": "SGD",
         "CurrencyName": "Dollar",
         "CurrencySymbol": "$",
-        "PostalCodeFormat": "^[09]{6}$",
-        "PostalCodeRegex": "^(\\d{6})$",
         "LicensePlateFormat": ""
     },
     "ZA": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
         "Code": "ZA",
         "Name": "South Africa",
         "Currency": "ZAR",
         "CurrencyName": "Rand",
         "CurrencySymbol": "R",
-        "PostalCodeFormat": "^[0-9]{4}$",
-        "PostalCodeRegex": "^(\\d{4})$",
         "LicensePlateFormat": ""
     },
     "PK": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
         "Code": "PK",
         "Name": "Pakistan",
         "Currency": "PKR",
         "CurrencyName": "Rupee",
-        "CurrencySymbol": "₨",
-        "PostalCodeFormat": "^[0-9]{5}$",
-        "PostalCodeRegex": "^(\\d{5})$",
+        "CurrencySymbol": "\u20a8",
         "LicensePlateFormat": ""
     },
-    "UK": {
-        "Code": "UK",
+    "AM": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "AM",
+        "Name": "Armenia",
+        "Currency": "AMD",
+        "CurrencyName": "Dram",
+        "CurrencySymbol": "\u058f",
+        "LicensePlateFormat": ""
+    },
+    "AR": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[A-Z]{1}[0-9]{4}[A-Z]{3}$",
+            "PostalCodeRegex": "^(\\w{1}\\d{4}\\w{3})$",
+            "MinLength": 8,
+            "MaxLength": 8
+        },
+        "Code": "AR",
+        "Name": "Argentina",
+        "Currency": "ARS",
+        "CurrencyName": "Peso",
+        "CurrencySymbol": "$",
+        "LicensePlateFormat": ""
+    },
+    "AT": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "AT",
+        "Name": "Austria",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "AU": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "AU",
+        "Name": "Australia",
+        "Currency": "AUD",
+        "CurrencyName": "Dollar",
+        "CurrencySymbol": "$",
+        "LicensePlateFormat": ""
+    },
+    "AZ": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "AZ",
+        "Name": "Azerbaijan",
+        "Currency": "AZN",
+        "CurrencyName": "Manat",
+        "CurrencySymbol": "\u20bc",
+        "LicensePlateFormat": ""
+    },
+    "BD": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "BD",
+        "Name": "Bangladesh",
+        "Currency": "BDT",
+        "CurrencyName": "Taka",
+        "CurrencySymbol": "\u09f3",
+        "LicensePlateFormat": ""
+    },
+    "BY": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{6}$",
+            "PostalCodeRegex": "^(\\d{6})$",
+            "MinLength": 6,
+            "MaxLength": 6
+        },
+        "Code": "BY",
+        "Name": "Belarus",
+        "Currency": "BYR",
+        "CurrencyName": "Ruble",
+        "CurrencySymbol": "p.",
+        "LicensePlateFormat": ""
+    },
+    "BR": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}-[0-9]{3}$",
+            "PostalCodeRegex": "^[0-9]{5}-[0-9]{3}$",
+            "MinLength": 9,
+            "MaxLength": 9
+        },
+        "Code": "BR",
+        "Name": "Brazil",
+        "Currency": "BRL",
+        "CurrencyName": "Real",
+        "CurrencySymbol": "R$",
+        "LicensePlateFormat": ""
+    },
+    "CA": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[A-Z][0-9][A-Z] [0-9][A-Z][0-9]$",
+            "PostalCodeRegex": "^(\\w\\d\\w \\d\\w\\d)$",
+            "MinLength": 7,
+            "MaxLength": 7
+        },
+        "Code": "CA",
+        "Name": "Canada",
+        "Currency": "CAD",
+        "CurrencyName": "Dollar",
+        "CurrencySymbol": "$",
+        "LicensePlateFormat": ""
+    },
+    "CH": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "CH",
+        "Name": "Switzerland",
+        "Currency": "CHF",
+        "CurrencyName": "Franc",
+        "CurrencySymbol": "Fr.",
+        "LicensePlateFormat": ""
+    },
+    "CN": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{6}$",
+            "PostalCodeRegex": "^(\\d{6})$",
+            "MinLength": 6,
+            "MaxLength": 6
+        },
+        "Code": "CN",
+        "Name": "China",
+        "Currency": "CNY",
+        "CurrencyName": "Yuan RenMinLengthbi",
+        "CurrencySymbol": "\u00a5",
+        "LicensePlateFormat": ""
+    },
+    "CY": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "CY",
+        "Name": "Cyprus",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "CZ": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{3} [0-9]{2}$",
+            "PostalCodeRegex": "^(\\d{3} \\d{2})$",
+            "MinLength": 6,
+            "MaxLength": 6
+        },
+        "Code": "CZ",
+        "Name": "Czech Republic",
+        "Currency": "CZK",
+        "CurrencyName": "Koruna",
+        "CurrencySymbol": "K\u010d",
+        "LicensePlateFormat": ""
+    },
+    "DE": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "DE",
+        "Name": "Germany",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "DK": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{4})$",
+            "MinLength": 4,
+            "MaxLength": 4
+        },
+        "Code": "DK",
+        "Name": "Denmark",
+        "Currency": "DKK",
+        "CurrencyName": "Krone",
+        "CurrencySymbol": "kr.",
+        "LicensePlateFormat": ""
+    },
+    "DZ": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "DZ",
+        "Name": "Algeria",
+        "Currency": "DZD",
+        "CurrencyName": "Dinar",
+        "CurrencySymbol": "\u062f.\u062c",
+        "LicensePlateFormat": ""
+    },
+    "ES": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "ES",
+        "Name": "Spain",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "FI": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "FI",
+        "Name": "Finland",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "FR": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "FR",
+        "Name": "France",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "GB": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$",
+            "PostalCodeRegex": "^(\\w{1,2}\\d\\w? \\d\\w{2})$",
+            "MinLength": 6,
+            "MaxLength": 8
+        },
+        "Code": "GB",
         "Name": "United Kingdom",
         "Currency": "GBP",
         "CurrencyName": "Pound",
-        "CurrencySymbol": "£",
-        "PostalCodeFormat": "^[A-Z]{1,2}[0-9][A-Z0-9]? [0-9][A-Z]{2}$",
-        "PostalCodeRegex": "^(\\w{1,2}\\d\\w? \\d\\w{2})$",
+        "CurrencySymbol": "\u00a3",
+        "LicensePlateFormat": ""
+    },
+    "IE": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[A-Z0-9]{3,4}$",
+            "PostalCodeRegex": "^(\\w{3,4})$",
+            "MinLength": 3,
+            "MaxLength": 4
+        },
+        "Code": "IE",
+        "Name": "Ireland",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "ID": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "ID",
+        "Name": "Indonesia",
+        "Currency": "IDR",
+        "CurrencyName": "Rupiah",
+        "CurrencySymbol": "Rp",
+        "LicensePlateFormat": ""
+    },
+    "IR": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{10}$",
+            "PostalCodeRegex": "^(\\d{10})$",
+            "MinLength": 10,
+            "MaxLength": 10
+        },
+        "Code": "IR",
+        "Name": "Iran",
+        "Currency": "IRR",
+        "CurrencyName": "Rial",
+        "CurrencySymbol": "\ufdfc",
+        "LicensePlateFormat": ""
+    },
+    "IT": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "IT",
+        "Name": "Italy",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "JP": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{3}-[0-9]{4}$",
+            "PostalCodeRegex": "^(\\d{3}-\\d{4})$",
+            "MinLength": 8,
+            "MaxLength": 8
+        },
+        "Code": "JP",
+        "Name": "Japan",
+        "Currency": "JPY",
+        "CurrencyName": "Yen",
+        "CurrencySymbol": "\u00a5",
+        "LicensePlateFormat": ""
+    },
+    "LY": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "LY",
+        "Name": "Libya",
+        "Currency": "LYD",
+        "CurrencyName": "Dinar",
+        "CurrencySymbol": "\u0644.\u062f",
+        "LicensePlateFormat": ""
+    },
+    "MY": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "MY",
+        "Name": "Malaysia",
+        "Currency": "MYR",
+        "CurrencyName": "Ringgit",
+        "CurrencySymbol": "RM",
+        "LicensePlateFormat": ""
+    },
+    "MX": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "MX",
+        "Name": "Mexico",
+        "Currency": "MXN",
+        "CurrencyName": "Peso",
+        "CurrencySymbol": "$",
+        "LicensePlateFormat": ""
+    },
+    "PL": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{2}-[0-9]{3}$",
+            "PostalCodeRegex": "^(\\d{2}-\\d{3})$",
+            "MinLength": 6,
+            "MaxLength": 6
+        },
+        "Code": "PL",
+        "Name": "Poland",
+        "Currency": "PLN",
+        "CurrencyName": "Zloty",
+        "CurrencySymbol": "z\u0142",
+        "LicensePlateFormat": ""
+    },
+    "PT": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{4}-[0-9]{3}$",
+            "PostalCodeRegex": "^(\\d{4}-\\d{3})$",
+            "MinLength": 8,
+            "MaxLength": 8
+        },
+        "Code": "PT",
+        "Name": "Portugal",
+        "Currency": "EUR",
+        "CurrencyName": "Euro",
+        "CurrencySymbol": "\u20ac",
+        "LicensePlateFormat": ""
+    },
+    "SE": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{3} [0-9]{2}$",
+            "PostalCodeRegex": "^(\\d{3} \\d{2})$",
+            "MinLength": 6,
+            "MaxLength": 6
+        },
+        "Code": "SE",
+        "Name": "Sweden",
+        "Currency": "SEK",
+        "CurrencyName": "Krona",
+        "CurrencySymbol": "kr",
+        "LicensePlateFormat": ""
+    },
+    "TH": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "TH",
+        "Name": "Thailand",
+        "Currency": "THB",
+        "CurrencyName": "Baht",
+        "CurrencySymbol": "\u0e3f",
+        "LicensePlateFormat": ""
+    },
+    "TR": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "TR",
+        "Name": "Turkey",
+        "Currency": "TRY",
+        "CurrencyName": "Lira",
+        "CurrencySymbol": "\u20ba",
+        "LicensePlateFormat": ""
+    },
+    "UA": {
+        "PostalCode": {
+            "PostalCodeFormat": "^[0-9]{5}$",
+            "PostalCodeRegex": "^(\\d{5})$",
+            "MinLength": 5,
+            "MaxLength": 5
+        },
+        "Code": "UA",
+        "Name": "Ukraine",
+        "Currency": "UAH",
+        "CurrencyName": "Hryvnia",
+        "CurrencySymbol": "\u20b4",
         "LicensePlateFormat": ""
     }
 }

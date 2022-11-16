@@ -124,3 +124,179 @@ Islamabad 44000
 PAKISTAN
 ```
 
+### AM - Armenia
+
+- The postal codes in Armenia consist of 4 digits. The first digit represents the region, the second digit represents the district, the third digit represents the city, and the last digit represents the street.
+
+
+## AR - Argentina
+
+The postcodes in Argentina consist of 8 digits (1 letter, 4 digits and 3 letters)
+
+`Example: C1425EAA`
+
+#### Address Format
+
+```
+SR. JUAN LOPEZ
+CASILLA DE CORREOS 432     P.O. Box
+CORREO CENTRAL             post office name
+C1000WAE CAPITAL FEDERAL   postcode + locality
+ARGENTINA
+```
+
+### AT - Austria
+
+- The postal codes in Austria consist of 4 digits. 
+
+`Example: 1010`
+
+
+
+### AU - Australia
+
+- The postcodes in Australia consist of 4 digits.
+
+`Example: 2000`
+
+#### Address Format
+
+```
+Mr John Smith
+99 George Street
+PARRAMATTA NSW 2150
+```
+
+### AZ - Azerbaijan
+
+
+- The postal codes in Azerbaijan consist of 4 digits. 
+
+`Example: 3942`
+
+#### Address Format
+
+```
+Mr. Agakazime Gurbanov
+Avenue de l’Azerbaïdjan 33
+AZ 1000 BACOU
+AZERBAIJAN
+```
+
+### BD - Bangladesh
+
+- The postal codes in Bangladesh consist of 4 digits.
+
+`Example: 1207`
+
+#### Address Format
+
+```
+Mr. Ashraduddin Khan
+Vil Genda
+P.O. SAVAR
+DHAKA – 1340
+BANGLADESH
+```
+
+### BY - Belarus
+
+- The postal codes in Belarus consist of 6 digits. The first three represent the region and the last three represent the post office.
+
+`Example: 220000`
+
+#### Address Format
+
+```
+Loutsévitch Ivan Fedorovitch -- addressee
+Avenue F. Skaryna 12, bat.2 , app. 10 -- street + premises + door
+220050 MINSK–50 -- postcode + locality
+REPUBLIC OF BELARUS -- country
+```
+
+### BR - Brazil
+
+- The postal codes in Brazil consist of 8 digits. The first five represent the region, while the last three represent the post office.
+
+`Example: 01001-000`
+
+#### Address Format
+
+```
+Sr. Luis Carvalho
+Boulevard das Flores 255
+SALVADOR-BA
+40301–110
+BRAZIL
+```
+
+### CA - Canada
+
+- The postal codes in Canada are made up of three numbers and three letters. The first three digits and the last three digits are generally separated by a space. Among the six digits, the first, third, and fifth are letters, and the second, fourth, and sixth are numbers. 
+
+The first digits represent the forward sortation area, the last three digits represent the local delivery unit. Generally, the first digit of postal code indicates a province or city.
+
+According to Statistics Canada, about 850,000 postal codes exist in Canada,using Forward Sortation Areas from A0A in Newfoundland to Y1A in Yukon.
+
+`Example: H3Z 2Y7`
+
+#### Address Format
+
+```
+MS. UNETELLE
+SERVICE DU MARKETING
+10-123 ½ RUE BEAUDRY
+MONTREAL QC H3Z 2Y7
+CANADA
+```
+
+### CH - Switzerland
+
+- The postal codes in Switzerland consist of 4 digits. In general,the first digit represents the routeing area, the seconde digit represents the routeing district, the third digit represents the route, the fourth digit represents the place of destination.
+
+1st digit: Routeing area
+2nd digit: Routeing district
+3rd digit: Route
+4th digit: Place of destination
+
+`Example: 8001`
+
+#### Address Format
+
+```
+Herrn
+Rudolf Weber
+Solothurnstrasse 28
+2544 BETTLACH
+SWITZERLAND
+```
+
+## CN - China
+
+The postcodes in China consist of 6 digits.
+
+1st & 2nd digits: Province
+3rd digit: Postal Zone
+4th digit: city
+5th & 6th digits: Delivery region
+
+`Example: 266033`
+
+#### Address Format
+
+```
+Mr. Zhimin Li
+62 Renmin lu, Qingdao Shi
+266033 SHANDONG
+P.R. CHINA
+```
+
+
+Reference: 
+
+- https://en.wikipedia.org/wiki/List_of_postal_codes
+- https://en.youbianku.com/
+
+
+
+
