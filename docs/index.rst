@@ -16,5 +16,5 @@ Contribute to Morse documentation on GitHub check out the source code for this d
    :maxdepth: 2
    
    introduction.rst
-   validators
    validators/index.rst
+   supported_country.rst
