@@ -26,11 +26,6 @@ Address Format
    1001
    AFGHANISTAN
 
-Reference: 
-
-- https://en.wikipedia.org/wiki/Postal_codes_in_Afghanistan 
-- https://en.youbianku.com/afghanistan
-
 IN - INDIA
 ~~~~~~~~~~
 
@@ -55,11 +50,6 @@ Address Format
    NEW DELHI 110034 
    INDIA
 
-References:
-
--  https://en.youbianku.com/India
--  https://ind.postcodebase.com/
--  https://ind.youbianku.com/
 
 US - USA
 ~~~~~~~~
@@ -81,9 +71,6 @@ Address Format
    9000 New Delhi Place
    Washington, DC  20521-9000[22]
 
-References:
-
--  https://en.wikipedia.org/wiki/ZIP_Code
 
 SA - Saudi Arabia
 ~~~~~~~~~~~~~~~~~
@@ -109,7 +96,6 @@ Address Format
    RIYADH 12987 - 7318
    SAUDI ARABIA
 
-References: - https://en.youbianku.com/Saudi_Arabia
 
 ZA - South Africa
 ~~~~~~~~~~~~~~~~~
@@ -141,12 +127,6 @@ UK - United Kingdom
 
 ``Example: SW1A 2AA``
 
-Reference:
-
--  https://ideal-postcodes.co.uk/guides/uk-postcode-format
--  https://ukpostcode.org/
--  https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
-
 SG - Singapore
 ~~~~~~~~~~~~~~
 
@@ -167,10 +147,6 @@ Address Format
    SINGAPORE 546080
    REP. OF SINGAPORE
 
-References:
-
--  https://en.youbianku.com/singapore
--  https://postal-codes.net/singapore/
 
 PK - Pakistan
 ~~~~~~~~~~~~~
@@ -192,8 +168,3 @@ Address Format
    Shakarparian
    Islamabad 44000
    PAKISTAN
-
-Reference: 
-
-- https://en.youbianku.com/pakistan 
-- https://www.europacco.com/en/find-zip/pk#
