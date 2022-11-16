@@ -26,10 +26,10 @@ Address Format
    1001
    AFGHANISTAN
 
-Reference:
+Reference: 
 
--  https://en.wikipedia.org/wiki/Postal_codes_in_Afghanistan
--  https://en.youbianku.com/afghanistan
+- https://en.wikipedia.org/wiki/Postal_codes_in_Afghanistan 
+- https://en.youbianku.com/afghanistan
 
 IN - INDIA
 ~~~~~~~~~~
@@ -109,9 +109,7 @@ Address Format
    RIYADH 12987 - 7318
    SAUDI ARABIA
 
-References:
-
--  https://en.youbianku.com/Saudi_Arabia
+References: - https://en.youbianku.com/Saudi_Arabia
 
 ZA - South Africa
 ~~~~~~~~~~~~~~~~~
@@ -176,7 +174,6 @@ References:
 
 PK - Pakistan
 ~~~~~~~~~~~~~
-
 The postal codes in Pakistan consist of 5 digits. The first two digits
 represent the routeing district, the last three digits represent the
 post office.
@@ -196,8 +193,7 @@ Address Format
    Islamabad 44000
    PAKISTAN
 
-Reference:
+Reference: 
 
--  https://en.youbianku.com/pakistan
--  https://www.europacco.com/en/find-zip/pk#
-
+- https://en.youbianku.com/pakistan 
+- https://www.europacco.com/en/find-zip/pk#

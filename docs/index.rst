@@ -17,4 +17,5 @@ Contribute to Morse documentation on GitHub check out the source code for this d
    
    introduction.rst
    validators/index.rst
+   research/index.rst
    supported_country.rst
