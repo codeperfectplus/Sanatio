@@ -29,6 +29,6 @@ if you want to contribute please open a pull request.
 | United Kingdom | GB | ✅ |
 | Singapore | SG | ✅ |
 | Pakistan | PK | ✅ |
-| United Arab Emirates | AE | will soon |
+
 
 will add more countries soon
