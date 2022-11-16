@@ -1,21 +1,16 @@
 <h1 align="center"><a href="#"> Validator.py(temp)</a></h1>
 
-String Validation In python, Inspired by Validatorjs allows you to validate strings in a simple way. The functions names are the same as the ones in Validator.js
-so you can easily switch between the two. 
+Document/String/Number/Date Validator for Python. Highly inspired by [validator.js](https://github.com/validatorjs/validator.js).
 
 ## Installation
 
 ```bash
-pip install <update_it>
+pip install <releasing_soon>
 ```
 
-## Why this project
+## Documentation
 
-This project is python port of [Validator.js](https://github.com/validatorjs/validator.js) which is a library for string validation. So people who are familiar with Validator.js can easily switch to this library. 
-It is also a good way to learn how to port a library from one language to another.
-I have tried to keep the code as similar as possible to the original library.
-if you find any bugs or have any suggestions please open an issue.
-if you want to contribute please open a pull request.
+Check out the [documentation](https://validator-py.readthedocs.io/en/latest/index.html) for more information.
 
 ## Supported Countries
 
@@ -30,5 +25,7 @@ if you want to contribute please open a pull request.
 | Singapore | SG | ✅ |
 | Pakistan | PK | ✅ |
 
+After the stable release, we will add more countries.
 
-will add more countries soon
+
+Support us by giving a ⭐️ to this repository and follow us for more updates. 
