@@ -18,6 +18,15 @@ class PostalCodeTest(unittest.TestCase):
         self.assertFalse(validator.isPostalCode('56003 1234', 'US'))
         self.assertFalse(validator.isPostalCode('56003-12345', 'US'))
         
+    def test_isPostalCode_AF(self):
+        self.assertTrue(validator.isPostalCode('1043', 'AF'))
+        self.assertTrue(validator.isPostalCode('1390', 'AF'))
+        self.assertTrue(validator.isPostalCode('1001', 'AF'))
+        
+        self.assertFalse(validator.isPostalCode('104', 'AF'))
+        self.assertFalse(validator.isPostalCode('4410', 'AF'))
+        self.assertFalse(validator.isPostalCode('10001', 'AF'))
+        
         
 if __name__ == '__main__':
     unittest.main()
