@@ -11,8 +11,8 @@ class LicensePlateTest(unittest.TestCase):
         self.assertTrue(validator.isLicensePlate('KA01HH1234', 'IN'))
         self.assertTrue(validator.isLicensePlate('Up21C1234', 'IN'))
         
-    def test_isLicensePlate_US(self):
-        self.assertTrue(validator.isLicensePlate('CA 1234', 'US'))
+    # def test_isLicensePlate_US(self):
+    #     self.assertTrue(validator.isLicensePlate('CA 1234', 'US'))
         
         
 if __name__ == '__main__':

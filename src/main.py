@@ -43,10 +43,11 @@ class Validator(object):
     def isPostalCode(self, value, locale):
         """ check if the string is postal code or not """
         country_data = all_country[locale]
+        
         PostalCode = country_data['PostalCode']
         
-        PostalCodeFormat = PostalCode['PostalCodeFormat']
-        PostalCodeRegex = PostalCode['PostalCodeRegex']
+        PostalCodeFormat = PostalCode['Format']
+        PostalCodeRegex = PostalCode['Regex']
         MinPostalCodeLength = PostalCode['MinLength']
         MaxPostalCodeLength = PostalCode['MaxLength']
         
@@ -61,10 +62,16 @@ class Validator(object):
         value = value.upper()
         country_data = all_country[locale]
 
-        LicensePlateFormat = country_data['LicensePlateFormat']
+        LicensePlate = country_data['LicensePlate']
+        Format = LicensePlate['Format']
+        Regex = LicensePlate['Regex']
+        MinLength = LicensePlate['MinLength']
+        MaxLength = LicensePlate['MaxLength']
+        
 
-        if re.match(LicensePlateFormat, value):
-            return True
+        if re.match(Format, value) and re.match(Regex, value) \
+            and self.isLength(value, MinLength, MaxLength):
+                return True
 
         return False
     
