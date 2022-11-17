@@ -398,7 +398,7 @@
             "Format": "^[A-Z0-9]{3,4}$",
             "Regex": "^(\\w{3,4})$",
             "MinLength": 3,
-            "MaxLength": 4
+            "MaxLength": 8
         },
         "Code": "IE",
         "Name": "Ireland",
@@ -465,8 +465,8 @@
     },
     "LY": {
         "PostalCode": {
-            "Format": "^[0-9]{5}$",
-            "Regex": "^(\\d{5})$",
+            "Format": "",
+            "Regex": "",
             "MinLength": 5,
             "MaxLength": 5
         },

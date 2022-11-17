@@ -464,6 +464,150 @@ UNITED KINGDOM
 
 ### IE - Ireland
 
+- Eircode, the postcode system for Ireland, launched in July 2015. Each postal address has been assigned a unique postcode, called an Eircode. The postal code is made up of 7 digits mixed with numbers and letters, which can be divided into two parts: the first part is generally a letter plus two numbers (except D6W), which is mainly used to refer to the postal area. The second part is made up of four digits mixed with random numbers and letters to identify each address. For example,
+
+`Example: W23 F854`
+
+#### Address Format
+
+```
+Ms. M Sullivan addressee
+BALLINROAMIN building
+THURLES locality
+CO. TIPPERARY county
+A65 TF12 postcode (Eircode)
+IRELAND country
+```
+
 
 ### ID - Indonesia
+
+- Indonesia has a postal code system consisting of 5 digits. The first three digits represent cities or regions
+Currently in Indonesia there are 34 provinces, 514 cities or regencies, 7,201 districts, 83,436 villages, and 16,056 islands that have names.
+
+`Example:- 40115`
+
+#### Address Format
+
+```
+Mr. N. Suprapto
+73, Jalan Cilaki
+BANDUNG 40115
+INDONESIA
+```
+
+### IR - Iran
+
+- Postal Codes in Iran consist of 10 numbers.eg:
+- In general,the first digit represents forwarding code.the second digit represent zone.The third represents district.The fourth represents part.The fifth represents segment.The last four digits is Identification code .
+
+`Example: 1193653471`
+
+
+#### Address Format
+
+```
+Mrs. Fatemeh Hoshoo 
+Amirieh, Farhang 
+Shahid Hossein Behrouz, Alavi lased 
+No 17 1stfloor 
+1193653471 TEHRAN 
+IRAN (ISLAMIC REP.)
+```
+
+### IT - Italy
+
+- The postcodes in Italy are called CAP (Codice di Avviamento Postale) and consist of 5 digits. Italy's postcode system is also used in the Vatican City and San Marino. For example:
+
+`Example: 00114`
+
+
+#### Address Format
+
+```
+Sig. Mario Rossi
+VIALE EUROPA 22
+00144 ROME RM
+ITALY
+```
+
+### JP - Japan.
+
+- Postal codes in Japan consist of 7 numbers.
+
+`Example: 123-4567`
+
+
+#### Address Format
+
+```
+Mr Taro Tanaka 
+10-C23, Kotobukich
+NIGATA 
+951-C8073  JAPAN
+```
+
+### LY - Libya
+
+- Libya does not have a postal code system. The postal code is not used in Libya.
+
+#### Address Format
+
+```
+Mr. Mohamed Ali Khalifa
+Av. Al Ghazaly 12
+TRIPOLI
+LIBYAN JAMAHIRIYA
+```
+
+### My - Malaysia
+
+- Postal Codes in Malaysia consist of 5 numbers. 
+
+1st & 2nd digits: delivery area
+3rd & 4th digits: delivery office
+
+### Address Format
+
+```
+Mr. Anuar bin Samsudin
+No. 66 Jalan Kenari
+Taman Kenari
+43000 KAJANG, SELANGOR
+MALAYSIA
+```
+
+### MX - Mexico
+
+- Postal Codes in Mexico consist of 5 numbers.
+- The first two digits represent the state, the third digit represents the area and the last two digits correspond to the district, neighborhood or locality.
+
+`Example: 02860`
+
+
+#### Address Format
+
+```
+Sra Otilia Ramos Perez
+Urión 30
+Col. Tlatilco
+02860 MEXICO, CDMX
+MEXICO
+```
+
+### PL - Poland
+
+- The Postal codes in Poland consists of 5 numbers in the following format xy-zzz.
+
+`Example: 00-123`
+
+#### Address Format
+
+```
+Sz. Pan	
+Czesław Gżegżółka	
+Ul. Kręta 15m 10
+00-950 WARSZAWA
+POLSKA / POLAND
+```
 
