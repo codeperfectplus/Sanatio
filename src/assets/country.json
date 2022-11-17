@@ -6,20 +6,32 @@
             "MinLength": 6,
             "MaxLength": 6
         },
-        "LicensePlate":  {
+        "LicensePlate": {
             "Format": "^[A-Z]{2,2}[0-9]{1,2}[A-Z]{1,2}[0-9]{4,4}$",
             "Regex": "^[A-Z]{2,2}[0-9]{1,2}[A-Z]{1,2}[0-9]{4,4}$",
             "MinLength": 9,
             "MaxLength": 10
         },
+        "MobileNumber": {
+            "Regex": "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+            "MinLength": 10,
+            "MaxLength": 13
+        },
+        "PassportNumber": {
+            "Regex": "^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$",
+            "MinLength": 8,
+            "MaxLength": 9
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
         "Code": "IN",
         "Name": "India",
         "Currency": "INR",
         "CurrencyName": "Rupee",
-        "CurrencySymbol": "\u20b9",
-        "MobileNumberRegex": "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
-        "PassportNumberRegex": "^[A-PR-WYa-pr-wy][1-9]\\d\\s?\\d{4}[1-9]$",
-        "DrivingLicenseNumberRegex": ""
+        "CurrencySymbol": "\u20b9"
     },
     "US": {
         "PostalCode": {
@@ -28,19 +40,32 @@
             "MinLength": 5,
             "MaxLength": 10
         },
-        "LicensePlate":  {
+        "LicensePlate": {
             "Format": "",
             "Regex": "",
             "MinLength": 6,
             "MaxLength": 6
         },
+        "MobileNumber": {
+            "Regex": "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
+            "MinLength": 10,
+            "MaxLength": 12
+        },
+        "PassportNumber": {
+            "Regex": "^[0-9]{9}$",
+            "MinLength": 9,
+            "MaxLength": 9
+        },
+        "DrivingLicense": {
+            "Regex": "^[0-9]{9}$",
+            "MinLength": 9,
+            "MaxLength": 9
+        },
         "Code": "US",
         "Name": "United States",
         "Currency": "USD",
         "CurrencyName": "Dollar",
-        "CurrencySymbol": "$",
-        "MobileNumberRegex": "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$",
-        "PassportNumberRegex": "^[0-9]{9}$"
+        "CurrencySymbol": "$"
     },
     "AF": {
         "PostalCode": {
@@ -54,8 +79,23 @@
         "Currency": "AFN",
         "CurrencyName": "Afghani",
         "CurrencySymbol": "\u060b",
-        "LicensePlate":  {},
-        "PassportNumberRegex": ""
+        "LicensePlate": {},
+        "PassportNumberRegex": "",
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "SA": {
         "PostalCode": {
@@ -69,7 +109,22 @@
         "Currency": "SAR",
         "CurrencyName": "Riyal",
         "CurrencySymbol": "\ufdfc",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "SG": {
         "PostalCode": {
@@ -83,7 +138,22 @@
         "Currency": "SGD",
         "CurrencyName": "Dollar",
         "CurrencySymbol": "$",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "ZA": {
         "PostalCode": {
@@ -97,7 +167,22 @@
         "Currency": "ZAR",
         "CurrencyName": "Rand",
         "CurrencySymbol": "R",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "PK": {
         "PostalCode": {
@@ -111,7 +196,22 @@
         "Currency": "PKR",
         "CurrencyName": "Rupee",
         "CurrencySymbol": "\u20a8",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "AM": {
         "PostalCode": {
@@ -125,7 +225,22 @@
         "Currency": "AMD",
         "CurrencyName": "Dram",
         "CurrencySymbol": "\u058f",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "AR": {
         "PostalCode": {
@@ -139,7 +254,22 @@
         "Currency": "ARS",
         "CurrencyName": "Peso",
         "CurrencySymbol": "$",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "AT": {
         "PostalCode": {
@@ -153,7 +283,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "AU": {
         "PostalCode": {
@@ -167,7 +312,22 @@
         "Currency": "AUD",
         "CurrencyName": "Dollar",
         "CurrencySymbol": "$",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "AZ": {
         "PostalCode": {
@@ -181,7 +341,22 @@
         "Currency": "AZN",
         "CurrencyName": "Manat",
         "CurrencySymbol": "\u20bc",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "BD": {
         "PostalCode": {
@@ -195,7 +370,22 @@
         "Currency": "BDT",
         "CurrencyName": "Taka",
         "CurrencySymbol": "\u09f3",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "BY": {
         "PostalCode": {
@@ -209,7 +399,22 @@
         "Currency": "BYR",
         "CurrencyName": "Ruble",
         "CurrencySymbol": "p.",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "BR": {
         "PostalCode": {
@@ -223,7 +428,22 @@
         "Currency": "BRL",
         "CurrencyName": "Real",
         "CurrencySymbol": "R$",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "CA": {
         "PostalCode": {
@@ -237,7 +457,22 @@
         "Currency": "CAD",
         "CurrencyName": "Dollar",
         "CurrencySymbol": "$",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "CH": {
         "PostalCode": {
@@ -251,7 +486,22 @@
         "Currency": "CHF",
         "CurrencyName": "Franc",
         "CurrencySymbol": "Fr.",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "CN": {
         "PostalCode": {
@@ -265,7 +515,22 @@
         "Currency": "CNY",
         "CurrencyName": "Yuan RenMinLengthbi",
         "CurrencySymbol": "\u00a5",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "CY": {
         "PostalCode": {
@@ -279,7 +544,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "CZ": {
         "PostalCode": {
@@ -293,7 +573,22 @@
         "Currency": "CZK",
         "CurrencyName": "Koruna",
         "CurrencySymbol": "K\u010d",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "DE": {
         "PostalCode": {
@@ -307,7 +602,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "DK": {
         "PostalCode": {
@@ -321,7 +631,22 @@
         "Currency": "DKK",
         "CurrencyName": "Krone",
         "CurrencySymbol": "kr.",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "DZ": {
         "PostalCode": {
@@ -335,7 +660,22 @@
         "Currency": "DZD",
         "CurrencyName": "Dinar",
         "CurrencySymbol": "\u062f.\u062c",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "ES": {
         "PostalCode": {
@@ -349,7 +689,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "FI": {
         "PostalCode": {
@@ -363,7 +718,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "FR": {
         "PostalCode": {
@@ -377,7 +747,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "GB": {
         "PostalCode": {
@@ -391,7 +776,22 @@
         "Currency": "GBP",
         "CurrencyName": "Pound",
         "CurrencySymbol": "\u00a3",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "IE": {
         "PostalCode": {
@@ -405,7 +805,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "ID": {
         "PostalCode": {
@@ -419,7 +834,22 @@
         "Currency": "IDR",
         "CurrencyName": "Rupiah",
         "CurrencySymbol": "Rp",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "IR": {
         "PostalCode": {
@@ -433,7 +863,22 @@
         "Currency": "IRR",
         "CurrencyName": "Rial",
         "CurrencySymbol": "\ufdfc",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "IT": {
         "PostalCode": {
@@ -447,7 +892,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "JP": {
         "PostalCode": {
@@ -461,7 +921,22 @@
         "Currency": "JPY",
         "CurrencyName": "Yen",
         "CurrencySymbol": "\u00a5",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "LY": {
         "PostalCode": {
@@ -475,7 +950,22 @@
         "Currency": "LYD",
         "CurrencyName": "Dinar",
         "CurrencySymbol": "\u0644.\u062f",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "MY": {
         "PostalCode": {
@@ -489,7 +979,22 @@
         "Currency": "MYR",
         "CurrencyName": "Ringgit",
         "CurrencySymbol": "RM",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "MX": {
         "PostalCode": {
@@ -503,7 +1008,22 @@
         "Currency": "MXN",
         "CurrencyName": "Peso",
         "CurrencySymbol": "$",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "PL": {
         "PostalCode": {
@@ -517,7 +1037,22 @@
         "Currency": "PLN",
         "CurrencyName": "Zloty",
         "CurrencySymbol": "z\u0142",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "PT": {
         "PostalCode": {
@@ -531,7 +1066,22 @@
         "Currency": "EUR",
         "CurrencyName": "Euro",
         "CurrencySymbol": "\u20ac",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "SE": {
         "PostalCode": {
@@ -545,7 +1095,22 @@
         "Currency": "SEK",
         "CurrencyName": "Krona",
         "CurrencySymbol": "kr",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "TH": {
         "PostalCode": {
@@ -559,7 +1124,22 @@
         "Currency": "THB",
         "CurrencyName": "Baht",
         "CurrencySymbol": "\u0e3f",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "TR": {
         "PostalCode": {
@@ -573,7 +1153,22 @@
         "Currency": "TRY",
         "CurrencyName": "Lira",
         "CurrencySymbol": "\u20ba",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     },
     "UA": {
         "PostalCode": {
@@ -587,6 +1182,21 @@
         "Currency": "UAH",
         "CurrencyName": "Hryvnia",
         "CurrencySymbol": "\u20b4",
-        "LicensePlate":  {}
+        "LicensePlate": {},
+        "MobileNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "PassportNumber": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        },
+        "DrivingLicense": {
+            "Regex": "",
+            "MinLength": 0,
+            "MaxLength": 0
+        }
     }
 }
