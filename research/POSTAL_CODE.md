@@ -19,7 +19,7 @@ Kabul
 AFGHANISTAN
 ```
 
-Reference: 
+Reference:
 
 - https://en.wikipedia.org/wiki/Postal_codes_in_Afghanistan
 - https://en.youbianku.com/afghanistan
@@ -33,17 +33,17 @@ Reference:
 #### Address Format
 
 ```
-Mr I.K. Taneja      
-Flat No.100 
-Triveni Apartments 
-Pitam Pura 
-NEW DELHI 110034 
+Mr I.K. Taneja
+Flat No.100
+Triveni Apartments
+Pitam Pura
+NEW DELHI 110034
 INDIA
 ```
 
 ### US - USA
 
-- A United States postal code, it included the five digits of the ZIP Code, followed by a hyphen and four digits that designated a more specific location. 
+- A United States postal code, it included the five digits of the ZIP Code, followed by a hyphen and four digits that designated a more specific location.
 
 `Example: 10001-1234`
 
@@ -147,7 +147,7 @@ ARGENTINA
 
 ### AT - Austria
 
-- The postal codes in Austria consist of 4 digits. 
+- The postal codes in Austria consist of 4 digits.
 
 `Example: 1010`
 
@@ -170,7 +170,7 @@ PARRAMATTA NSW 2150
 ### AZ - Azerbaijan
 
 
-- The postal codes in Azerbaijan consist of 4 digits. 
+- The postal codes in Azerbaijan consist of 4 digits.
 
 `Example: 3942`
 
@@ -232,7 +232,7 @@ BRAZIL
 
 ### CA - Canada
 
-- The postal codes in Canada are made up of three numbers and three letters. The first three digits and the last three digits are generally separated by a space. Among the six digits, the first, third, and fifth are letters, and the second, fourth, and sixth are numbers. 
+- The postal codes in Canada are made up of three numbers and three letters. The first three digits and the last three digits are generally separated by a space. Among the six digits, the first, third, and fifth are letters, and the second, fourth, and sixth are numbers.
 
 The first digits represent the forward sortation area, the last three digits represent the local delivery unit. Generally, the first digit of postal code indicates a province or city.
 
@@ -292,11 +292,178 @@ P.R. CHINA
 ```
 
 
-Reference: 
+Reference:
 
 - https://en.wikipedia.org/wiki/List_of_postal_codes
 - https://en.youbianku.com/
 
+### CY - Cyprus
+
+Postal Codes in Cyprus consist of 4 numbers.
+
+1st digit: Administrative district
+2nd digit: Delivery area and method
+
+`Example: 2008`
+
+#### Address Format
+
+```
+Mr. Andreas Panagiotou
+Sofocleous 26
+2008 STROVOLOS
+CYPRUS
+```
+
+### CZ - Czech Republic
+
+The postal codes in the Czech Republic consist of 5 numbers, usually written with a space following the third digit
+
+1st digit: postal zone
+2nd digit: central transport
+3rd digit: district transport
+4th & 5th digits: delivery
+
+`Example: 110 00`
+
+#### Address Format
+
+```
+Pan Martin Parma
+Hrušovská 455/10
+110  00 Praha 102
+CZECH REP.
+```
+
+### DE - Germany
+
+The postal codes in Germany consist of 5 digits. The first two digits represent the region, the third digit represents the routeing district, the fourth digit represents the route, and the last digit represents the place of destination.
+
+`Example: 26115`
+
+#### Address Format
+
+```
+Herrn
+Quincy Happy
+Wacholderweg 52a
+26133 OLDENBURG
+GERMANY
+```
+
+### DK - Denmark
+
+- The Postal codes in Denmark consists of 4 numbers.They were implemented in the year 1967
+
+1st digit: delivery office
+2nd digit: route
+3rd & 4th digits: routing zone
+
+`Example: 2800`
+
+#### Address Format
+
+```
+Hr. Henrik Nielsen
+Kastanievej 15, 2
+Agerskov
+8660 SKANDERBORG
+DENMARK
+```
+
+### DZ - Algeria
+
+- Postal Codes in Algeria consist of 5 numbers.
+
+`Example: 16001`
 
 
+#### Address Format
+
+```
+M. Said Mohamed
+2, rue de l'Indépendance
+16027 ALGIERS
+ALGERIA
+```
+
+### ES - Spain
+
+- The postal codes in Spain consist of 5 digits.
+
+1st and 2nd digits: Province
+last 3 digits: Postal area
+
+`Example: 28001`
+
+#### Address Format
+
+```
+Sr. D. Jaime Lozano Seguí
+Plaza de las Descalzas 27, Esc 2, 3º, C
+45012 TOLEDO
+TOLEDO
+SPAIN
+```
+
+### FI - Finland
+
+- The postal codes in Finland consist of 5 digits.
+
+1st & 2nd digits: Discrict/Village
+Usually the last digit is 0/5.
+
+`Example: 00550`
+
+
+#### Address Format
+
+```
+Matti Manninen
+Mäkelänkatu 25 B 13
+FI-00550 HELSINKI
+FINLAND
+```
+
+### FR- France
+
+- The postcodes of France began to be used in 1972 and consist of 5 numbers.
+
+1st and 2nd digits: Department
+last 3 digits: Postal area
+
+`Example: 33800`
+
+
+#### Address Format
+
+```
+M. Jean DELHOURME
+25 RUE DE L EGLISE
+CAUDOS
+33380 MIOS
+FRANCE
+```
+
+### GB - United Kingdom
+
+- The Postal code of United Kingdom mix of letters and numbers. It's most complex format in the world.
+
+`Example: EC1A 1BB`
+
+
+#### Address Format
+
+```
+Mr. Walter C. Brown           
+49 Featherstone Street        
+LONDON                        
+EC1Y 8SY                      
+UNITED KINGDOM 
+```
+
+### IE - Ireland
+
+
+### ID - Indonesia
 

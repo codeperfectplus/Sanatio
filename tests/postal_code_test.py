@@ -187,6 +187,66 @@ class PostalCodeTest(unittest.TestCase):
         self.assertFalse(validator.isPostalCode('46504', 'CN'))
         self.assertFalse(validator.isPostalCode('36268', 'CN'))
         
+    def test_isPostalCode_CY_True(self):
+        self.assertTrue(validator.isPostalCode('2008', 'CY'))
+        self.assertTrue(validator.isPostalCode('2009', 'CY'))
+        self.assertTrue(validator.isPostalCode('2010', 'CY'))
+        
+    def test_isPostalCode_CY_False(self):
+        self.assertFalse(validator.isPostalCode('200', 'CY'))
+        self.assertFalse(validator.isPostalCode('20099', 'CY'))
+        self.assertFalse(validator.isPostalCode('20100', 'CY'))
+    
+    def test_isPostalCode_CZ_True(self):
+        self.assertTrue(validator.isPostalCode('123 45', 'CZ'))
+        self.assertTrue(validator.isPostalCode('432 10', 'CZ'))
+        self.assertTrue(validator.isPostalCode('876 45', 'CZ'))
+    
+    def test_isPostalCode_CZ_False(self):
+        self.assertFalse(validator.isPostalCode('1234', 'CZ'))
+        self.assertFalse(validator.isPostalCode('12345', 'CZ'))
+        self.assertFalse(validator.isPostalCode('123456', 'CZ'))
+        
+    def test_isPostalCode_DE_True(self):
+        self.assertTrue(validator.isPostalCode('12345', 'DE'))
+        self.assertTrue(validator.isPostalCode('43210', 'DE'))
+        self.assertTrue(validator.isPostalCode('87645', 'DE'))
+        
+    def test_isPostalCode_DE_False(self):
+        self.assertFalse(validator.isPostalCode('1234', 'DE'))
+        self.assertFalse(validator.isPostalCode('123456', 'DE'))
+        self.assertFalse(validator.isPostalCode('1234567', 'DE'))
+        
+    def test_isPosalCode_DZ_True(self):
+        self.assertTrue(validator.isPostalCode('16000', 'DZ'))
+        self.assertTrue(validator.isPostalCode('26000', 'DZ'))
+        self.assertTrue(validator.isPostalCode('36000', 'DZ'))
+        
+    def test_isPostalCode_DZ_False(self):
+        self.assertFalse(validator.isPostalCode('1600', 'DZ'))
+        self.assertFalse(validator.isPostalCode('2600', 'DZ'))
+        self.assertFalse(validator.isPostalCode('3600', 'DZ'))
+
+    def test_isPostalCode_FR_True(self):
+        self.assertTrue(validator.isPostalCode('12345', 'FR'))
+        self.assertTrue(validator.isPostalCode('43210', 'FR'))
+        self.assertTrue(validator.isPostalCode('87645', 'FR'))
+        
+    def test_isPostalCode_FR_False(self):
+        self.assertFalse(validator.isPostalCode('1234', 'FR'))
+        self.assertFalse(validator.isPostalCode('123456', 'FR'))
+        self.assertFalse(validator.isPostalCode('1234567', 'FR'))
+    
+    def test_isPostalCode_GB_True(self):
+        self.assertTrue(validator.isPostalCode('M2 5BQ', 'GB'))
+        self.assertTrue(validator.isPostalCode('M34 4AB', 'GB'))
+        self.assertTrue(validator.isPostalCode('CR0 2YR', 'GB'))
+        self.assertTrue(validator.isPostalCode('DN16 9AA', 'GB'))
+        self.assertTrue(validator.isPostalCode('W1A 4ZZ', 'GB'))
+        self.assertTrue(validator.isPostalCode('EC1A 1BB', 'GB'))
+        
+    
+                                                        
         
     
 if __name__ == '__main__':
