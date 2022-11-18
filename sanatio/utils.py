@@ -3,7 +3,7 @@ import json
 import re
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ASSETS_DIR = os.path.join(ROOT_DIR, 'src/assets')
+ASSETS_DIR = os.path.join(ROOT_DIR, 'sanatio/assets')
 
 
 def load_json(filename):

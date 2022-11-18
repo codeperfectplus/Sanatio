@@ -4,7 +4,7 @@ from datetime import datetime
 from dateutil.parser import parse
 from Levenshtein import distance as levenshtein_distance
 
-from src.utils import all_country, regexs
+from sanatio.utils import all_country, regexs
 
 class Validator(object):
     """ Validator class for validating the data """

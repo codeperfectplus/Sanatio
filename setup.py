@@ -1,4 +1,5 @@
 import setuptools
+from glob import glob
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -7,7 +8,7 @@ with open("requirements.txt", "r") as fh:
     requirements = fh.read().splitlines()
 
 setuptools.setup(
-    name="",
+    name="Sanatio",
     version="0.0.1",
     author="Deepak Raj",
     author_email="deepak008@live.com",
@@ -15,6 +16,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Py-Contributors/validator.py",
+    data_files=[('assets', glob('sanatio/assets/*'))],
     keywords="audiobook",
     install_requires=requirements,
     packages=setuptools.find_packages(),
@@ -27,4 +29,5 @@ setuptools.setup(
                  "Operating System :: OS Independent",
                  "Intended Audience :: Developers"],
     python_requires=">=3.4",
+    include_package_data=True,
 )

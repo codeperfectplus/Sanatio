@@ -1,7 +1,7 @@
 import sys
 import unittest
 sys.path.append('.')
-from src.main import Validator
+from sanatio.main import Validator
 
 validator = Validator()
 
