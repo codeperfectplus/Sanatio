@@ -1,4 +1,3 @@
-
 # Verhoeff's algorithm implementation for checksum digit calculation
 verhoeff_table_d = (
     (0,1,2,3,4,5,6,7,8,9),
@@ -24,17 +23,14 @@ verhoeff_table_p = (
 
 verhoeff_table_inv = (0,4,3,2,1,5,6,7,8,9)
 
-def calcsum(number):
-    """ For a given number returns a Verhoeff checksum digit """
-    c = 0
-    for i, item in enumerate(reversed(str(number))):
-        c = verhoeff_table_d[c][verhoeff_table_p[(i+1)%8][int(item)]]
-    
-    return verhoeff_table_inv[c]
+class Verhoeff(object):
+    def __init__(self):
+        pass
 
-def checksum_aadhar(aadhar_number):
-    """ validates aadhar number """
-    if int(aadhar_number[-1]) == calcsum(str(aadhar_number)[:-1]):
-        return True
-    return False
-    
+    def calcsum(self, number):
+        """ For a given number returns a Verhoeff checksum digit """
+        c = 0
+        for i, item in enumerate(reversed(str(number))):
+            c = verhoeff_table_d[c][verhoeff_table_p[(i+1)%8][int(item)]]
+        
+        return verhoeff_table_inv[c]

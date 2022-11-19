@@ -5,7 +5,7 @@ from dateutil.parser import parse
 from Levenshtein import distance as levenshtein_distance
 
 from sanatio.utils.utils import all_country, regexs
-from sanatio.utils.aadhar_utils import checksum_aadhar
+from sanatio.utils.checksum import checksum_aadhar
 
 class Validator(object):
     """ Validator class for validating the data """
@@ -43,14 +43,16 @@ class Validator(object):
     
     def isAadharCard(self, value):
         """ check if the string is Aadhar card or not """
+        regex = "^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$"
         value = value.strip().replace(" ", "")
         if self.isLength(value, 12, 12):
             if isinstance(value, int):  
                 value = str(value)
                 
             if value[0] != '0' or value[0] != '1':
-                if checksum_aadhar(value): # last digit is checksum
-                    return True
+                if re.match(regex, value):
+                    if checksum_aadhar(value):
+                        return True
             
         return False
     
@@ -126,7 +128,7 @@ class Validator(object):
             return True
         return False
     
-    def isCreditCard(self, value):
+    def isCreditCard(self, value):  # checksum not implemented
         regex = regexs['credit_card_regex']
         if re.match(regex, value):
             return True
