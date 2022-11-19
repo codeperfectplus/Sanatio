@@ -1,12 +1,15 @@
-from sanatio.utils.verhoeff_algorithm import Verhoeff
+import sys
+sys.path.append('.')
+from sanatio.utils.checksum_algorithms.verhoeff_algorithm import VerhoeffAlgorithm
+from sanatio.utils.checksum_algorithms.luhn_algorithm import LuhnAlgorithm
 
-var = Verhoeff()
+verhoeff = VerhoeffAlgorithm()
+luhn = LuhnAlgorithm()
+
 
 def checksum_aadhar(aadhar_number):
     """ validates aadhar number """
-    if int(aadhar_number[-1]) == var.calcsum(str(aadhar_number)[:-1]):
-        return True
-    return False
+    return verhoeff.verify(aadhar_number)
 
 def checksum_pan(pan_number):
     """ pancard checksum """
@@ -14,5 +17,9 @@ def checksum_pan(pan_number):
 
 def checksum_credit_card(credit_card_number):
     """ credit card checksum """
-    pass
+    return luhn.verify(credit_card_number)
     
+    
+    
+# res = checksum_credit_card('4578423013769219')
+# print(res)
