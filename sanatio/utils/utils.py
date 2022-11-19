@@ -2,7 +2,7 @@ import os
 import json
 import re
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ASSETS_DIR = os.path.join(ROOT_DIR, 'sanatio/assets')
 
 
@@ -22,3 +22,5 @@ def load_asset(filename):
 
 all_country = load_asset('country.json')
 regexs = load_asset('regex.json')
+
+
