@@ -4,4 +4,4 @@ Date Validation
 .. toctree::
    :maxdepth: 2
 
-   password.rst
+   date.rst
