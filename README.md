@@ -16,6 +16,7 @@ pip install sanatio
 Check out the [documentation](https://pycontributors.readthedocs.io/projects/sanatio/en/latest/) for more information.
 
 After the stable release, we will add more countries.
+Currently, we support the 41 countries.
 Support us by giving a ⭐️ to this repository and follow us for more updates. 
 
 ## Roadmap
