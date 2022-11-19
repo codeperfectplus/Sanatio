@@ -1,6 +1,5 @@
 # Mobile Number format
 
-
 ### AF - Afghanistan
 
 - Country code: +93

@@ -1,11 +1,12 @@
-## Data Type
+# Data Type
 
-International date format is YYYY-MM-DD
+Table represents the date format used in the world. It is used to validate the date format and check if the date is valid or not.
 
-<!-- In table format it will look better/ -->
-
-- Date format in India is DD-MM-YYYY
-- Date format in the US is MM-DD-YYYY
-- Date format in the UK is DD-MM-YYYY
-- Date format in Japan is YYYY-MM-DD
-- Date format in China is YYYY-MM-DD
+| Country | Format | Example |
+|---------|--------| ------- |
+| Inernational | YYYY-MM-DD | 2019-12-31 |
+| India | DD-MM-YYYY | 31-12-2019 |
+| USA | MM-DD-YYYY | 12-31-2019 |
+| Europe | DD-MM-YYYY | 31-12-2019 |
+| Japan | YYYY-MM-DD | 2019-12-31 |
+| China | YYYY-MM-DD | 2019-12-31 |

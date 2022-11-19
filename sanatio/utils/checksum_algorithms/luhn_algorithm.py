@@ -1,19 +1,22 @@
 """ Luhn Algorithm for checksum calculation. """
 
-class LuhnAlgorithm(object):
+class LuhnAlgorithm(object):  # TODO: need to review this variable names
     """Class to validate a number using Luhn algorithm."""
     
     def __init__(self) -> None:
         pass
     
-    def __checksum(self, number: str) -> int:
+    def __last_digit(self, number: str) -> int:
+        """ Returns the last digit of a number """
+        return int(number[-1])
+    
+    def __checksum(self, numbers: str) -> int:
         nums = []
-        
-        last_digit = int(number[-1])
-        
-        for idx, num in enumerate(number[:-1]):
+        last_digit = self.__last_digit(numbers)
+        for idx, num in enumerate(numbers[:-1]):
             num = int(num)
             idx = idx + 1
+            
             if idx % 2 == 0:
                 nums.append(num)
             else:
@@ -29,12 +32,12 @@ class LuhnAlgorithm(object):
             return True
         return False
     
-    def verify(self, number: str) -> bool:
+    def verify(self, numbers: str) -> bool:
         """Verify a number using Luhn algorithm."""
-        if isinstance(number, int):
-            number = str(number)
+        if isinstance(numbers, int):
+            number = str(numbers)
             
-        return self.__checksum(number)
+        return self.__checksum(numbers)
         
         
         
