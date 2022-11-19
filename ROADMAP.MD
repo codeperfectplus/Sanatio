@@ -7,6 +7,8 @@ Currently it supports following Document validation: Few countries added in init
 - Mobile Number
 - Passport
 - Postal Code
+- Aadhar Card
+- Pan Card
 - Social Security Number
 
 ## Future Roadmap:
