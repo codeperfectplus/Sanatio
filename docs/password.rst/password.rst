@@ -5,7 +5,7 @@ The password validation is done by the function isStrongPassword().
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

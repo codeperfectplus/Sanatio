@@ -3,6 +3,12 @@ Number Validation functions
 
 The following functions are used to validate numbers.
 
+.. code:: python
+    
+    from sanatio import Validator
+
+    val = Validator()
+
 :code:`isDecimal(value)`
     Returns true if the value is a decimal number.
 

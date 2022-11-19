@@ -5,7 +5,7 @@ Check if a license plate is valid or not.
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

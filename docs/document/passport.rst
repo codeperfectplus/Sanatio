@@ -5,7 +5,7 @@ This module provides a validation for passport numbers.
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

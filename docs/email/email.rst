@@ -5,7 +5,7 @@ The following functions are used to validate email addresses.
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

@@ -6,7 +6,7 @@ mobile number ranges published by the ITU-T E.164. The list is updated
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

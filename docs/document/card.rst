@@ -1,9 +1,13 @@
 Card Validation function
 ========================
 
+This function is used to validate the card number and the card type. 
+`Luhn algorithm` is used to validate the card number. The function returns 
+boolean value.
+
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

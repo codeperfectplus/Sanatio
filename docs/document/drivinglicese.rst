@@ -5,7 +5,7 @@ This is a simple script to validate driving license numbers.
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

@@ -5,7 +5,7 @@ The following functions are used to validate postal codes.
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

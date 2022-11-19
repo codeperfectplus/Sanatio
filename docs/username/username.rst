@@ -5,7 +5,7 @@ The following validation rules are applied to the username:
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 

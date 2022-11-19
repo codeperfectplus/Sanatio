@@ -5,7 +5,7 @@ The following functions are used to validate dates.  They return a boolean value
 
 .. code:: python
     
-    from validator import Validator
+    from sanatio import Validator
 
     val = Validator()
 
