@@ -2,7 +2,7 @@
 from sanatio.utils.utils import all_country
 import os
 
-output_dir = "research/supported_country"
+output_dir = "docs/supported_country"
 os.makedirs(output_dir, exist_ok=True)
 
 def create_html_table(document_type):
@@ -49,11 +49,28 @@ def create_md_table(document_type):
         f.write(final_table)
     return final_table
 
+def create_rst_table(document_type):
+    table_body = ""
+    for key, value in all_country.items():
+        if all_country[key][document_type]["Regex"] == "":
+            line = "{} \t {}\n".format(value["Name"], "❌")
+        else:
+            line = "{} \t {}\n".format(value["Name"], "✅")
+        table_body += line
+        
+    final_table = f"""====================  =========== \n Country               Document Type \n====================  =========== \n{table_body}====================  ==========="""
+    pre_text  = f"""Supported Country for {document_type}\n================================\n"""
+    final_text = pre_text + "\n" + final_table
+    with open('{}/{}.rst'.format(output_dir, doc), 'w', encoding="utf-8") as f:
+        f.write(final_text)    
+
+    
+
 
 docs = ["PostalCode", "MobileNumber", "PassportNumber" , "DrivingLicense"]
 
 for doc in docs:
-    final_table = create_md_table(doc)
+    final_table = create_rst_table(doc)
         
         
     
