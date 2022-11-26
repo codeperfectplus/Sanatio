@@ -22,11 +22,6 @@
             "MinLength": 8,
             "MaxLength": 9
         },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
         "Code": "IN",
         "Name": "India",
         "Currency": "INR",
@@ -52,11 +47,6 @@
             "MaxLength": 12
         },
         "PassportNumber": {
-            "Regex": "^[0-9]{9}$",
-            "MinLength": 9,
-            "MaxLength": 9
-        },
-        "DrivingLicense": {
             "Regex": "^[0-9]{9}$",
             "MinLength": 9,
             "MaxLength": 9
@@ -90,11 +80,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "SA": {
@@ -116,11 +101,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -148,11 +128,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "ZA": {
@@ -174,11 +149,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -206,11 +176,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "AM": {
@@ -232,11 +197,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -264,11 +224,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "AT": {
@@ -290,11 +245,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -322,11 +272,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "AZ": {
@@ -348,11 +293,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -380,11 +320,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "BY": {
@@ -406,11 +341,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -438,11 +368,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "CA": {
@@ -464,11 +389,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -496,11 +416,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "CN": {
@@ -522,11 +437,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -554,11 +464,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "CZ": {
@@ -580,11 +485,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -612,11 +512,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "DK": {
@@ -638,11 +533,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -670,11 +560,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "ES": {
@@ -696,11 +581,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -728,11 +608,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "FR": {
@@ -754,11 +629,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -786,11 +656,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "IE": {
@@ -812,11 +677,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -844,11 +704,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "IR": {
@@ -870,11 +725,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -902,11 +752,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "JP": {
@@ -928,11 +773,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -960,11 +800,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "MY": {
@@ -986,11 +821,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -1018,11 +848,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "PL": {
@@ -1044,11 +869,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -1076,11 +896,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "SE": {
@@ -1102,11 +917,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
@@ -1134,11 +944,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "TR": {
@@ -1163,11 +968,6 @@
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0
-        },
-        "DrivingLicense": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
         }
     },
     "UA": {
@@ -1189,11 +989,6 @@
             "MaxLength": 0
         },
         "PassportNumber": {
-            "Regex": "",
-            "MinLength": 0,
-            "MaxLength": 0
-        },
-        "DrivingLicense": {
             "Regex": "",
             "MinLength": 0,
             "MaxLength": 0

@@ -2,11 +2,10 @@ Validator.py is simple python tool to validate Document/String/Number/Date/Email
 
 Currently it supports following Document validation: Few countries added in initial release. More countries will be added in future release.
 
-- Driving License
-- License Plate
-- Mobile Number
 - Passport
 - Postal Code
+- License Plate
+- Mobile Number
 - Aadhar Card
 - Pan Card
 - Social Security Number
