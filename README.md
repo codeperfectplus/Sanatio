@@ -1,5 +1,5 @@
-<h1 align="center"><a href="#">Sanatio <p align="center"><a href="https://twitter.com/py_contributors"><img
-src="https://img.shields.io/twitter/follow/py_contributors?style=social"
+<h1 align="center"><a href="#">Sanatio <p align="center"><a href="https://twitter.com/pycontributors"><img
+src="https://img.shields.io/twitter/follow/pycontributors?style=social"
 alt="Twitter" /></a></a></h1>
 <p align="center">Sanatio is a latin word which mean Validation</p>
 
