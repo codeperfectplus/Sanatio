@@ -59,3 +59,11 @@ The following functions are used to validate strings.
     >>> val.contains("abc", "d")
     False
 
+:code:`isSlug(input_string)`
+    Returns true if the string contains the substring.
+
+    >>> val.contains("foo-bar")
+    True
+    >>> val.contains("foo bar)
+    False
+

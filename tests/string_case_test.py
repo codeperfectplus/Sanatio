@@ -58,6 +58,15 @@ class ValidatorTest(unittest.TestCase):
         self.assertFalse(validator.isEmpty('foo'))
         self.assertFalse(validator.isEmpty(' foo '))
 
+    def test_isSlug_true(self):
+        self.assertTrue(validator.isSlug('foo-bar'))
+        self.assertTrue(validator.isSlug('foo-bar-123'))
+        self.assertTrue(validator.isSlug('foo-bar-123-456'))
+
+    def test_isSlug_false(self):
+        self.assertFalse(validator.isSlug('foo bar'))
+
+
 
 if __name__ == '__main__':
     unittest.main()

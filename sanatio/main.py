@@ -20,8 +20,6 @@ class Validator(object):
         if isinstance(value, str):
             return True
 
-        return False
-
     def __isvalidNumber(self, value: int)-> bool:
         """ check if the number is valid or not """
         if value is None:
@@ -30,8 +28,6 @@ class Validator(object):
         if isinstance(value, (int, float)):
             return True
 
-        return False
-
     def __isvalidBoolean(self, value: bool)-> bool:
         """ check if the string is boolean or not """
         if value is None:
@@ -39,8 +35,6 @@ class Validator(object):
 
         if isinstance(value, bool):
             return True
-
-        return False
 
     def isAadharCard(self, value)-> bool:
         """ check if the string is Aadhar card or not """
@@ -54,8 +48,6 @@ class Validator(object):
                 if re.match(regex, value):
                     if checksum_aadhar(value):
                         return True
-
-        return False
 
     def isPostalCode(self, value, locale: str)-> bool:
         """ check if the string is postal code or not """
@@ -352,7 +344,10 @@ class Validator(object):
 
     def isSlug(self, value: str) -> bool:
         """ check if the string is slug or not """
-        pass
+        regex = "^[a-z0-9-]+$"
+        if re.match(regex, value):
+            return True
+        return False
 
     def isStrongPassword(self, value: str) -> bool:
         """ check if the string is strong password or not
