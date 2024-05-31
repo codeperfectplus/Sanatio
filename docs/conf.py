@@ -1,6 +1,6 @@
 from datetime import datetime
 
-project = 'Validation.py'
+project = 'Sanatio'
 author = 'Deeapk Raj'
 release = '1.0.0'
 
