@@ -8,14 +8,14 @@ This library is written in pure python and is very easy to use.
 It is a simple library that can be used to validate strings, documents, emails, dates, urls, domain names, etc.
 
 Installation
-============
+------------
 
 To install the library, you can use pip: 
 
 :code:` pip install sanatio`
 
 Usage-Examples
-=====
+--------------
 
 .. code:: python
 

@@ -23,6 +23,12 @@ class DateTest(unittest.TestCase):
     def test_toDate(self):
         self.assertEqual(validator.toDate('2017-01-01'), datetime.datetime(2017, 1, 1, 0, 0))
         self.assertEqual(validator.toDate('2017-01-31'), datetime.datetime(2017, 1, 31, 0, 0))
+        self.assertEqual(validator.toDate('01-01-2022', '%d-%m-%Y'), datetime.datetime(2022, 1, 1, 0, 0))
+        self.assertEqual(validator.toDate('01/01/2022', '%d/%m/%Y'), datetime.datetime(2022, 1, 1, 0, 0))
+        self.assertEqual(validator.toDate('01.01.2022', '%d.%m.%Y'), datetime.datetime(2022, 1, 1, 0, 0))
+        self.assertEqual(validator.toDate('01 01 2022', '%d %m %Y'), datetime.datetime(2022, 1, 1, 0, 0))
+        self.assertEqual(validator.toDate('01 Feb 2022', '%d %b %Y'), datetime.datetime(2022, 2, 1, 0, 0))
+        self.assertEqual(validator.toDate('01 February 2022', '%d %B %Y'), datetime.datetime(2022, 2, 1, 0, 0))
     
     def test_isAfter_true(self):  # if date1 is after date2
         self.assertTrue(validator.isAfter('2020-01-01', '2019-01-01'))
@@ -49,6 +55,7 @@ class DateTest(unittest.TestCase):
         self.assertFalse(validator.isLeapYear(2017))
         self.assertFalse(validator.isLeapYear(2018))
         self.assertFalse(validator.isLeapYear(2019))
+        self.assertFalse(validator.isLeapYear(2100))
 
 
 if __name__ == '__main__':

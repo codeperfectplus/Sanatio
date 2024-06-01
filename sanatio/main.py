@@ -6,11 +6,13 @@ from Levenshtein import distance as levenshtein_distance
 
 from sanatio.utils.utils import all_country, regexs
 from sanatio.utils.checksum import checksum_aadhar, checksum_credit_card
+from sanatio.base import BaseValidator
 
-class Validator(object):
+
+class Validator(BaseValidator):
     """ Validator class for validating the data """
     def __init__(self):
-        pass
+        super().__init__()
 
     def __isvalidString(self, value: str) -> bool:
         """ check if the string is valid or not """
@@ -28,14 +30,14 @@ class Validator(object):
         if isinstance(value, (int, float)):
             return True
 
-    def __isvalidBoolean(self, value: bool)-> bool:
+    def __isvalidBoolean(self, value)-> bool:
         """ check if the string is boolean or not """
         if value is None:
             return False
 
         if isinstance(value, bool):
             return True
-
+    
     def isAadharCard(self, value)-> bool:
         """ check if the string is Aadhar card or not """
         regex = "^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$"  # need to improve regex for space and hyphen
@@ -236,7 +238,6 @@ class Validator(object):
         else:
             return False
 
-
     def isEmail(self, value: str, checkDNS: bool=False) -> bool:
         """ check if the string is email or not """
         if not self.__isvalidString(value):
@@ -265,10 +266,21 @@ class Validator(object):
 
         return False
 
-    def isEAN(self, value) -> bool:
+    def isEAN13(self, value) -> bool:
         """ check if the string is EAN or not """
-        pass
-
+        if isinstance(value, int):
+            value = str(value)
+        if not self.isLength(value, 13, 13):
+            return False
+ 
+        last_digit = int(value[-1])
+        remaining_numbers = value[:-1]
+        total_sum = sum(int(remaining_numbers[i]) * 3 if i % 2 != 0 else \
+            int(remaining_numbers[i]) for i in range(len(remaining_numbers)))
+        unit_digit = 0 if total_sum % 10 == 0 else 10 - (total_sum % 10)
+        if unit_digit == last_digit:
+            return True
+    
     def isHash(self, value) -> bool:
         """ check if the string is hash or not """
         pass
@@ -294,7 +306,7 @@ class Validator(object):
 
     def isSSN(self, value) -> bool:
         """ check if the string is SSN or not """
-        regex = '^(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$'
+        regex = r'^(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$'
         if re.match(regex, value):
             return True
         return False
@@ -309,7 +321,7 @@ class Validator(object):
 
     def isJWT(self, value) -> bool:
         """ check if the string is JWT or not """
-        regex = "^[A-Za-z0-9_-]{2,}(?:\.[A-Za-z0-9_-]{2,}){2}$"
+        regex = r"^[A-Za-z0-9_-]{2,}(?:\.[A-Za-z0-9_-]{2,}){2}$"
         if re.match(regex, value):
             return True
 
@@ -317,7 +329,7 @@ class Validator(object):
 
     def isLatLong(self, value: str) -> bool:
         """ check if the string is lat long or not """
-        regex = "^((\-?|\+?)?\d+(\.\d+)?),\s*((\-?|\+?)?\d+(\.\d+)?)$"
+        regex = r"^((\-?|\+?)?\d+(\.\d+)?),\s*((\-?|\+?)?\d+(\.\d+)?)$"
         if re.match(regex, value):
             return True
         return False
@@ -380,13 +392,11 @@ class Validator(object):
         """ check if the string is UUID or not """
         pass
 
-    def toDate(self, value):  # need to improve this function
+    def toDate(self, value, format='%Y-%m-%d'):  # need to improve this function
         """ convert string to date """
-        format = '%Y-%m-%d'
         if self.isDate(value):
             date = datetime.strptime(value, format)
             return date
-
         else:
             return None
 
