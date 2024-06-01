@@ -2,7 +2,7 @@ import sys
 import datetime
 import unittest
 sys.path.append('.')
-from sanatio.main import Validator
+from sanatio import Validator
 
 validator = Validator()
 
