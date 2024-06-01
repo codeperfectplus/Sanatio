@@ -2,6 +2,7 @@ from datetime import datetime
 from dateutil.parser import parse
 from dateutil.parser import parse
 
+
 class DateValidator:
     def __init__(self) -> None:
         pass
@@ -59,4 +60,3 @@ class DateValidator:
             return date
         else:
             return None
-

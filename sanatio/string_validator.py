@@ -143,4 +143,3 @@ class StringValidator(BaseValidator):
         """ remove white space from string """
         if self.isvalidString(value):
             return value.replace(" ", "")
-

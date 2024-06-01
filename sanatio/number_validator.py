@@ -39,4 +39,3 @@ class NumberValidator(BaseValidator):
             value = 0
 
         return value
-

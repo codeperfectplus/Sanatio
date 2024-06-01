@@ -19,6 +19,8 @@ class DateTest(unittest.TestCase):
     
     def test_isDate_false(self):
         self.assertFalse(validator.isDate('2017-01-32'))
+        self.assertFalse(validator.isDate('2017-02-29'))
+        self.assertFalse(validator.isDate('2017-02-30'))
         
     def test_toDate(self):
         self.assertEqual(validator.toDate('2017-01-01'), datetime.datetime(2017, 1, 1, 0, 0))

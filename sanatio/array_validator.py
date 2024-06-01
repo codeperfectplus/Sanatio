@@ -19,5 +19,3 @@ class ArrayValidator:
         if element in value:
             return True
         return False
-    
-

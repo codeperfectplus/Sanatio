@@ -158,5 +158,3 @@ class FileValidator:
     def isShell(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Shell or not """
         pass
-
-

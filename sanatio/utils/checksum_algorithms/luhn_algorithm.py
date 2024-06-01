@@ -35,9 +35,7 @@ class LuhnAlgorithm(object):  # TODO: need to review this variable names
     def verify(self, numbers: str) -> bool:
         """Verify a number using Luhn algorithm."""
         if isinstance(numbers, int):
-            number = str(numbers)
+            numbers = str(numbers)
             
         return self.__checksum(numbers)
-        
-        
         

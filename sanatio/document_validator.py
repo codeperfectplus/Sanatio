@@ -3,6 +3,7 @@ import re
 from sanatio.utils.utils import all_country, regexs
 from sanatio.utils.checksum import checksum_aadhar, checksum_credit_card
 
+
 class DocumentValidator:
     def __init__(self) -> None:
         pass
@@ -53,5 +54,3 @@ class DocumentValidator:
             if checksum_credit_card(value):
                 return True
         return False
-
-

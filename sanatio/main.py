@@ -10,7 +10,7 @@ from sanatio.username_validator import UsernameValidator
 
 
 class Validator(StringValidator, DocumentValidator, UsernameValidator, NumberValidator, 
-                DateValidator, EmailValidator, PasswordValidator, OtherValidator):
+                DateValidator, EmailValidator, PasswordValidator, OtherValidator, ArrayValidator):
     """ Validator class for validating the data """
     def __init__(self):
         super().__init__()

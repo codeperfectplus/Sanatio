@@ -9,6 +9,9 @@ All notable changes to this project will be documented in this file. The format 
 ## Second Release Version 1.1.0
 
 -  added new functionality
+   -  Function added to check if a given EAN-13 barcode is valid or not
+   -  Array validation multiple functions added
+  
 -  documentation added
 -  code refactored and code quality improved
 -  test cases and test coverage added
