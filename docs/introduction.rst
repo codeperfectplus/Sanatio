@@ -12,23 +12,22 @@ Installation
 
 To install the library, you can use pip: 
 
-```bash
-pip install sanatio
-```
+:code:` pip install sanatio`
 
-Usage
+Usage-Examples
 =====
 
-```python
+.. code:: python
+
 from sanatio import Validator
 val = Validator()
 
 
 # Check if the string is equal to the given value
 
-```python
+.. code:: python
+
 val.equals("abc", "abc") # True
-```
 
 
 
