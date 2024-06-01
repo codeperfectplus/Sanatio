@@ -1,6 +1,6 @@
 from datetime import datetime
 
-project = 'Validation.py'
+project = 'Sanatio'
 author = 'Deeapk Raj'
 release = '1.0.0'
 
@@ -14,7 +14,7 @@ extensions = [
 
 pdf_documents = [('index', u'documentation', 'My Docs', u'Me'), ]
 
-releases_github_path = "Py-Contributors/validator.py"
+releases_github_path = "codeperfectplus/Sanatio"
 
 autosectionlabel_prefix_document = True
 

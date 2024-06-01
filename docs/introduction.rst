@@ -1,11 +1,38 @@
 Introduction
 ============
 
-This project is python port of Validator.js which is a library for string validation. 
-So people who are familiar with Validator.js can easily switch to this library. 
-It is also a good way to learn how to port a library from one language to another. 
-I have tried to keep the code as similar as possible to the original library. 
-if you find any bugs or have any suggestions please open an issue. 
-if you want to contribute please open a pull request.
+This project is inspired from Validator.js which is a library for string validation. 
+So people who are familiar with Validator.js can easily switch to this library.
+ 
+This library is written in pure python and is very easy to use. 
+It is a simple library that can be used to validate strings, documents, emails, dates, urls, domain names, etc.
+
+Installation
+============
+
+To install the library, you can use pip: 
+
+```bash
+pip install sanatio
+```
+
+Usage
+=====
+
+```python
+from sanatio import Validator
+val = Validator()
+
+
+# Check if the string is equal to the given value
+
+```python
+val.equals("abc", "abc") # True
+```
+
+
+
+
+
 
 

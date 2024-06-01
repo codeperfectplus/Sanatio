@@ -1,15 +1,15 @@
 import setuptools
 from glob import glob
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+with open("README.md", "rb") as fh:
+    long_description = fh.read().decode("utf-8")
 
 with open("requirements.txt", "r") as fh:
     requirements = fh.read().splitlines()
 
 setuptools.setup(
     name="Sanatio",
-    version="0.0.1",
+    version="1.0.0",
     author="Deepak Raj",
     author_email="deepak008@live.com",
     description="",
