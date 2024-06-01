@@ -1,13 +1,7 @@
 import re
-import json
-from datetime import datetime
-from dateutil.parser import parse
-from Levenshtein import distance as levenshtein_distance
 
 from sanatio.utils.utils import all_country, regexs
 from sanatio.utils.checksum import checksum_aadhar, checksum_credit_card
-from sanatio.base_class import BaseValidator
-
 
 class DocumentValidator:
     def __init__(self) -> None:

@@ -1,15 +1,6 @@
 import re
-import json
-from datetime import datetime
-from dateutil.parser import parse
-from Levenshtein import distance as levenshtein_distance
 
-from sanatio.utils.utils import all_country, regexs
-from sanatio.utils.checksum import checksum_aadhar, checksum_credit_card
-from sanatio.base_class import BaseValidator
-
-
-class PasswordValidator(BaseValidator):
+class PasswordValidator:
     def __init__(self):
         super().__init__()
 
@@ -39,5 +30,49 @@ class PasswordValidator(BaseValidator):
             return False
 
         return True
+    
+    def isPasswordLength(self, value: str, min_length: int, max_length: int) -> bool:
+        """ check if the string length is between min and max """
+        if min_length <= len(value) <= max_length:
+            return True
 
+        return False
+    
+    def isPasswordMatch(self, value: str, match_value: str) -> bool:
+        """ check if the string matches the match_value """
+        if value == match_value:
+            return True
 
+        return False
+    
+    def isPasswordNotMatch(self, value: str, match_value: str) -> bool:
+        """ check if the string does not match the match_value """
+        if value != match_value:
+            return True
+
+        return False
+    
+    def isPasswordNotInList(self, value: str, list_values: list) -> bool:
+        """ check if the string is not in the list """
+        if value not in list_values:
+            return True
+
+        return False
+    
+    def isPasswordNotInFile(self, value: str, file_path: str) -> bool:
+        """ check if the string is not in the file """
+        with open(file_path, 'r') as f:
+            data = f.read().splitlines()
+        
+        if value not in data:
+            return True
+
+        return False
+    
+    def isPasswordNotInDict(self, value: str, dict_values: dict) -> bool:
+        """ check if the string is not in the dictionary """
+        if value not in dict_values:
+            return True
+
+        return False
+    

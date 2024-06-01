@@ -8,5 +8,8 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Second Release Version 1.1.0
 
--  isEAN13 added
+-  added new functionality
 -  documentation added
+-  code refactored and code quality improved
+-  test cases and test coverage added
+-  bug fixes
