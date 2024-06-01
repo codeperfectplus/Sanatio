@@ -9,7 +9,7 @@ with open("requirements.txt", "r") as fh:
 
 setuptools.setup(
     name="Sanatio",
-    version="1.0.0",
+    version="1.1.0",
     author="Deepak Raj",
     author_email="deepak008@live.com",
     description="Simple and easy to validate data in Python",

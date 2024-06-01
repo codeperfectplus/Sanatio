@@ -2,7 +2,7 @@ from datetime import datetime
 
 project = 'Sanatio'
 author = 'Deeapk Raj'
-release = '1.0.0'
+release = '1.1.0'
 
 extensions = [
     'sphinx.ext.autodoc',
