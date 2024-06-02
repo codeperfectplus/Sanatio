@@ -3,7 +3,7 @@ import json
 
 from sanatio.utils.utils import all_country, regexs
 from sanatio.base_class import BaseValidator
-from sanatio.utils.checksum import checksum_ean
+from sanatio.utils.checksum_algorithms.ean_checksum import EANCheckSum
 
 class OtherValidator(BaseValidator):
     def __init__(self):
@@ -12,7 +12,7 @@ class OtherValidator(BaseValidator):
     def isEAN13(self, value) -> bool:
         """ check if the string is EAN or not """
         value = str(value) if isinstance(value, int) else value
-        return self.isLength(value, 13, 13) and checksum_ean(value)
+        return self.isLength(value, 13, 13) and EANCheckSum(value).verify()
 
     def isHash(self, value) -> bool:
         """ check if the string is hash or not """

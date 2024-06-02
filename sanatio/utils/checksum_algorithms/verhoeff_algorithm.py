@@ -24,18 +24,18 @@ verhoeff_table_p = (
 verhoeff_table_inv = (0, 4, 3, 2, 1, 5, 6, 7, 8, 9)
 
 class VerhoeffAlgorithm(object):  # TODO: need to review this variable names
-    def __init__(self):
-        pass
+    def __init__(self, input_value: str) -> None:
+        self.input_value = input_value.replace(' ', '')
     
-    def __last_digit(self, number):
+    def __last_digit_and_remaining_numbers(self) -> tuple:
         """ Returns the last digit of a number """
-        return int(number[-1])
+        return int(self.input_value[-1]), self.input_value[:-1]
 
-    def __checksum(self, numbers):
+    def __checksum(self):
         """ For a given number returns a Verhoeff checksum digit """
         c = 0
-        last_digit = self.__last_digit(numbers)
-        for i, item in enumerate(reversed(numbers[:-1])):
+        last_digit, remaining_numbers = self.__last_digit_and_remaining_numbers()
+        for i, item in enumerate(reversed(remaining_numbers)):
             c = verhoeff_table_d[c][verhoeff_table_p[(i+1)%8][int(item)]]
     
         if c == last_digit:
@@ -43,10 +43,8 @@ class VerhoeffAlgorithm(object):  # TODO: need to review this variable names
         
         return False
 
-    def verify(self, numbers):
+    def verify(self):
         """ Verify a given number including its checksum digit """
-        if isinstance(numbers, int):
-            number = str(numbers)
-
-        numbers = numbers.replace(' ', '')
-        return self.__checksum(numbers)
+        # if isinstance(input_value, int):
+        #     number = str(input_value)
+        return self.__checksum()

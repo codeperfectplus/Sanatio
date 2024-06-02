@@ -1,8 +1,8 @@
 import re
 
 from sanatio.utils.utils import all_country, regexs
-from sanatio.utils.checksum import checksum_aadhar, checksum_credit_card
-
+from sanatio.utils.checksum_algorithms.verhoeff_algorithm import VerhoeffAlgorithm
+from sanatio.utils.checksum_algorithms.luhn_algorithm import LuhnAlgorithm
 
 class DocumentValidator:
     def __init__(self) -> None:
@@ -16,7 +16,7 @@ class DocumentValidator:
             value = str(value)
         if self.isLength(str(value), 12, 12) \
             and value[0] not in ['0', '1'] and re.match(regex, value) \
-                and checksum_aadhar(value):
+                and VerhoeffAlgorithm(value).verify():
             return True
         return False
 
@@ -50,6 +50,6 @@ class DocumentValidator:
     def isCreditCard(self, value: str) -> bool:  # checksum not implemented
         regex = regexs['credit_card_regex']
         if re.match(regex, value):
-            if checksum_credit_card(value):
+            if LuhnAlgorithm(value).verify():
                 return True
         return False
