@@ -39,7 +39,7 @@ class OtherValidator(BaseValidator):
 
     def isSSN(self, value) -> bool:
         """ check if the string is SSN or not """
-        regex = r'^(?!0{3})(?!6{3})[0-8]\d{2}-(?!0{2})\d{2}-(?!0{4})\d{4}$'
+        regex = regexs['ssn_regex']
         if re.match(regex, value):
             return True
         return False
@@ -54,7 +54,7 @@ class OtherValidator(BaseValidator):
 
     def isJWT(self, value) -> bool:
         """ check if the string is JWT or not """
-        regex = r"^[A-Za-z0-9_-]{2,}(?:\.[A-Za-z0-9_-]{2,}){2}$"
+        regex = regexs['jwt_regex']
         if re.match(regex, value):
             return True
 
@@ -62,7 +62,7 @@ class OtherValidator(BaseValidator):
 
     def isLatLong(self, value: str) -> bool:
         """ check if the string is lat long or not """
-        regex = r"^((\-?|\+?)?\d+(\.\d+)?),\s*((\-?|\+?)?\d+(\.\d+)?)$"
+        regex = regexs['lat_long_regex']
         if re.match(regex, value):
             return True
         return False
@@ -89,7 +89,7 @@ class OtherValidator(BaseValidator):
 
     def isSlug(self, value: str) -> bool:
         """ check if the string is slug or not """
-        regex = "^[a-z0-9-]+$"
+        regex = regexs["is_slug"]
         if re.match(regex, value):
             return True
         return False

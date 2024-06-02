@@ -9,9 +9,11 @@ class DateValidator:
 
     def isLeapYear(self, year) -> bool:
         """ check if the year is leap year or not """
+        if isinstance(year, str):
+            year = int(year)
         return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
 
-    def isAfter(self, date1, date2=datetime.now()) -> bool:
+    def isAfter(self, date1, date2=datetime.now(), format='%Y-%m-%d') -> bool:
         """ check if date1 is after date2 default date2 is current date
 
         Args:
@@ -20,13 +22,13 @@ class DateValidator:
 
         """
         if isinstance(date1, str):
-            date1 = datetime.strptime(date1, '%Y-%m-%d')
+            date1 = datetime.strptime(date1, format)
         if isinstance(date2, str):
-            date2 = datetime.strptime(date2, '%Y-%m-%d')
+            date2 = datetime.strptime(date2, format)
 
         return date1 > date2
 
-    def isBefore(self, date1, date2=datetime.now()) -> bool:
+    def isBefore(self, date1, date2=datetime.now(), format='%Y-%m-%d') -> bool:
         """
         check if date1 is before date2 default date2 is current date
 
@@ -35,9 +37,9 @@ class DateValidator:
             date2 (str): date in string format default is current date
         """
         if isinstance(date1, str):
-            date1 = datetime.strptime(date1, '%Y-%m-%d')
+            date1 = datetime.strptime(date1, format)
         if isinstance(date2, str):
-            date2 = datetime.strptime(date2, '%Y-%m-%d')
+            date2 = datetime.strptime(date2, format)
 
         return date1 < date2
 
@@ -55,8 +57,4 @@ class DateValidator:
 
     def toDate(self, value, format='%Y-%m-%d'):  # need to improve this function
         """ convert string to date """
-        if self.isDate(value):
-            date = datetime.strptime(value, format)
-            return date
-        else:
-            return None
+        return datetime.strptime(value, format) if self.isDate(value) else None
