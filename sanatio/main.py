@@ -7,10 +7,14 @@ from sanatio.other_validator import OtherValidator
 from sanatio.password_validator import PasswordValidator
 from sanatio.string_validator import StringValidator
 from sanatio.username_validator import UsernameValidator
+from warnings import warn
 
 
-class Validator(StringValidator, DocumentValidator, UsernameValidator, NumberValidator, 
-                DateValidator, EmailValidator, PasswordValidator, OtherValidator, ArrayValidator):
-    """ Validator class for validating the data """
+class Sanatio(ArrayValidator, DateValidator, DocumentValidator, EmailValidator, NumberValidator, OtherValidator, PasswordValidator, StringValidator, UsernameValidator):
+    """ Sanatio class for validating the data """
     def __init__(self):
         super().__init__()
+class Validator(Sanatio):
+    """ Validator class for validating the data """
+    def __init__(self):
+        warn("Validator class is deprecated, use Sanatio class instead", DeprecationWarning)

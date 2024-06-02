@@ -5,9 +5,9 @@ The following functions are used to validate dates.  They return a boolean value
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`IsDate()` Returns true if the value is a valid date.
     args: value

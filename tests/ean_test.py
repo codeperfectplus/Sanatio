@@ -3,8 +3,8 @@ import sys
 import random
 import unittest
 sys.path.append('.')
-from sanatio import Validator
-validator = Validator()
+from sanatio import Sanatio
+validator = Sanatio()
 
 def generate_ean13_number():
     """ generate ean13 number """

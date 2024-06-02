@@ -19,8 +19,8 @@ Usage-Examples
 
 .. code:: python
 
-from sanatio import Validator
-val = Validator()
+from sanatio import Sanatio
+val = Sanatio()
 
 
 # Check if the string is equal to the given value

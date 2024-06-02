@@ -2,9 +2,9 @@ import sys
 import datetime
 import unittest
 sys.path.append('.')
-from sanatio import Validator
+from sanatio import Sanatio
 
-validator = Validator()
+validator = Sanatio()
 
 
 class DateTest(unittest.TestCase):

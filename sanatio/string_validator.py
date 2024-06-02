@@ -50,39 +50,6 @@ class StringValidator(BaseValidator):
 
         return False
 
-    def trim(self, value):
-        """ trim string """
-        if self.isvalidString(value):
-            return value.strip()
-
-    def ltrim(self, value):
-        if self.isvalidString(value):
-            return value.lstrip()
-
-    def rtrim(self, value):
-        if self.isvalidString(value):
-            return value.rstrip()
-
-    def toUpperCase(self, value):
-        """ convert string to upper case """
-        if self.isvalidString(value):
-            return value.upper()
-
-    def toLowerCase(self, value):
-        """ convert string to lower case """
-        if self.isvalidString(value):
-            return value.lower()
-
-    def removeSpaces(self, value):
-        """ remove spaces from string """
-        if self.isvalidString(value):
-            return value.replace(" ", "")
-
-    def removeSymbols(self, value):
-        """ remove symbols from string """
-        if self.isvalidString(value):
-            return re.sub(r'[^\w\s]', '', value)
-
     def levenshtein_distance(self, value1, value2):
         """ calculate distance between two strings """
         distance = levenshtein_distance(value1, value2)
@@ -118,6 +85,39 @@ class StringValidator(BaseValidator):
             return True
 
         return False
+    
+    def trim(self, value):
+        """ trim string """
+        if self.isvalidString(value):
+            return value.strip()
+
+    def ltrim(self, value):
+        if self.isvalidString(value):
+            return value.lstrip()
+
+    def rtrim(self, value):
+        if self.isvalidString(value):
+            return value.rstrip()
+
+    def toUpperCase(self, value):
+        """ convert string to upper case """
+        if self.isvalidString(value):
+            return value.upper()
+
+    def toLowerCase(self, value):
+        """ convert string to lower case """
+        if self.isvalidString(value):
+            return value.lower()
+
+    def removeSpaces(self, value):
+        """ remove spaces from string """
+        if self.isvalidString(value):
+            return value.replace(" ", "")
+
+    def removeSymbols(self, value):
+        """ remove symbols from string """
+        if self.isvalidString(value):
+            return re.sub(r'[^\w\s]', '', value)
 
     def removeNonASCII(self, value):
         """ remove non ASCII characters from string """

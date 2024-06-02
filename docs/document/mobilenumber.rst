@@ -6,9 +6,9 @@ mobile number ranges published by the ITU-T E.164. The list is updated
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isMobilePhone(value, locale)` - checks if the string is a valid mobile phone number.
 

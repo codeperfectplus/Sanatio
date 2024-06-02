@@ -20,6 +20,7 @@ Document    Algorithm
 =========== =========
 Credit Card Luhn
 Aadhar card Verhoeff
+Ean13       Ean13 checksum
 =========== =========
 
 References

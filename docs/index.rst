@@ -1,6 +1,6 @@
 .. rst-class:: hide-header
 
-Welcome to Validator.py's documentation!
+Welcome to Sanatio's documentation!
 =====================================
 
 

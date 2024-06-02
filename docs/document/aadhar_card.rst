@@ -7,9 +7,9 @@ aadhar card is 12 digit number.
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isAadharCard(value)` - check if the value is a valid aadhar card number.
     >>> val.isAadharCard('9284 9436 2499')

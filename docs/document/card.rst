@@ -7,9 +7,9 @@ boolean value.
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isCreditCard(value)` - Checks if the value is a valid credit card number.
 

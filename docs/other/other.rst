@@ -5,9 +5,9 @@ The following functions are used to
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isEan13` - Check if the value is a valid EAN13 number
     Returns true if the value is a valid EAN13 number

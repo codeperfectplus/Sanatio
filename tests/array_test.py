@@ -1,8 +1,8 @@
 import sys
 import unittest
 sys.path.append('.')
-from sanatio import Validator
-validator = Validator()
+from sanatio import Sanatio
+validator = Sanatio()
 
 
 class ArrayTest(unittest.TestCase):
