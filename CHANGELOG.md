@@ -16,3 +16,4 @@ All notable changes to this project will be documented in this file. The format 
 -  code refactored and code quality improved
 -  test cases and test coverage added
 -  bug fixes
+-  Validator class deprecated, Use the Sanatio class instead, which is appropriate name as package name.
