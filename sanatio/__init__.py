@@ -1,3 +1,3 @@
-from sanatio.main import Validator
+from sanatio.main import Sanatio
 
 __all__ = ['Validator']

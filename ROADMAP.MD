@@ -1,4 +1,4 @@
-Validator.py is simple python tool to validate Document/String/Number/Date/Email/Username/Password.
+Sanatio is simple python tool to validate Document/String/Number/Date/Email/Username/Password.
 
 Currently it supports following Document validation: Few countries added in initial release. More countries will be added in future release.
 

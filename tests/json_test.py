@@ -1,9 +1,9 @@
 import sys
 import unittest
 sys.path.append('.')
-from sanatio.main import Validator
+from sanatio import Sanatio
 
-validator = Validator()
+validator = Sanatio()
 
 class JsonTest(unittest.TestCase):
     def test_json_true(self):

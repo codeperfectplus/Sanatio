@@ -8,27 +8,26 @@ This library is written in pure python and is very easy to use.
 It is a simple library that can be used to validate strings, documents, emails, dates, urls, domain names, etc.
 
 Installation
-============
+------------
 
 To install the library, you can use pip: 
 
-```bash
-pip install sanatio
-```
+:code:` pip install sanatio`
 
-Usage
-=====
+Usage-Examples
+--------------
 
-```python
-from sanatio import Validator
-val = Validator()
+.. code:: python
+
+from sanatio import Sanatio
+val = Sanatio()
 
 
 # Check if the string is equal to the given value
 
-```python
+.. code:: python
+
 val.equals("abc", "abc") # True
-```
 
 
 

@@ -5,9 +5,9 @@ The following functions are used to validate email addresses.
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isEmail()` - Returns true if the email address is valid, false otherwise.
     args: value, checkDNS

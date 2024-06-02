@@ -5,9 +5,9 @@ The following functions are used to validate postal codes.
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isPostalCode(value, locale)` - return true if the postal code is valid for the country
     args: value, locale

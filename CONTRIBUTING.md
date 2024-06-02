@@ -1,4 +1,4 @@
-# Contributing to Validator.py
+# Contributing to Sanatio
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
@@ -21,7 +21,7 @@ We love your input! We want to make contributing to this project as easy and tra
 - Add a upstream link to main branch in your cloned repo
 
     ```sh
-    git remote add upstream https://github.com/Py-Contributors/validator.py/
+    git remote add upstream https://github.com/codeperfectplus/Sanatio/
     ```
 
 - Keep your cloned repo upto date by pulling from upstream (this will also avoid any merge conflicts while committing new changes)

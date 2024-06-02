@@ -5,9 +5,9 @@ Check if a license plate is valid or not.
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isLicensePlate()` - Check if a license plate is valid or not.
     args: value

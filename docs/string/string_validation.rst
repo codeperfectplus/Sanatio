@@ -5,9 +5,9 @@ The following functions are used to validate strings.
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`equals(value1, value2, ignoreCase)` 
     Returns true if the two strings are equal.

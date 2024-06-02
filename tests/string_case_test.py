@@ -1,22 +1,22 @@
 import sys
 import unittest
 sys.path.append('.')
-from sanatio.main import Validator
+from sanatio import Sanatio
 
-validator = Validator()
+validator = Sanatio()
 
 
 class ValidatorTest(unittest.TestCase):
     """ """
 
     def test_equals_true(self):
-        self.assertTrue(validator.equals('foo', 'foo'))
-        self.assertTrue(validator.equals('foo', 'Foo', ignoreCase=True))
+        self.assertTrue(validator.is_equals('foo', 'foo'))
+        self.assertTrue(validator.is_equals('foo', 'Foo', ignoreCase=True))
         
     def test_equals_false(self):
-        self.assertFalse(validator.equals('foo', 'bar'))
-        self.assertFalse(validator.equals('foo', 'Foo'))
-        self.assertFalse(validator.equals('foo', 'Foo', ignoreCase=False))
+        self.assertFalse(validator.is_equals('foo', 'bar'))
+        self.assertFalse(validator.is_equals('foo', 'Foo'))
+        self.assertFalse(validator.is_equals('foo', 'Foo', ignoreCase=False))
         
     def test_length_true(self):
         self.assertTrue(validator.isLength('foo', 1, 3))

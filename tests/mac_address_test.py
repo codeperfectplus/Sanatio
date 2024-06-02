@@ -1,9 +1,9 @@
 import sys
 import unittest
 sys.path.append('.')
-from sanatio.main import Validator
+from sanatio import Sanatio
 
-validator = Validator()
+validator = Sanatio()
 
 
 class MacAddressTest(unittest.TestCase):

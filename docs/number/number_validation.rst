@@ -5,9 +5,9 @@ The following functions are used to validate numbers.
 
 .. code:: python
     
-    from sanatio import Validator
+    from sanatio import Sanatio
 
-    val = Validator()
+    val = Sanatio()
 
 :code:`isDecimal(value)`
     Returns true if the value is a decimal number.
