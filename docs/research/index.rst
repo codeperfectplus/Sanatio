@@ -13,3 +13,4 @@ Research for the project
    mobile_number.rst
    pan_card.rst
    passport.rst
+   ean_number.rst

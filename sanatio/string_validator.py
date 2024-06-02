@@ -105,7 +105,7 @@ class StringValidator(BaseValidator):
 
         return difference
 
-    def equals(self, value1: str, value2: str, ignoreCase: bool=False)-> bool:
+    def is_equals(self, value1: str, value2: str, ignoreCase: bool=False)-> bool:
         """ Check if the two string are equal or not """
         if not self.isvalidString(value1) or not self.isvalidString(value2):
             return False

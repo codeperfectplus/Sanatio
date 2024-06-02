@@ -34,6 +34,16 @@ class ArrayTest(unittest.TestCase):
         self.assertFalse(validator.isContains([1, 2, 3], 4))
         self.assertFalse(validator.isContains([1, 2, 3], 5))
         self.assertFalse(validator.isContains([1, 2, 3], 6))
+
+    def test_isUnique_True(self):
+        self.assertTrue(validator.isUnique([1, 2, 3]))
+        self.assertTrue(validator.isUnique(['a', 'b', 'c']))
+        self.assertTrue(validator.isUnique([1, 'a', 3]))
+
+    def test_isUnique_False(self):
+        self.assertFalse(validator.isUnique([1, 2, 2]))
+        self.assertFalse(validator.isUnique(['a', 'b', 'b']))
+        self.assertFalse(validator.isUnique([1, 'a', 3, 3]))
     
 
 if __name__ == '__main__':
