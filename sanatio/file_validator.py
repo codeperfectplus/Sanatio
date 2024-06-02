@@ -1,3 +1,5 @@
+import os
+
 class FileValidator:
     
     def __init__(self) -> None:
@@ -5,156 +7,312 @@ class FileValidator:
     
     def isFile(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is file or not """
-        pass
+        if os.path.isfile(value):
+            return True
+        return False
+        
     
     def isImage(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is image or not """
-        pass
+        extensions =('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg', '.webp')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
+        
     
     def isVideo(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is video or not """
-        pass
-    
+        extensions = ('.mp4', '.mkv', '.avi', '.flv', '.wmv', '.mov')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
+
     def isAudio(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is audio or not """
-        pass
+        extensions = ('.mp3', '.wav', '.ogg', '.aac', '.wma', '.flac')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isPDF(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is PDF or not """
-        pass
+        extensions = ('.pdf')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isCSV(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is CSV or not """
-        pass
+        extensions = ('.csv')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isExcel(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Excel or not """
-        pass
+        extensions = ('.xls', '.xlsx')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isWord(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Word or not """
-        pass
+        extensions = ('.doc', '.docx')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isPowerPoint(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is PowerPoint or not """
-        pass
+        extensions = ('.ppt', '.pptx')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isText(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Text or not """
-        pass
+        extensions = ('.txt')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isZip(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Zip or not """
-        pass
+        extensions = ('.zip')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isGzip(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Gzip or not """
-        pass
+        extensions = ('.gz')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isTar(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Tar or not """
-        pass
+        extensions = ('.tar')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
-    def isRAR(self, value) -> bool:  # TODO: test cases is pending
+    def isRar(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is RAR or not """
-        pass
+        extensions = ('.rar')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def is7z(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is 7z or not """
-        pass
+        extensions = ('.7z')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isJSON(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is JSON or not """
-        pass
+        extensions = ('.json')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isXML(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is XML or not """
-        pass
+        extensions = ('.xml')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isYAML(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is YAML or not """
-        pass
+        extensions = ('.yaml', '.yml')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isINI(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is INI or not """
-        pass
+        extensions = ('.ini')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isConfig(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Config or not """
-        pass
+        extensions = ('.config')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isLog(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Log or not """
-        pass
+        extensions = ('.log')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isSQL(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is SQL or not """
-        pass
+        extensions = ('.sql')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isHTML(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is HTML or not """
-        pass
+        extensions = ('.html')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isCSS(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is CSS or not """
-        pass
+        extensions = ('.css')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isJS(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is JS or not """
-        pass
+        extensions = ('.js')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isPHP(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is PHP or not """
-        pass
+        extensions = ('.php')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isPython(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Python or not """
-        pass
+        extensions = ('.py')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isJava(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Java or not """
-        pass
+        extensions = ('.java')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isC(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is C or not """
-        pass
+        extensions = ('.c')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isCPP(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is CPP or not """
-        pass
+        extensions = ('.cpp')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isCSharp(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is CSharp or not """
-        pass
+        extensions = ('.cs')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isRuby(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Ruby or not """
-        pass
+        extensions = ('.rb')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isSwift(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Swift or not """
-        pass
+        extensions = ('.swift')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isKotlin(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Kotlin or not """
-        pass
+        extensions = ('.kt')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isR(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is R or not """
-        pass
+        extensions = ('.r')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isGo(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Go or not """
-        pass
+        extensions = ('.go')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isScala(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Scala or not """
-        pass
+        extensions = ('.scala')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isPerl(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Perl or not """
-        pass
+        extensions = ('.pl')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False
     
     def isShell(self, value) -> bool:  # TODO: test cases is pending
         """ check if the string is Shell or not """
-        pass
+        extensions = ('.sh')
+        if self.isFile(value):
+            if value.endswith(extensions):
+                return True
+        return False

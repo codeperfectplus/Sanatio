@@ -16,6 +16,7 @@ class EmailTest(unittest.TestCase):
     def test_isEmail_False(self):
         self.assertFalse(validator.isEmail('abc.gmail'))
         self.assertFalse(validator.isEmail('abc.gmail.'))
+        self.assertFalse(validator.isEmail('abc.gmail.com'))
         
 
 if __name__ == '__main__':
