@@ -2,8 +2,8 @@ import sys
 sys.path.append('.')
 
 import unittest
-from sanatio.utils.checksum_algorithms.verhoeff_algorithm import VerhoeffAlgorithm
-from sanatio.utils.checksum_algorithms.luhn_algorithm import LuhnAlgorithm
+from sanatio.utils.checksum import VerhoeffAlgorithm
+from sanatio.utils.checksum import LuhnAlgorithm
 
 
 class CheckSumTest(unittest.TestCase):

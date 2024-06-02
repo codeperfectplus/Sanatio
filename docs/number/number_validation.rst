@@ -24,4 +24,3 @@ The following functions are used to validate numbers.
     True
     >>> val.isDivisibleBy(10, 3)
     False
-

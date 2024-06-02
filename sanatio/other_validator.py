@@ -3,11 +3,9 @@ import json
 
 from sanatio.utils.utils import all_country, regexs
 from sanatio.base_class import BaseValidator
-from sanatio.utils.checksum_algorithms.ean_checksum import EANCheckSum
+from sanatio.utils.checksum import EANCheckSum
 
 class OtherValidator(BaseValidator):
-    def __init__(self):
-        super().__init__()
 
     def isEAN13(self, value) -> bool:
         """ check if the string is EAN or not """

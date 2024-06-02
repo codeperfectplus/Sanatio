@@ -26,11 +26,17 @@ class NumberTest(unittest.TestCase):
         self.assertFalse(validator.isDivisibleBy("foo", "bar"))
         self.assertFalse(validator.isDivisibleBy("foo", 1))
         
-    def test_toInt(self):
+    def test_toInt_true(self):
         self.assertEqual(validator.toInt("10"), 10)
         self.assertEqual(validator.toInt("10.0"), 10)
         self.assertEqual(validator.toInt("10.1"), 10)
         self.assertEqual(validator.toInt(10.9), 10)
+    
+    def test_toInt_false(self):
+        self.assertEqual(validator.toInt("foo"), None)
+        self.assertEqual(validator.toInt("foo.0"), None)
+        self.assertEqual(validator.toInt("foo.1"), None)
+        self.assertEqual(validator.toInt("foo.9"), None)
         
 
 if __name__ == '__main__':

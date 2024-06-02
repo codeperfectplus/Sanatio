@@ -1,12 +1,12 @@
 import re
 
 from sanatio.utils.utils import all_country, regexs
-from sanatio.utils.checksum_algorithms.verhoeff_algorithm import VerhoeffAlgorithm
-from sanatio.utils.checksum_algorithms.luhn_algorithm import LuhnAlgorithm
+from sanatio.utils.checksum import VerhoeffAlgorithm
+from sanatio.utils.checksum import LuhnAlgorithm
+from sanatio.base_class import BaseValidator
 
-class DocumentValidator:
-    def __init__(self) -> None:
-        pass
+
+class DocumentValidator(BaseValidator):
 
     def isAadharCard(self, value)-> bool:
         """ check if the string is Aadhar card or not """

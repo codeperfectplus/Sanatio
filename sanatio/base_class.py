@@ -14,3 +14,7 @@ class BaseValidator:
     def isvalidBoolean(self, value)-> bool:
         """ check if the string is boolean or not """
         return isinstance(value, bool)
+
+    def removeSpaces(self, value):
+        """ remove spaces from string """
+        return value.replace(" ", "") if self.isvalidString(value) else None

@@ -1,9 +1,9 @@
 import os
 
-class FileValidator:
+from sanatio.base_class import BaseValidator
 
-    def __init__(self) -> None:
-        pass
+
+class FileValidator(BaseValidator):
 
     def isFile(self, value) -> bool:
         """ check if the string is file or not """

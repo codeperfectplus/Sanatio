@@ -4,9 +4,7 @@ from sanatio.base_class import BaseValidator
 
 
 class StringValidator(BaseValidator):
-    def __init__(self) -> None:
-        super().__init__()
-
+    
     def isAlphanumeric(self, value: str) -> bool:
         if value.isalnum():
             return True
@@ -72,19 +70,11 @@ class StringValidator(BaseValidator):
 
         return difference
 
-    def is_equals(self, value1: str, value2: str, ignoreCase: bool=False)-> bool:
+    def isEquals(self, value1: str, value2: str, ignoreCase: bool=False)-> bool:
         """ Check if the two string are equal or not """
-        if not self.isvalidString(value1) or not self.isvalidString(value2):
-            return False
-
-        if ignoreCase:
-            value1 = value1.lower()
-            value2 = value2.lower()
-
-        if value1 == value2:
+        if self.isvalidString(value1) and self.isvalidString(value2) and \
+            (ignoreCase and value1.lower() == value2.lower() or value1 == value2):
             return True
-
-        return False
     
     def isVowel(self, value) -> bool:
         """ check if the string is Vowel or not """
@@ -117,10 +107,6 @@ class StringValidator(BaseValidator):
         if self.isvalidString(value):
             return value.lower()
 
-    def removeSpaces(self, value):
-        """ remove spaces from string """
-        return value.replace(" ", "") if self.isvalidString(value) else None
-
     def removeSymbols(self, value):
         """ remove symbols from string """
         return re.sub(r'[^\w\s]', '', value) if self.isvalidString(value) else None
@@ -145,3 +131,11 @@ class StringValidator(BaseValidator):
     def removeWhiteSpace(self, value):
         """ remove white space from string """
         return value.replace(" ", "") if self.isvalidString(value) else None
+
+    def removeProtocol(self, value):
+        """ remove protocol from url """
+        return re.sub(r'^https?:\/\/', '', value) if self.isvalidString(value) else None
+    
+    def removeProfanity(self, value):
+        """ remove profanity from string """
+        pass

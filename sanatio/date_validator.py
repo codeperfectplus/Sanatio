@@ -1,11 +1,9 @@
 from datetime import datetime
 from dateutil.parser import parse
-from dateutil.parser import parse
 
+from sanatio.base_class import BaseValidator
 
-class DateValidator:
-    def __init__(self) -> None:
-        pass
+class DateValidator(BaseValidator):
 
     def isLeapYear(self, year) -> bool:
         """ check if the year is leap year or not """

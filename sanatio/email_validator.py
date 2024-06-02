@@ -3,8 +3,6 @@ from sanatio.base_class import BaseValidator
 from sanatio.utils.utils import regexs
 
 class EmailValidator(BaseValidator):
-    def __init__(self):
-        super().__init__()
 
     def isEmail(self, value: str, checkDNS: bool=False) -> bool:
         """ check if the string is email or not """
