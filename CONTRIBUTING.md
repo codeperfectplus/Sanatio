@@ -76,4 +76,4 @@ When you are creating an issue, make sure it's not already present. Furthermore,
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under its  [MIT License](http://choosealicense.com/licenses/mit/).
+By contributing, you agree that your contributions will be licensed under its  [MIT License](http://choosealicense.com/licenses/apache-2.0/).
