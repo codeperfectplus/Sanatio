@@ -1,12 +1,14 @@
 import re
 
 
-class UsernameValidator:
-    def __init__(self):
-        pass
+from sanatio.utils.utils import regexs
+from sanatio.base_class import BaseValidator
+
+
+class UsernameValidator(BaseValidator):
 
     def isDiscordUsername(self, value: str) -> bool:
-        regex = "^.{3,32}#[0-9]{4}$"
+        regex = regexs["discord_username_regex"]
         if re.match(regex, value):
             return True
         return False

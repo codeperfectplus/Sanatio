@@ -5,24 +5,16 @@ class BaseValidator:
 
     def isvalidString(self, value: str) -> bool:
         """ check if the string is valid or not """
-        if value is None or value == '':
-            return False
-
-        if isinstance(value, str):
-            return True
+        return isinstance(value, str) and value != ''
         
     def isvalidNumber(self, value: int)-> bool:
         """ check if the number is valid or not """
-        if value is None:
-            return False
-
-        if isinstance(value, (int, float)):
-            return True
+        return isinstance(value, int)
         
     def isvalidBoolean(self, value)-> bool:
         """ check if the string is boolean or not """
-        if value is None:
-            return False
+        return isinstance(value, bool)
 
-        if isinstance(value, bool):
-            return True
+    def removeSpaces(self, value):
+        """ remove spaces from string """
+        return value.replace(" ", "") if self.isvalidString(value) else None

@@ -1,27 +1,31 @@
-class ArrayValidator:
-    def __init__(self) -> None:
-        pass
-    
+from sanatio.base_class import BaseValidator
+
+class ArrayValidator(BaseValidator):
+        
     def isArray(self, value) -> bool:
         """ check if the string is array or not """
-        if isinstance(value, list):
-            return True
-        return False
+        return isinstance(value, list)
     
-    def isLength(self, value, min: int=0, max: int=None) -> bool:
+    def isArrayLength(self, value, min: int=0, max: int=None) -> bool:
         """ check if the array length is between min and max """
-        if min <= len(value) <= max:
-            return True
-        return False
+        return min <= len(value) <= max
     
-    def isContains(self, value, element) -> bool:
+    def isContains(self, value, contains) -> bool:
         """ check if the array contains the element or not """
-        if element in value:
-            return True
-        return False
+        return contains in value
     
     def isUnique(self, value) -> bool:
         """ check if the array contains unique elements or not """
-        if len(value) == len(set(value)):
-            return True
-        return False
+        return len(value) == len(set(value))
+    
+    def isMultidimensional(self, value) -> bool:
+        """ check if the array is multidimensional or not """
+        return any(isinstance(i, list) for i in value)
+    
+    def isMinlength(self, value, min: int) -> bool:
+        """ check if the array length is greater than min """
+        return len(value) > min
+    
+    def isMaxlength(self, value, max: int) -> bool:
+        """ check if the array length is less than max """
+        return len(value) < max

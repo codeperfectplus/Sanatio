@@ -1,25 +1,24 @@
 import re
 
 from sanatio.utils.utils import all_country, regexs
-from sanatio.utils.checksum import checksum_aadhar, checksum_credit_card
+from sanatio.utils.checksum import VerhoeffAlgorithm
+from sanatio.utils.checksum import LuhnAlgorithm
+from sanatio.base_class import BaseValidator
 
 
-class DocumentValidator:
-    def __init__(self) -> None:
-        pass
+class DocumentValidator(BaseValidator):
 
     def isAadharCard(self, value)-> bool:
         """ check if the string is Aadhar card or not """
-        regex = "^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$"  # need to improve regex for space and hyphen
+        regex = regexs['aadhar_regex']
         value = value.strip().replace(" ", "")
-        if self.isLength(value, 12, 12):
-            if isinstance(value, int):
-                value = str(value)
-
-            if value[0] != '0' or value[0] != '1':
-                if re.match(regex, value):
-                    if checksum_aadhar(value):
-                        return True
+        if isinstance(value, int):
+            value = str(value)
+        if self.isLength(str(value), 12, 12) \
+            and value[0] not in ['0', '1'] and re.match(regex, value) \
+                and VerhoeffAlgorithm(value).verify():
+            return True
+        return False
 
     def isLicensePlate(self, value, locale: str) -> bool:
         """ check if the string is license plate or not """
@@ -51,6 +50,6 @@ class DocumentValidator:
     def isCreditCard(self, value: str) -> bool:  # checksum not implemented
         regex = regexs['credit_card_regex']
         if re.match(regex, value):
-            if checksum_credit_card(value):
+            if LuhnAlgorithm(value).verify():
                 return True
         return False

@@ -4,9 +4,7 @@ from sanatio.base_class import BaseValidator
 
 
 class StringValidator(BaseValidator):
-    def __init__(self) -> None:
-        super().__init__()
-
+    
     def isAlphanumeric(self, value: str) -> bool:
         if value.isalnum():
             return True
@@ -72,52 +70,46 @@ class StringValidator(BaseValidator):
 
         return difference
 
-    def is_equals(self, value1: str, value2: str, ignoreCase: bool=False)-> bool:
+    def isEquals(self, value1: str, value2: str, ignoreCase: bool=False)-> bool:
         """ Check if the two string are equal or not """
-        if not self.isvalidString(value1) or not self.isvalidString(value2):
-            return False
-
-        if ignoreCase:
-            value1 = value1.lower()
-            value2 = value2.lower()
-
-        if value1 == value2:
+        if self.isvalidString(value1) and self.isvalidString(value2) and \
+            (ignoreCase and value1.lower() == value2.lower() or value1 == value2):
             return True
-
-        return False
+    
+    def isVowel(self, value) -> bool:
+        """ check if the string is Vowel or not """
+        return value.lower() in ('a', 'e', 'i', 'o', 'u')
+    
+    def isConsonant(self, value) -> bool:
+        """ check if the string is Consonant or not """
+        return value.lower() not in ('a', 'e', 'i', 'o', 'u')
+    
+    def isPalindrome(self, value) -> bool:
+        """ check if the string is Palindrome or not """
+        return value == value[::-1]
     
     def trim(self, value):
         """ trim string """
-        if self.isvalidString(value):
-            return value.strip()
+        return value.strip() if self.isvalidString(value) else None
 
     def ltrim(self, value):
-        if self.isvalidString(value):
-            return value.lstrip()
+        return value.lstrip() if self.isvalidString(value) else None
 
     def rtrim(self, value):
-        if self.isvalidString(value):
-            return value.rstrip()
+        return value.rstrip() if self.isvalidString(value) else None
 
     def toUpperCase(self, value):
         """ convert string to upper case """
-        if self.isvalidString(value):
-            return value.upper()
+        return value.upper() if self.isvalidString(value) else None
 
     def toLowerCase(self, value):
         """ convert string to lower case """
         if self.isvalidString(value):
             return value.lower()
 
-    def removeSpaces(self, value):
-        """ remove spaces from string """
-        if self.isvalidString(value):
-            return value.replace(" ", "")
-
     def removeSymbols(self, value):
         """ remove symbols from string """
-        if self.isvalidString(value):
-            return re.sub(r'[^\w\s]', '', value)
+        return re.sub(r'[^\w\s]', '', value) if self.isvalidString(value) else None
 
     def removeNonASCII(self, value):
         """ remove non ASCII characters from string """
@@ -126,20 +118,24 @@ class StringValidator(BaseValidator):
 
     def removeNonWord(self, value):
         """ remove non word characters from string """
-        if self.isvalidString(value):
-            return re.sub(r'[^\w]', '', value)
+        return re.sub(r'[^\w]', '', value) if self.isvalidString(value) else None
 
     def removeNonNumeric(self, value):
         """ remove non numeric characters from string """
-        if self.isvalidString(value):
-            return re.sub(r'[^\d]', '', value)
-
+        return re.sub(r'[^\d]', '', value) if self.isvalidString(value) else None
+        
     def removeTags(self, value):
         """ remove tags from string """
-        if self.isvalidString(value):
-            return re.sub(r'<[^>]*>', '', value)
-
+        return re.sub(r'<[^>]*>', '', value) if self.isvalidString(value) else None
+        
     def removeWhiteSpace(self, value):
         """ remove white space from string """
-        if self.isvalidString(value):
-            return value.replace(" ", "")
+        return value.replace(" ", "") if self.isvalidString(value) else None
+
+    def removeProtocol(self, value):
+        """ remove protocol from url """
+        return re.sub(r'^https?:\/\/', '', value) if self.isvalidString(value) else None
+    
+    def removeProfanity(self, value):
+        """ remove profanity from string """
+        pass

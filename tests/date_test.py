@@ -52,6 +52,9 @@ class DateTest(unittest.TestCase):
         self.assertTrue(validator.isLeapYear(2016))
         self.assertTrue(validator.isLeapYear(2020))
         self.assertTrue(validator.isLeapYear(2024))
+        self.assertTrue(validator.isLeapYear("2024"))
+        self.assertTrue(validator.isLeapYear("2020"))
+        self.assertTrue(validator.isLeapYear("2016"))
         
     def test_isLeapYear_false(self):
         self.assertFalse(validator.isLeapYear(2017))
