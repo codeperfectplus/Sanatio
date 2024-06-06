@@ -15,14 +15,13 @@ pip install sanatio
 
 Check out the [documentation](https://sanatio.readthedocs.io/en/latest/) for more information.
 
-
 ## Roadmap
 
 Check out the [roadmap](https://github.com/py-contributors/sanatio/ROADMAP.MD) for more information.
 
 ## Contributing
 
-[contributing](/CONTRIBUTING.md)
+Check out the [contributing](/CONTRIBUTING.md) for more information.
 
 ## License
 
