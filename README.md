@@ -22,7 +22,7 @@ Check out the [roadmap](https://github.com/py-contributors/sanatio/ROADMAP.MD) f
 
 ## Contributing
 
-Check out the [contributing](/CONTRIBUTING.md) for more information.
+[contributing](/CONTRIBUTING.md)
 
 ## License
 
