@@ -3,6 +3,7 @@ from dateutil.parser import parse
 
 from sanatio.base_class import BaseValidator
 
+
 class DateValidator(BaseValidator):
 
     def isLeapYear(self, year) -> bool:

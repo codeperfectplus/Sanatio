@@ -27,7 +27,7 @@ class FileValidator(BaseValidator):
         """ check if the string is audio or not """
         extensions = ('.mp3', '.wav', '.ogg', '.aac', '.wma', '.flac')
         return self.isFileType(value, extensions)
-    
+
     def isPDF(self, value) -> bool:
         """ check if the string is PDF or not """
         extensions = ('.pdf')
@@ -37,7 +37,7 @@ class FileValidator(BaseValidator):
         """ check if the string is CSV or not """
         extensions = ('.csv')
         return self.isFileType(value, extensions)
-    
+
     def isExcel(self, value) -> bool:
         """ check if the string is Excel or not """
         extensions = ('.xls', '.xlsx')
@@ -52,7 +52,7 @@ class FileValidator(BaseValidator):
         """ check if the string is PowerPoint or not """
         extensions = ('.ppt', '.pptx')
         return self.isFileType(value, extensions)
-    
+
     def isText(self, value) -> bool:
         """ check if the string is Text or not """
         extensions = ('.txt')
@@ -72,12 +72,12 @@ class FileValidator(BaseValidator):
         """ check if the string is Tar or not """
         extensions = ('.tar')
         return self.isFileType(value, extensions)
-    
+
     def isRar(self, value) -> bool:
         """ check if the string is RAR or not """
         extensions = ('.rar')
         return self.isFileType(value, extensions)
-    
+
     def is7z(self, value) -> bool:
         """ check if the string is 7z or not """
         extensions = ('.7z')
@@ -102,12 +102,12 @@ class FileValidator(BaseValidator):
         """ check if the string is INI or not """
         extensions = ('.ini')
         return self.isFileType(value, extensions)
-    
+
     def isConfig(self, value) -> bool:
         """ check if the string is Config or not """
         extensions = ('.config')
         return self.isFileType(value, extensions)
-    
+
     def isLog(self, value) -> bool:
         """ check if the string is Log or not """
         extensions = ('.log')
@@ -142,7 +142,7 @@ class FileValidator(BaseValidator):
         """ check if the string is Python or not """
         extensions = ('.py')
         return self.isFileType(value, extensions)
-    
+
     def isJava(self, value) -> bool:
         """ check if the string is Java or not """
         extensions = ('.java')
@@ -152,7 +152,7 @@ class FileValidator(BaseValidator):
         """ check if the string is C or not """
         extensions = ('.c')
         return self.isFileType(value, extensions)
-    
+
     def isCPP(self, value) -> bool:
         """ check if the string is CPP or not """
         extensions = ('.cpp')
@@ -202,18 +202,13 @@ class FileValidator(BaseValidator):
         """ check if the string is Shell or not """
         extensions = ('.sh')
         return self.isFileType(value, extensions)
-    
+
     def isBatch(self, value) -> bool:
         """ check if the string is Batch or not """
         extensions = ('.bat')
         return self.isFileType(value, extensions)
-    
+
     def isPowerShell(self, value) -> bool:
         """ check if the string is PowerShell or not """
         extensions = ('.ps1')
-        return self.isFileType(value, extensions)
-    
-    def isSwift(self, value) -> bool:
-        """ check if the string is Swift or not """
-        extensions = ('.swift')
         return self.isFileType(value, extensions)

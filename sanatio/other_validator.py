@@ -5,6 +5,7 @@ from sanatio.utils.utils import all_country, regexs
 from sanatio.base_class import BaseValidator
 from sanatio.utils.checksum import EANCheckSum
 
+
 class OtherValidator(BaseValidator):
 
     def isEAN13(self, value) -> bool:
@@ -96,7 +97,7 @@ class OtherValidator(BaseValidator):
         """ check if the string is UUID or not """
         pass
 
-    def isPostalCode(self, value, locale: str)-> bool:
+    def isPostalCode(self, value, locale: str) -> bool:
         """ check if the string is postal code or not """
         country_data = all_country[locale]
 
@@ -108,8 +109,8 @@ class OtherValidator(BaseValidator):
         MaxPostalCodeLength = PostalCode['MaxLength']
 
         if re.match(PostalCodeRegex, value) and re.match(PostalCodeFormat, value) \
-            and self.isLength(str(value), MinPostalCodeLength, MaxPostalCodeLength):
-                return True
+                and self.isLength(str(value), MinPostalCodeLength, MaxPostalCodeLength):
+            return True
 
         return False
 

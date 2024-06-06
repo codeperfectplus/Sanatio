@@ -4,7 +4,7 @@ from sanatio.base_class import BaseValidator
 
 
 class StringValidator(BaseValidator):
-    
+
     def isAlphanumeric(self, value: str) -> bool:
         if value.isalnum():
             return True
@@ -17,7 +17,7 @@ class StringValidator(BaseValidator):
         if value.isascii():
             return True
 
-    def isLength(self, value: str, min: int=0, max: int=None) -> bool:
+    def isLength(self, value: str, min: int = 0, max: int = None) -> bool:
         """ check if the string length is between min and max """
         if min <= len(value) <= max:
             return True
@@ -28,7 +28,7 @@ class StringValidator(BaseValidator):
         if value == "":
             return True
 
-    def contains(self, value: str, substring: str, ignoreCase: bool=False) -> bool:
+    def contains(self, value: str, substring: str, ignoreCase: bool = False) -> bool:
         if ignoreCase:
             value = value.lower()
             substring = substring.lower()
@@ -58,24 +58,24 @@ class StringValidator(BaseValidator):
 
         return difference
 
-    def isEquals(self, value1: str, value2: str, ignoreCase: bool=False)-> bool:
+    def isEquals(self, value1: str, value2: str, ignoreCase: bool = False) -> bool:
         """ Check if the two string are equal or not """
         if self.isvalidString(value1) and self.isvalidString(value2) and \
-            (ignoreCase and value1.lower() == value2.lower() or value1 == value2):
+                (ignoreCase and value1.lower() == value2.lower() or value1 == value2):
             return True
-    
+
     def isVowel(self, value) -> bool:
         """ check if the string is Vowel or not """
         return value.lower() in ('a', 'e', 'i', 'o', 'u')
-    
+
     def isConsonant(self, value) -> bool:
         """ check if the string is Consonant or not """
         return value.lower() not in ('a', 'e', 'i', 'o', 'u')
-    
+
     def isPalindrome(self, value) -> bool:
         """ check if the string is Palindrome or not """
         return value == value[::-1]
-    
+
     def trim(self, value):
         """ trim string """
         return value.strip() if self.isvalidString(value) else None
@@ -111,11 +111,11 @@ class StringValidator(BaseValidator):
     def removeNonNumeric(self, value):
         """ remove non numeric characters from string """
         return re.sub(r'[^\d]', '', value) if self.isvalidString(value) else None
-        
+
     def removeTags(self, value):
         """ remove tags from string """
         return re.sub(r'<[^>]*>', '', value) if self.isvalidString(value) else None
-        
+
     def removeWhiteSpace(self, value):
         """ remove white space from string """
         return value.replace(" ", "") if self.isvalidString(value) else None
@@ -123,7 +123,7 @@ class StringValidator(BaseValidator):
     def removeProtocol(self, value):
         """ remove protocol from url """
         return re.sub(r'^https?:\/\/', '', value) if self.isvalidString(value) else None
-    
+
     def removeProfanity(self, value):
         """ remove profanity from string """
         pass

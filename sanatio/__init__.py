@@ -11,14 +11,14 @@ from sanatio.file_validator import FileValidator
 from warnings import warn
 
 
-class Sanatio(ArrayValidator, 
-              DateValidator, 
-              DocumentValidator, 
-              EmailValidator, 
-              NumberValidator, 
-              OtherValidator, 
-              PasswordValidator, 
-              StringValidator, 
+class Sanatio(ArrayValidator,
+              DateValidator,
+              DocumentValidator,
+              EmailValidator,
+              NumberValidator,
+              OtherValidator,
+              PasswordValidator,
+              StringValidator,
               UsernameValidator,
               FileValidator):
     """ Sanatio class for validating the data """
@@ -30,6 +30,3 @@ class Validator(Sanatio):
     """ Validator class for validating the data """
     def __init__(self):
         warn("Validator class is deprecated, use Sanatio class instead", DeprecationWarning)
-    
-    
-    

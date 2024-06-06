@@ -8,7 +8,7 @@ from sanatio.base_class import BaseValidator
 
 class DocumentValidator(BaseValidator):
 
-    def isAadharCard(self, value)-> bool:
+    def isAadharCard(self, value) -> bool:
         """ check if the string is Aadhar card or not """
         regex = regexs['aadhar_regex']
         value = value.strip().replace(" ", "")
@@ -31,14 +31,13 @@ class DocumentValidator(BaseValidator):
         MinLength = LicensePlate['MinLength']
         MaxLength = LicensePlate['MaxLength']
 
-
         if re.match(Format, value) and re.match(Regex, value) \
-            and self.isLength(value, MinLength, MaxLength):
-                return True
+                and self.isLength(value, MinLength, MaxLength):
+            return True
 
         return False
 
-    def isPassportNumber(self, value, locale: str)-> bool:  # TODO: research more about passport number
+    def isPassportNumber(self, value, locale: str) -> bool:  # TODO: research more about passport number
         """ check if the string is passport number or not """
         country_data = all_country[locale]
 

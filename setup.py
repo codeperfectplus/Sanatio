@@ -1,7 +1,7 @@
 import setuptools
 from glob import glob
 
-with open("README.md", "rb") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read().decode("utf-8")
 
 with open("requirements.txt", "r") as fh:
@@ -17,10 +17,10 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/codeperfectplus/Sanatio",
     data_files=[('assets', glob('sanatio/assets/*'))],
-    keywords="audiobook",
+    keywords="sanatio, validation, python, data, data-validation, data-validation-python, data-validation-library, data-validation-python-library, data-validation-python-package, data-validation-package, data-validation-library-python",
     install_requires=requirements,
     packages=setuptools.find_packages(),
-    project_urls={"Documentation": "https://pycontributors.readthedocs.io/projects/morse/en/latest/",
+    project_urls={"Documentation": "https://sanatio.readthedocs.io/en/latest/",
                   "Source": "https://github.com/codeperfectplus/Sanatio",
                   "Tracker": "https://github.com/codeperfectplus/Sanatio/issues"},
     classifiers=["Development Status :: 5 - Production/Stable",
