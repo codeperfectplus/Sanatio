@@ -91,3 +91,9 @@ class LuhnAlgorithm(BaseChecksumAlgorithm):
     def verify(self) -> bool:
         """Verify a number using Luhn algorithm."""            
         return self.__checksum()
+
+class Mod10Algorithm(LuhnAlgorithm):
+    # luhn algorithm and mod10 algorithm are same
+    pass
+
+

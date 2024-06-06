@@ -12,8 +12,9 @@ Use of checksums in this project
 --------------------------------
 
 In Sanatio, Checksum is implemented as a validator. It is used to check
-that a number has been entered correctly. It is used in the following
-validators with the following algorithms:
+that a number has been entered correctly or to identify any malicious
+activity. The checksum validator is used to validate the following.
+Checksum Algorithm are helpful to identify if the number is valid or not.
 
 =========== =========
 Document    Algorithm

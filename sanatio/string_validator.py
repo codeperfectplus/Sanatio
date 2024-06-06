@@ -9,34 +9,24 @@ class StringValidator(BaseValidator):
         if value.isalnum():
             return True
 
-        return False
-
     def isAlpha(self, value: str) -> bool:
         if value.isalpha():
             return True
 
-        return False
-
     def isAscii(self, value) -> bool:
         if value.isascii():
             return True
-
-        return False
 
     def isLength(self, value: str, min: int=0, max: int=None) -> bool:
         """ check if the string length is between min and max """
         if min <= len(value) <= max:
             return True
 
-        return False
-
     def isEmpty(self, value: str) -> bool:
         """ check if the string is empty or not """
         value = value.strip()
         if value == "":
             return True
-
-        return False
 
     def contains(self, value: str, substring: str, ignoreCase: bool=False) -> bool:
         if ignoreCase:
@@ -45,8 +35,6 @@ class StringValidator(BaseValidator):
 
         if substring in value:
             return True
-
-        return False
 
     def levenshtein_distance(self, value1, value2):
         """ calculate distance between two strings """
