@@ -1,17 +1,14 @@
-from sanatio.base_class import BaseValidator
+import re
 
+from sanatio.base_class import BaseValidator
+from sanatio.utils.utils import regexs
 
 class NumberValidator(BaseValidator):
 
     def isDecimal(self, value: float) -> bool:
         """ check if the string is decimal or not """
-        if not self.isvalidNumber(value):
-            return False
-
         if value.isdecimal():
             return True
-
-        return False
 
     def isDivisibleBy(self, number: int, divisor: int) -> bool:
         """ check if the number is divisible by divisor or not """
@@ -19,11 +16,8 @@ class NumberValidator(BaseValidator):
     
     def truncate(self, value: float, digits: int) -> float:
         """ truncate the float value """
-        pass
-    
-    def round(self, value: float, digits: int) -> float:
-        """ round the float value """
-        return round(value, digits)
+        regex = regexs["truncate_regex"]
+        return float(re.findall(f'{regex}{{{digits}}}', str(value))[0])
     
     def toInt(self, value):
         """ convert string to int """
@@ -86,4 +80,3 @@ class NumberValidator(BaseValidator):
     def isBetween(self, value, min_value, max_value):
         """ check if the value is between min_value and max_value or not """
         return self.isvalidNumber(value) and self.isvalidNumber(min_value) and self.isvalidNumber(max_value) and min_value <= value <= max_value
-

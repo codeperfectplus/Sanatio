@@ -18,3 +18,4 @@ class BaseValidator:
     def removeSpaces(self, value):
         """ remove spaces from string """
         return value.replace(" ", "") if self.isvalidString(value) else None
+    

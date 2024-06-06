@@ -11,8 +11,7 @@ All notable changes to this project will be documented in this file. The format 
 ## Version 1.2.0 Release 
 
 - File validator added
-- More functions for password validation added
-- More functions for string validation added
+- More functions for password, String, and number validation added
 - Credit card validation added
 - Code optimized and refactored
 - Test cases and test coverage improved
