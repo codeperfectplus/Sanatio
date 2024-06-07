@@ -44,7 +44,7 @@ class PasswordValidator(BaseValidator):
         if len(re.findall(r'[0-9]', value)) >= min_length:
             return True
 
-    def isPasswordLength(self, value: str, min_length: int) -> bool:
+    def isPasswordLength(self, value: str, min_length: int = 8) -> bool:
         """ check if the string length is between min and max """
         if len(value) >= min_length:
             return True
@@ -77,8 +77,7 @@ class PasswordValidator(BaseValidator):
 
     def isPasswordNotInFile(self, value: str, file_path: str, ignore_case: bool = False) -> bool:
         """ check if the string is not in the file """
-        with open(file_path, 'r') as f:
-            data = f.read().splitlines()
+        data = self.read_file(file_path, split_lines=True)
 
         if ignore_case and value.lower() not in [x.lower() for x in data]:
             return True

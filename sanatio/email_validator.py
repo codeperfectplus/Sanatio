@@ -4,6 +4,16 @@ from sanatio.utils.utils import regexs_dict
 
 
 class EmailValidator(BaseValidator):
+    """ 
+    EmailValidator class is used to validate email address
+
+    Methods
+    -------
+
+    isEmail(value: str, checkDNS: bool = False) -> bool:
+        check if the string is email or not
+
+    """
 
     def isEmail(self, value: str, checkDNS: bool = False) -> bool:
         """ check if the string is email or not """

@@ -75,4 +75,5 @@ class NumberValidator(BaseValidator):
 
     def isBetween(self, value, min_value, max_value):
         """ check if the value is between min_value and max_value or not """
-        return self.isvalidNumber(value) and self.isvalidNumber(min_value) and self.isvalidNumber(max_value) and min_value <= value <= max_value
+        return self.isvalidNumber(value) and self.isvalidNumber(min_value) and \
+            self.isvalidNumber(max_value) and min_value <= value <= max_value

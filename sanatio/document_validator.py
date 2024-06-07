@@ -1,12 +1,30 @@
 import re
 
-from sanatio.utils.utils import country_json_data, regexs_dict
+from sanatio.utils.utils import country_json, regexs_dict
 from sanatio.utils.checksum import VerhoeffAlgorithm
 from sanatio.utils.checksum import LuhnAlgorithm
 from sanatio.base_class import BaseValidator
 
 
 class DocumentValidator(BaseValidator):
+    """ 
+    DocumentValidator class is used to validate document numbers like Aadhar card, License plate, Passport number, Credit card number
+
+    Methods
+    -------
+    isAadharCard(value: str) -> bool:
+        check if the string is Aadhar card or not
+
+    isLicensePlate(value: str, locale: str) -> bool:
+        check if the string is license plate or not
+
+    isPassportNumber(value: str, locale: str) -> bool:
+        check if the string is passport number or not
+
+    isCreditCard(value: str) -> bool:
+        check if the string is credit card number or not
+
+    """
 
     def isAadharCard(self, value) -> bool:
         """ check if the string is Aadhar card or not """
@@ -23,7 +41,7 @@ class DocumentValidator(BaseValidator):
     def isLicensePlate(self, value, locale: str) -> bool:
         """ check if the string is license plate or not """
         value = value.upper()
-        country_data = country_json_data[locale]
+        country_data = country_json[locale]
 
         LicensePlate = country_data['LicensePlate']
         Format = LicensePlate['Format']
@@ -39,7 +57,7 @@ class DocumentValidator(BaseValidator):
 
     def isPassportNumber(self, value, locale: str) -> bool:  # TODO: research more about passport number
         """ check if the string is passport number or not """
-        country_data = country_json_data[locale]
+        country_data = country_json[locale]
 
         PassportNumberRegex = country_data['PassportNumberRegex']
         if re.match(PassportNumberRegex, value):
