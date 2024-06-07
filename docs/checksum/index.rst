@@ -1,5 +1,5 @@
-Research for the project
-========================
+Checksum Algorithms
+===================
 
 .. toctree::
    :maxdepth: 2
