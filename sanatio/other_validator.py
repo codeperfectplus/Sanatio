@@ -1,7 +1,7 @@
 import re
 import json
 
-from sanatio.utils.utils import regexs_dict, country_data
+from sanatio.utils.utils import regexs_dict, country_json
 from sanatio.base_class import BaseValidator
 from sanatio.utils.checksum import EANCheckSum
 
@@ -37,7 +37,11 @@ class OtherValidator(BaseValidator):
 
     def isJSON(self, value) -> bool:
         """ check if the string is JSON or not """
-        return True if json.loads(value) else False
+        try:
+            json.loads(value)
+            return True
+        except ValueError:
+            return False
 
     def isJWT(self, value) -> bool:
         """ check if the string is JWT or not """
@@ -78,7 +82,7 @@ class OtherValidator(BaseValidator):
 
     def isPostalCode(self, value, locale: str) -> bool:
         """ check if the string is postal code or not """
-        country_data = country_data[locale]
+        country_data = country_json[locale]
 
         PostalCode = country_data['PostalCode']
 
@@ -95,7 +99,7 @@ class OtherValidator(BaseValidator):
 
     def isMobilePhone(self, value, locale: str) -> bool:
         """ check if the string is mobile phone or not """
-        country_data = country_data[locale]
+        country_data = country_json[locale]
         MobileNumberRegex = country_data['MobileNumberRegex']
         if re.match(MobileNumberRegex, value):
             return True

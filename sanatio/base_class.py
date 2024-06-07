@@ -13,7 +13,7 @@ class BaseValidator:
 
     def isvalidNumber(self, value: int) -> bool:
         """ check if the number is valid or not """
-        return isinstance(value, int)
+        return isinstance(value, (int, float))
 
     def isvalidBoolean(self, value) -> bool:
         """ check if the string is boolean or not """
