@@ -20,5 +20,5 @@ def load_asset(filename):
     return load_json(os.path.join(ASSETS_DIR, filename))
 
 
-all_country = load_asset('country.json')
-regexs = load_asset('regex.json')
+country_data = load_asset('country.json')
+regexs_dict = load_asset('regex.json')

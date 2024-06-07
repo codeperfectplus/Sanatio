@@ -1,7 +1,7 @@
 import re
 import json
 
-from sanatio.utils.utils import all_country, regexs
+from sanatio.utils.utils import country_json_data, regexs_dict
 from sanatio.base_class import BaseValidator
 from sanatio.utils.checksum import EANCheckSum
 
@@ -19,56 +19,39 @@ class OtherValidator(BaseValidator):
 
     def isIMEI(self, value) -> bool:
         """ check if the string is IMEI or not """
-        if len(value) == 15 or len(value) == 17:
-            return True
-        return False
+        return len(value) == 15 or len(value) == 17
 
     def isIPV4(self, value: str) -> bool:
         """ check if the string is IP or not """
-        regex = regexs['ipv4_regex']
-        if re.search(regex, value):
-            return True
-        return False
+        regex = regexs_dict['ipv4_regex']
+        return True if re.match(regex, value) else False
 
     def isIPV6(self, value: str) -> bool:
-        regex = regexs['ipv6_regex']
-        if re.match(regex, value):
-            return True
-        return False
+        regex = regexs_dict['ipv6_regex']
+        return True if re.match(regex, value) else False
 
     def isSSN(self, value) -> bool:
         """ check if the string is SSN or not """
-        regex = regexs['ssn_regex']
-        if re.match(regex, value):
-            return True
-        return False
+        regex = regexs_dict['ssn_regex']
+        return True if re.match(regex, value) else False
 
     def isJSON(self, value) -> bool:
         """ check if the string is JSON or not """
-        try:
-            json.loads(value)
-            return True
-        except ValueError:
-            return False
+        return True if json.loads(value) else False
 
     def isJWT(self, value) -> bool:
         """ check if the string is JWT or not """
-        regex = regexs['jwt_regex']
-        if re.match(regex, value):
-            return True
-
-        return False
+        regex = regexs_dict['jwt_regex']
+        return True if re.match(regex, value) else False
 
     def isLatLong(self, value: str) -> bool:
         """ check if the string is lat long or not """
-        regex = regexs['lat_long_regex']
-        if re.match(regex, value):
-            return True
-        return False
+        regex = regexs_dict['lat_long_regex']
+        return True if re.match(regex, value) else False
 
     def isMACAddress(self, value: str) -> bool:
         """ check if the string is MAC address or not """
-        regex = regexs['mac_address_regex']
+        regex = regexs_dict['mac_address_regex']
         if self.isvalidString(value) and re.search(regex, value, re.IGNORECASE):
             return True
         return False
@@ -82,16 +65,12 @@ class OtherValidator(BaseValidator):
         A port number is a 16-bit unsigned integer,
         so it has a minimum value of 0 and a maximum value of 65535.
         """
-        if value.isdigit() and 0 <= int(value) <= 65535:
-            return True
-        return False
+        return value.isdigit() and 0 <= int(value) <= 65535
 
     def isSlug(self, value: str) -> bool:
         """ check if the string is slug or not """
-        regex = regexs["is_slug"]
-        if re.match(regex, value):
-            return True
-        return False
+        regex = regexs_dict["is_slug"]
+        return True if re.match(regex, value) else False
 
     def isUUID(self, value: str) -> bool:
         """ check if the string is UUID or not """
@@ -99,7 +78,7 @@ class OtherValidator(BaseValidator):
 
     def isPostalCode(self, value, locale: str) -> bool:
         """ check if the string is postal code or not """
-        country_data = all_country[locale]
+        country_data = country_json_data[locale]
 
         PostalCode = country_data['PostalCode']
 
@@ -116,11 +95,7 @@ class OtherValidator(BaseValidator):
 
     def isMobilePhone(self, value, locale: str) -> bool:
         """ check if the string is mobile phone or not """
-        country_data = all_country[locale]
-
+        country_data = country_json_data[locale]
         MobileNumberRegex = country_data['MobileNumberRegex']
-
         if re.match(MobileNumberRegex, value):
             return True
-
-        return False

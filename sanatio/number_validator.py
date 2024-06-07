@@ -1,15 +1,14 @@
 import re
 
 from sanatio.base_class import BaseValidator
-from sanatio.utils.utils import regexs
+from sanatio.utils.utils import regexs_dict
 
 
 class NumberValidator(BaseValidator):
 
     def isDecimal(self, value: float) -> bool:
         """ check if the string is decimal or not """
-        if value.isdecimal():
-            return True
+        return self.isvalidNumber(value)
 
     def isDivisibleBy(self, number: int, divisor: int) -> bool:
         """ check if the number is divisible by divisor or not """
@@ -17,7 +16,7 @@ class NumberValidator(BaseValidator):
 
     def truncate(self, value: float, digits: int) -> float:
         """ truncate the float value """
-        regex = regexs["truncate_regex"]
+        regex = regexs_dict["truncate_regex"]
         return float(re.findall(f'{regex}{{{digits}}}', str(value))[0])
 
     def toInt(self, value):
@@ -33,10 +32,6 @@ class NumberValidator(BaseValidator):
             return float(value)
         except ValueError:
             return None
-
-    def isvalidNumber(self, value):
-        """ check if the value is valid number or not """
-        return isinstance(value, (int, float))
 
     def isPositive(self, value):
         """ check if the value is positive or not """

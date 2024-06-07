@@ -1,6 +1,6 @@
 import re
 
-from sanatio.utils.utils import all_country, regexs
+from sanatio.utils.utils import country_json_data, regexs_dict
 from sanatio.utils.checksum import VerhoeffAlgorithm
 from sanatio.utils.checksum import LuhnAlgorithm
 from sanatio.base_class import BaseValidator
@@ -10,7 +10,7 @@ class DocumentValidator(BaseValidator):
 
     def isAadharCard(self, value) -> bool:
         """ check if the string is Aadhar card or not """
-        regex = regexs['aadhar_regex']
+        regex = regexs_dict['aadhar_regex']
         value = value.strip().replace(" ", "")
         if isinstance(value, int):
             value = str(value)
@@ -23,7 +23,7 @@ class DocumentValidator(BaseValidator):
     def isLicensePlate(self, value, locale: str) -> bool:
         """ check if the string is license plate or not """
         value = value.upper()
-        country_data = all_country[locale]
+        country_data = country_json_data[locale]
 
         LicensePlate = country_data['LicensePlate']
         Format = LicensePlate['Format']
@@ -39,7 +39,7 @@ class DocumentValidator(BaseValidator):
 
     def isPassportNumber(self, value, locale: str) -> bool:  # TODO: research more about passport number
         """ check if the string is passport number or not """
-        country_data = all_country[locale]
+        country_data = country_json_data[locale]
 
         PassportNumberRegex = country_data['PassportNumberRegex']
         if re.match(PassportNumberRegex, value):
@@ -47,7 +47,7 @@ class DocumentValidator(BaseValidator):
         return False
 
     def isCreditCard(self, value: str) -> bool:  # checksum not implemented
-        regex = regexs['credit_card_regex']
+        regex = regexs_dict['credit_card_regex']
         if re.match(regex, value):
             if LuhnAlgorithm(value).verify():
                 return True
