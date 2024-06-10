@@ -45,14 +45,11 @@ class BaseValidator:
                 return data
         return {}
 
-    def write_file(self, file_path: str, data: str, mode: str = 'w', is_list: bool = False) -> bool:
+    def write_file(self, file_path: str, data: str, mode: str = 'w', sep: str = '') -> bool:
         """ write the data to the file """
         with open(file_path, mode) as file:
-            if is_list:
-                for line in data:
-                    file.write(line + '\n')
-            else:
-                file.write(data)
+            for line in data:
+                file.write(line + sep)
         return True
 
     def write_json(self, file_path: str, data: dict) -> bool:
