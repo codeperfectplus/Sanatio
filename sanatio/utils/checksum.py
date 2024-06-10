@@ -86,7 +86,7 @@ class LuhnAlgorithm(BaseChecksumAlgorithm):
         last_digit, remaining_numbers = self.last_digit_and_remaining_numbers()
         nums = [int(num) if idx % 2 != 0 else int(num) * 2 if int(num) * 2 <= 9
                 else int(num) * 2 % 10 + int(num) * 2 // 10
-                for idx, num in enumerate(remaining_numbers)]
+                for idx, num in enumerate(reversed(remaining_numbers))]
 
         return (sum(nums) + last_digit) % 10 == 0
 
