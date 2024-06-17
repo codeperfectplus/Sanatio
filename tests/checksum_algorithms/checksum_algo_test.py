@@ -15,5 +15,9 @@ class CheckSumTest(unittest.TestCase):
         luhn = LuhnAlgorithm('4569403961014710')
         self.assertTrue(luhn.verify())
         
+    def test_luhn_short_True(self):
+        luhn = LuhnAlgorithm('109')
+        self.assertTrue(luhn.verify())
+
 if __name__ == '__main__':
     unittest.main()
