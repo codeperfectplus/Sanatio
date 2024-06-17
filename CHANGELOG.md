@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file. The format 
 | Version 1.1.0 | 2-June-2024 |
 | Version 1.0.0 | 31-May-2024 |
 
+## Version 1.3.0 Release 
+
+- `LuhnAlgorithm` bug fixed
+
 ## Version 1.2.0 Release 
 
 - File validator added
