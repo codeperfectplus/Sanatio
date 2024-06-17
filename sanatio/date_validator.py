@@ -1,5 +1,6 @@
 from datetime import datetime
-from dateutil.parser import parse, relativedelta
+from dateutil.parser import parse
+from dateutil import relativedelta
 
 from sanatio.base_class import BaseValidator
 

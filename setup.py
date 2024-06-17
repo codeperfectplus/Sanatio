@@ -1,7 +1,7 @@
 import setuptools
 from glob import glob
 
-with open("README.md", "r") as fh:
+with open("README.md", "rb") as fh:
     long_description = fh.read().decode("utf-8")
 
 with open("requirements.txt", "r") as fh:
