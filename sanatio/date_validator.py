@@ -1,5 +1,5 @@
 from datetime import datetime
-from dateutil.parser import parse
+from dateutil.parser import parse, relativedelta
 
 from sanatio.base_class import BaseValidator
 
@@ -57,3 +57,22 @@ class DateValidator(BaseValidator):
     def toDate(self, value, format='%Y-%m-%d'):  # need to improve this function
         """ convert string to date """
         return datetime.strptime(value, format) if self.isDate(value) else None
+
+    def getYearDiff(date1, date2, increment=False, date_format="%d-%m-%Y"):
+        """ get the difference between two dates in years """
+        if isinstance(date1, str):
+            date1 = datetime.strptime(date1, date_format)
+
+        if isinstance(date2, str):
+            date2 = datetime.strptime(date2, date_format)
+
+        diff = relativedelta.relativedelta(date1, date2)
+        total_months = abs(diff.months + diff.years * 12)
+        
+        total_years = total_months // 12
+        if total_months % 12 > 0 and increment:
+            total_years += 1
+            
+        return total_years
+    
+    
