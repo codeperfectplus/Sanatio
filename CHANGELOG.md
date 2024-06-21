@@ -4,9 +4,16 @@ All notable changes to this project will be documented in this file. The format 
 
 | Version | Date |
 | ------- | ---- |
-| Version 1.2.0 | will release |
+| Version 1.3.0 | 17-June-2024|
+| Version 1.2.0 | 17-June-2024|
 | Version 1.1.0 | 2-June-2024 |
 | Version 1.0.0 | 31-May-2024 |
+
+## Version 1.4.0 Release 
+
+- `isUUID` function added
+- Test cases and test coverage improved
+- Bug fixes
 
 ## Version 1.3.0 Release 
 

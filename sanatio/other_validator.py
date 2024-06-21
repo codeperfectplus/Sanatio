@@ -13,10 +13,6 @@ class OtherValidator(BaseValidator):
         value = str(value) if isinstance(value, int) else value
         return self.isLength(value, 13, 13) and EANCheckSum(value).verify()
 
-    def isHash(self, value) -> bool:
-        """ check if the string is hash or not """
-        pass
-
     def isIMEI(self, value) -> bool:
         """ check if the string is IMEI or not """
         return len(value) == 15 or len(value) == 17
@@ -60,10 +56,6 @@ class OtherValidator(BaseValidator):
             return True
         return False
 
-    def isMD5(self, value) -> bool:
-        """ check if the string is MD5 or not """
-        pass
-
     def isPort(self, value: int) -> bool:
         """ check if the string is port or not
         A port number is a 16-bit unsigned integer,
@@ -75,10 +67,6 @@ class OtherValidator(BaseValidator):
         """ check if the string is slug or not """
         regex = regexs_dict["is_slug"]
         return True if re.match(regex, value) else False
-
-    def isUUID(self, value: str) -> bool:
-        """ check if the string is UUID or not """
-        pass
 
     def isPostalCode(self, value, locale: str) -> bool:
         """ check if the string is postal code or not """
@@ -103,3 +91,8 @@ class OtherValidator(BaseValidator):
         MobileNumberRegex = country_data['MobileNumberRegex']
         if re.match(MobileNumberRegex, value):
             return True
+
+    def isUUID(self, value: str) -> bool:
+        """ check if the string is UUID or not """
+        regex = regexs_dict['uuid_regex']
+        return True if re.match(regex, value) else False
