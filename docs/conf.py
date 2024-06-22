@@ -2,7 +2,7 @@ from datetime import datetime
 
 project = 'Sanatio'
 author = 'Deeapk Raj'
-release = '1.3.0'
+version = '1.4.0'
 
 extensions = [
     'sphinx.ext.autodoc',
@@ -29,3 +29,5 @@ html_theme = 'sphinx_rtd_theme'  # 'pydata_sphinx_theme' 'alabaster'
 html_static_path = ['_static']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.venv']
 html_sidebars = {'**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html']}
+
+version = '1.4.0'
