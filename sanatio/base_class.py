@@ -4,8 +4,6 @@ import json
 
 class BaseValidator:
     """ Base validator class for validating the data """
-    def __init__(self):
-        pass
 
     def isvalidString(self, value: str) -> bool:
         """ check if the string is valid or not """
