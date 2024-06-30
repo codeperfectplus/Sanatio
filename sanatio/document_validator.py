@@ -55,7 +55,8 @@ class DocumentValidator(BaseValidator):
 
         return False
 
-    def isPassportNumber(self, value, locale: str) -> bool:  # TODO: research more about passport number
+    # TODO: research more about passport number
+    def isPassportNumber(self, value, locale: str) -> bool:
         """ check if the string is passport number or not """
         country_data = country_json[locale]
 

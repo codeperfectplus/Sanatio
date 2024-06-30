@@ -24,16 +24,28 @@ class BaseValidator:
     def isFileExists(self, file_path: str) -> bool:
         """ check if the file exists or not """
         return os.path.exists(file_path)
-
-    def read_file(self, file_path: str, split_lines: bool = False) -> list:
+    
+    def read_file(self, 
+                  file_path: str, 
+                  split_lines: bool = False, 
+                  unique: bool = False, 
+                  is_json: bool = False,
+                  sep: str = '\n',
+                  mode: str = 'r'
+                  ) -> list:
+        
         """ read the file content """
         if self.isFileExists(file_path):
-            with open(file_path, 'r') as file:
+            
+            if is_json:
+                return self.read_json(file_path)
+            
+            with open(file_path, mode) as file:
                 data = file.read()
-                if split_lines:
-                    data = data.splitlines()
+                if split_lines and unique:
+                    return list(set(data.split(sep)))
                 return data
-        return []
+        return None
         
     def read_json(self, file_path: str) -> dict:
         """ read the json file content """
@@ -43,7 +55,12 @@ class BaseValidator:
                 return data
         return {}
 
-    def write_file(self, file_path: str, data: str, mode: str = 'w', sep: str = '') -> bool:
+    def write_file(self, 
+                   file_path: str, 
+                   data: str, 
+                   mode: str = 'w', 
+                   sep: str = '') -> bool:
+        
         """ write the data to the file """
         with open(file_path, mode) as file:
             for line in data:
