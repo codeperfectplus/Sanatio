@@ -28,7 +28,7 @@ class DocumentValidator(BaseValidator):
 
     def isAadharCard(self, value) -> bool:
         """ check if the string is Aadhar card or not """
-        regex = regexs_dict['aadhar_regex']
+        regex = regexs_dict.get('aadhar_card_regex')
         value = value.strip().replace(" ", "")
         if isinstance(value, int):
             value = str(value)
@@ -66,7 +66,7 @@ class DocumentValidator(BaseValidator):
         return False
 
     def isCreditCard(self, value: str) -> bool:  # checksum not implemented
-        regex = regexs_dict['credit_card_regex']
+        regex = regexs_dict.get('credit_card_regex')
         if re.match(regex, value):
             if LuhnAlgorithm(value).verify():
                 return True

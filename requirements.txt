@@ -1,2 +1,4 @@
 python-Levenshtein==0.25.1
 python-dateutil
+pytest
+pytest-xdist

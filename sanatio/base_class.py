@@ -3,26 +3,26 @@ import json
 
 
 class BaseValidator:
-    """ Base validator class for validating the data """
+    """Base validator class for validating the data"""
 
     def isvalidString(self, value: str) -> bool:
-        """ check if the string is valid or not """
+        """Check if the string is valid or not"""
         return isinstance(value, str) and value != ''
 
     def isvalidNumber(self, value: int) -> bool:
-        """ check if the number is valid or not """
+        """Check if the number is valid or not"""
         return isinstance(value, (int, float))
 
     def isvalidBoolean(self, value) -> bool:
-        """ check if the string is boolean or not """
+        """Check if the value is boolean or not"""
         return isinstance(value, bool)
 
     def removeSpaces(self, value) -> str:
-        """ remove spaces from string """
-        return value.replace(" ", "") if self.isvalidString(value) else None
+        """Remove spaces from string"""
+        return value.replace(" ", "") if self.is_valid_string(value) else None
     
     def isFileExists(self, file_path: str) -> bool:
-        """ check if the file exists or not """
+        """Check if the file exists or not"""
         return os.path.exists(file_path)
     
     def read_file(self, 
@@ -31,12 +31,9 @@ class BaseValidator:
                   unique: bool = False, 
                   is_json: bool = False,
                   sep: str = '\n',
-                  mode: str = 'r'
-                  ) -> list:
-        
-        """ read the file content """
+                  mode: str = 'r') -> list:
+        """Read the file content"""
         if self.isFileExists(file_path):
-            
             if is_json:
                 return self.read_json(file_path)
             
@@ -48,7 +45,7 @@ class BaseValidator:
         return None
         
     def read_json(self, file_path: str) -> dict:
-        """ read the json file content """
+        """Read the json file content"""
         if self.isFileExists(file_path):
             with open(file_path, 'r') as file:
                 data = json.load(file)
@@ -60,25 +57,24 @@ class BaseValidator:
                    data: str, 
                    mode: str = 'w', 
                    sep: str = '') -> bool:
-        
-        """ write the data to the file """
+        """Write the data to the file"""
         with open(file_path, mode) as file:
             for line in data:
                 file.write(line + sep)
         return True
 
     def write_json(self, file_path: str, data: dict) -> bool:
-        """ write the data to the json file """
+        """Write the data to the json file"""
         with open(file_path, 'w') as file:
             json.dump(data, file)
         return True
 
-    def boolConversion(self, value: str, output = [True, False]) -> bool:
-        """ convert the string to boolean 
+    def boolConversion(self, value: str, output=[True, False]) -> bool:
+        """Convert the string to boolean
         
         input: 'true', 'yes', 'y', '1', 't' -> True
-                'false', 'no', 'n', '0', 'f' -> False
-
+               'false', 'no', 'n', '0', 'f' -> False
+        
         output: True or False
                 1 or 0
                 y or n

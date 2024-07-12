@@ -16,7 +16,7 @@ class NumberValidator(BaseValidator):
 
     def truncate(self, value: float, digits: int) -> float:
         """ truncate the float value """
-        regex = regexs_dict["truncate_regex"]
+        regex = regexs_dict.get('truncate_regex')
         return float(re.findall(f'{regex}{{{digits}}}', str(value))[0])
 
     def toInt(self, value):

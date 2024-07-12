@@ -19,16 +19,16 @@ class OtherValidator(BaseValidator):
 
     def isIPV4(self, value: str) -> bool:
         """ check if the string is IP or not """
-        regex = regexs_dict['ipv4_regex']
+        regex = regexs_dict.get('ipv4_regex')
         return True if re.match(regex, value) else False
 
     def isIPV6(self, value: str) -> bool:
-        regex = regexs_dict['ipv6_regex']
+        regex = regexs_dict.get('ipv6_regex')
         return True if re.match(regex, value) else False
 
     def isSSN(self, value) -> bool:
         """ check if the string is SSN or not """
-        regex = regexs_dict['ssn_regex']
+        regex = regexs_dict.get('ssn_regex')
         return True if re.match(regex, value) else False
 
     def isJSON(self, value) -> bool:
@@ -41,17 +41,17 @@ class OtherValidator(BaseValidator):
 
     def isJWT(self, value) -> bool:
         """ check if the string is JWT or not """
-        regex = regexs_dict['jwt_regex']
+        regex = regexs_dict.get('jwt_regex')
         return True if re.match(regex, value) else False
 
     def isLatLong(self, value: str) -> bool:
         """ check if the string is lat long or not """
-        regex = regexs_dict['lat_long_regex']
+        regex = regexs_dict.get('lat_long_regex')
         return True if re.match(regex, value) else False
 
     def isMACAddress(self, value: str) -> bool:
         """ check if the string is MAC address or not """
-        regex = regexs_dict['mac_address_regex']
+        regex = regexs_dict.get('mac_address_regex')
         if self.isvalidString(value) and re.search(regex, value, re.IGNORECASE):
             return True
         return False
@@ -65,7 +65,7 @@ class OtherValidator(BaseValidator):
 
     def isSlug(self, value: str) -> bool:
         """ check if the string is slug or not """
-        regex = regexs_dict["is_slug"]
+        regex = regexs_dict('slug_regex')
         return True if re.match(regex, value) else False
 
     def isPostalCode(self, value, locale: str) -> bool:
@@ -94,5 +94,5 @@ class OtherValidator(BaseValidator):
 
     def isUUID(self, value: str) -> bool:
         """ check if the string is UUID or not """
-        regex = regexs_dict['uuid_regex']
+        regex = regexs_dict.get('uuid_regex')
         return True if re.match(regex, value) else False
