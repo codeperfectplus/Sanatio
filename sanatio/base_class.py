@@ -19,7 +19,7 @@ class BaseValidator:
 
     def removeSpaces(self, value) -> str:
         """Remove spaces from string"""
-        return value.replace(" ", "") if self.is_valid_string(value) else None
+        return value.replace(" ", "") if self.isvalidString(value) else None
     
     def isFileExists(self, file_path: str) -> bool:
         """Check if the file exists or not"""

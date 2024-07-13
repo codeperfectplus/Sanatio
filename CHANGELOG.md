@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. The format 
 ## Version 1.5.0 Release
 
 - Bug fixes
+- code refactored and optimized
 
 ## Version 1.4.0 Release 
 

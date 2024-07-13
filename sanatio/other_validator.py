@@ -65,7 +65,7 @@ class OtherValidator(BaseValidator):
 
     def isSlug(self, value: str) -> bool:
         """ check if the string is slug or not """
-        regex = regexs_dict('slug_regex')
+        regex = regexs_dict.get('slug_regex')
         return True if re.match(regex, value) else False
 
     def isPostalCode(self, value, locale: str) -> bool:

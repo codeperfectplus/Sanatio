@@ -28,7 +28,7 @@ class DocumentValidator(BaseValidator):
 
     def isAadharCard(self, value) -> bool:
         """ check if the string is Aadhar card or not """
-        regex = regexs_dict.get('aadhar_card_regex')
+        regex = regexs_dict.get('aadhar_regex')
         value = value.strip().replace(" ", "")
         if isinstance(value, int):
             value = str(value)
