@@ -26,9 +26,9 @@ check_command git
 check_command flake8
 check_command twine
 check_file setup.py
-python3 setup.py sdist bdist_wheel
+python setup.py sdist bdist_wheel
 check_directory dist
-python3 -m twine upload dist/*
+python -m twine upload dist/*
 
 rm -rf dist
 rm -rf build
