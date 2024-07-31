@@ -12,7 +12,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 # Setting up the package
 setuptools.setup(
     name="Sanatio",
-    version="1.5.0",
+    version="1.6.0",
     author="Deepak Raj",
     author_email="deepak008@live.com",
     description="Simple and easy to validate data in Python",
