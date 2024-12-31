@@ -17,7 +17,7 @@ Check out the [documentation](https://sanatio.readthedocs.io/en/latest/) for mor
 
 ## Roadmap
 
-Check out the [roadmap](https://github.com/py-contributors/sanatio/ROADMAP.MD) for more information.
+Check out the [roadmap](/ROADMAP.MD) for more information.
 
 ## Contributing
 
