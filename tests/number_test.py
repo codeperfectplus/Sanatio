@@ -1,7 +1,7 @@
 import sys
 import unittest
-sys.path.append('.')
 from sanatio import Sanatio
+sys.path.append('.')
 
 validator = Sanatio()
 
@@ -283,6 +283,7 @@ class NumberTest(unittest.TestCase):
         self.assertFalse(validator.isCube(30))
         self.assertFalse(validator.isCube(-23))
         self.assertFalse(validator.isCube(-100))
+
 
 if __name__ == '__main__':
     unittest.main()
