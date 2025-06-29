@@ -1,85 +1,89 @@
 import re
+from typing import List, Optional
 
 from sanatio.base_class import BaseValidator
 
 
 class PasswordValidator(BaseValidator):
 
-    def isStrongPassword(self, value: str,
-                         min_length: int = 8,
-                         special_chars: bool = True,
-                         numbers: bool = True,
-                         uppercase: bool = True,
-                         lowercase: bool = True) -> bool:
-        """ check if the string is strong password or not
+    def is_strong_password(self, value: str,
+                           min_length: int = 8,
+                           special_chars: bool = True,
+                           numbers: bool = True,
+                           uppercase: bool = True,
+                           lowercase: bool = True) -> bool:
+        """Check if the string is a strong password.
 
-        requirements:
-            1. At least 8 characters long
-            2. At least one uppercase letter
-            3. At least one lowercase letter
-            4. At least one number
-            5. At least one special character
+        Requirements:
+            1. At least `min_length` characters
+            2. At least one uppercase letter (optional)
+            3. At least one lowercase letter (optional)
+            4. At least one number (optional)
+            5. At least one special character (optional)
         """
-        if not self.isPasswordLength(value, min_length) or \
-           (special_chars and not self.isPasswordSpecialChar(value)) or \
-           (numbers and not self.isPasswordNumber(value)) or \
-           (uppercase and not self.isPasswordUppercase(value)) or \
-           (lowercase and not self.isPasswordLowercase(value)):
+        if not self.is_password_length(value, min_length):
+            return False
+        if special_chars and not self.is_password_special_char(value):
+            return False
+        if numbers and not self.is_password_number(value):
+            return False
+        if uppercase and not self.is_password_uppercase(value):
+            return False
+        if lowercase and not self.is_password_lowercase(value):
             return False
 
         return True
 
-    def isPasswordUppercase(self, value: str, min_length: int = 1) -> bool:
-        """ check if the string has uppercase letters """
-        if len(re.findall(r'[A-Z]', value)) >= min_length:
-            return True
+    def is_password_uppercase(self, value: str, min_length: int = 1) -> bool:
+        """Check if the string has at least `min_length` uppercase letters."""
+        return len(re.findall(r'[A-Z]', value)) >= min_length
 
-    def isPasswordLowercase(self, value: str, min_length: int = 1) -> bool:
-        """ check if the string has lowercase letters """
-        if len(re.findall(r'[a-z]', value)) >= min_length:
-            return True
+    def is_password_lowercase(self, value: str, min_length: int = 1) -> bool:
+        """Check if the string has at least `min_length` lowercase letters."""
+        return len(re.findall(r'[a-z]', value)) >= min_length
 
-    def isPasswordNumber(self, value: str, min_length: int = 1) -> bool:
-        """ check if the string has numbers """
-        if len(re.findall(r'[0-9]', value)) >= min_length:
-            return True
+    def is_password_number(self, value: str, min_length: int = 1) -> bool:
+        """Check if the string has at least `min_length` digits."""
+        return len(re.findall(r'\d', value)) >= min_length
 
-    def isPasswordLength(self, value: str, min_length: int = 8) -> bool:
-        """ check if the string length is between min and max """
-        if len(value) >= min_length:
-            return True
+    def is_password_length(self, value: str, min_length: int = 8) -> bool:
+        """Check if the string is at least `min_length` characters long."""
+        return len(value) >= min_length
 
-    def isPasswordSpecialChar(self, value: str, min_length: int = 1) -> bool:
-        """ check if the string has special characters """
-        if len(re.findall(r'[_@$]', value)) >= min_length:
-            return True
+    def is_password_special_char(self, value: str, min_length: int = 1) -> bool:
+        """Check if the string has at least `min_length` special characters."""
+        # Common special characters set: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+        return len(re.findall(r'[^a-zA-Z0-9]', value)) >= min_length
 
-    def isPasswordMatch(self, value: str, match_value: str, ignore_case: bool = False) -> bool:
-        """ check if the string matches the match_value """
-        if ignore_case and value.lower() == match_value.lower():
-            return True
-        elif value == match_value:
-            return True
+    def is_password_match(self, value: str, match_value: str, ignore_case: bool = False) -> bool:
+        """Check if the password matches `match_value`."""
+        if ignore_case:
+            return value.lower() == match_value.lower()
+        return value == match_value
 
-    def isPasswordNotMatch(self, value: str, match_value: str, ignore_case: bool = False) -> bool:
-        """ check if the string does not match the match_value """
-        if ignore_case and value.lower() != match_value.lower():
-            return True
-        elif value != match_value:
-            return True
+    def is_password_not_match(self, value: str, match_value: str, ignore_case: bool = False) -> bool:
+        """Check if the password does not match `match_value`."""
+        if ignore_case:
+            return value.lower() != match_value.lower()
+        return value != match_value
 
-    def isPasswordNotInList(self, value: str, list_values: list, ignore_case: bool = False) -> bool:
-        """ check if the string is not in the list """
-        if ignore_case and value.lower() not in [x.lower() for x in list_values]:
-            return True
-        elif value not in list_values:
-            return True
+    def is_password_not_in_list(self, value: str, list_values: Optional[List[str]] = None,
+                                ignore_case: bool = False) -> bool:
+        """Check if the password is not in a list of disallowed passwords."""
+        if list_values is None:
+            list_values = []
 
-    def isPasswordNotInFile(self, value: str, file_path: str, ignore_case: bool = False) -> bool:
-        """ check if the string is not in the file """
+        if ignore_case:
+            return value.lower() not in [x.lower() for x in list_values]
+        return value not in list_values
+
+    def is_password_not_in_file(self, value: str, file_path: str, ignore_case: bool = False) -> bool:
+        """Check if the password is not in a file of disallowed passwords."""
+        if not hasattr(self, "read_file"):
+            raise NotImplementedError("read_file() method not implemented in BaseValidator or subclass.")
+
         data = self.read_file(file_path, split_lines=True)
 
-        if ignore_case and value.lower() not in [x.lower() for x in data]:
-            return True
-        elif value not in data:
-            return True
+        if ignore_case:
+            return value.lower() not in [x.lower() for x in data]
+        return value not in data
