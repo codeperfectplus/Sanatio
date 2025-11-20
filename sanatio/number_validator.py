@@ -1,10 +1,23 @@
 import re
+import math
+from typing import Union, Optional
+from functools import lru_cache
 
 from sanatio.base_class import BaseValidator
 from sanatio.utils.utils import regexs_dict
 
 
 class NumberValidator(BaseValidator):
+    """
+    NumberValidator provides comprehensive numeric validation and utility methods.
+    
+    Features:
+    - Type checking (int, float, decimal)
+    - Range validation and comparison operations
+    - Mathematical property validation (prime, even, odd, perfect square/cube)
+    - Type conversion utilities with error handling
+    - Performance optimized with caching for expensive operations
+    """
 
     def isDecimal(self, value: float) -> bool:
         """ check if the string is decimal or not """
@@ -91,11 +104,42 @@ class NumberValidator(BaseValidator):
                 self.isvalidNumber(max_value) and
                 min_value <= value <= max_value)
 
-    def isPrime(self, value) -> bool:
-        """ check if the value is a prime number or not """
-        if not self.isvalidNumber(value) or value < 2:
+    @lru_cache(maxsize=1024)
+    def isPrime(self, value: Union[int, float]) -> bool:
+        """
+        Check if the value is a prime number using optimized algorithm.
+        
+        Args:
+            value (int|float): Number to check
+            
+        Returns:
+            bool: True if number is prime, False otherwise
+            
+        Example:
+            >>> validator.isPrime(17)
+            True
+            >>> validator.isPrime(16)
+            False
+        """
+        if not self.isvalidNumber(value):
             return False
-        for i in range(2, int(value ** 0.5) + 1):
+            
+        # Convert to int if it's a whole number float
+        if isinstance(value, float):
+            if not value.is_integer():
+                return False
+            value = int(value)
+            
+        if value < 2:
+            return False
+        if value == 2:
+            return True
+        if value % 2 == 0:
+            return False
+            
+        # Check odd divisors up to sqrt(value)
+        sqrt_val = int(math.sqrt(value))
+        for i in range(3, sqrt_val + 1, 2):
             if value % i == 0:
                 return False
         return True

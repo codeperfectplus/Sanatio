@@ -87,3 +87,9 @@ class PasswordValidator(BaseValidator):
         if ignore_case:
             return value.lower() not in [x.lower() for x in data]
         return value not in data
+
+    # Alias method for backward compatibility with tests
+    def isStrongPassword(self, value: str, min_length: int = 8, special_chars: bool = True, 
+                        numbers: bool = True, uppercase: bool = True, lowercase: bool = True) -> bool:
+        """Alias for is_strong_password method."""
+        return self.is_strong_password(value, min_length, special_chars, numbers, uppercase, lowercase)

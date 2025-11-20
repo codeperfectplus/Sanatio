@@ -17,6 +17,29 @@ class BaseValidator:
         """Check if the value is boolean or not"""
         return isinstance(value, bool)
 
+    def isLength(self, value, min_length: int = 0, max_length: int = None) -> bool:
+        """
+        Universal length validator that works with strings, lists, and other sequence types.
+        
+        Args:
+            value: The value to check (string, list, tuple, etc.)
+            min_length (int): Minimum length (inclusive), default is 0
+            max_length (int|None): Maximum length (inclusive), None means no maximum
+            
+        Returns:
+            bool: True if length is within range, False otherwise
+        """
+        if value is None:
+            return False
+            
+        try:
+            length = len(value)
+            if max_length is None:
+                return length >= min_length
+            return min_length <= length <= max_length
+        except TypeError:
+            return False
+
     def removeSpaces(self, value) -> str:
         """Remove spaces from string"""
         return value.replace(" ", "") if self.isvalidString(value) else None
