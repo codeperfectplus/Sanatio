@@ -36,6 +36,21 @@ class ArrayValidator(BaseValidator):
                 seen.append(i)
             return True
 
+    # Alias methods for backward compatibility with tests
+    def isArray(self, value: Any) -> bool:
+        """Alias for is_array method."""
+        return self.is_array(value)
+
+    def isContains(self, value: List[Any], item: Any) -> bool:
+        """Alias for is_contains method."""
+        return self.is_contains(value, item)
+
+    def isUnique(self, value: List[Any]) -> bool:
+        """Alias for is_unique method."""
+        return self.is_unique(value)
+
+    # isLength method removed from ArrayValidator - now inherited from BaseValidator
+
     def is_multidimensional(self, value: List[Any]) -> bool:
         """Check if the array is multidimensional (contains at least one list)."""
         if not self.is_array(value):
